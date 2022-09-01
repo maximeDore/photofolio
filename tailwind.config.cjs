@@ -5,10 +5,10 @@ module.exports = {
 	theme: {
 		extend: {
 			colors: {
-				primary: "#00040f",
-				secondary: "#00f6ff",
-				dimWhite: "rgba(255, 255, 255, 0.7)",
-				dimBlue: "rgba(9, 151, 124, 0.1)",
+				black: "#1d1d1d",
+				dark: "#2d2d2d",
+				primary: "#ffd24e",
+				secondary: "#a9a9a9",
 			},
 			fontFamily: {
 				rubik: ["Rubik", "sans-serif"],

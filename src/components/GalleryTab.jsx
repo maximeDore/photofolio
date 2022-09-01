@@ -113,7 +113,7 @@ const GalleryTab = () => {
 	if (data === null) {
 		return <Spinner />;
 	} else {
-		console.log(data.response.results[0]);
+		// console.log(data.response.results[0]);
 		return (
 			<div className="gallery gallery--unsplash">
 				{data.response.results.map((photo) => (

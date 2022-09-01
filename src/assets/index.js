@@ -3,4 +3,6 @@ import instagram from "./instagram.svg";
 import linkedin from "./linkedin.svg";
 import unsplash from "./unsplash.svg";
 
-export { logo, instagram, linkedin, unsplash };
+import hero1 from "./P1232212.jpg";
+
+export { logo, instagram, linkedin, unsplash, hero1 };

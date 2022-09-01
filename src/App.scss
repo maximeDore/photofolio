@@ -4,15 +4,22 @@
 @tailwind components;
 @tailwind utilities;
 
+// Colors
 $black: #1d1d1d;
 $dark: #2d2d2d;
 $primary: #ffd24e;
 $secondary: #a9a9a9;
 $white: #ffffff;
 
+// Sizes
 $wrap: 5vw;
 $wrapper: 1200px;
 $padd: 120px;
+
+// Anims
+$bezier: cubic-bezier(0.68, 0.16, 0.39, 0.98);
+$bounce: cubic-bezier(0.79, 2.25, 0.65, 0.5);
+$animTime: 0.35s $bezier;
 
 :root {
 	--black: #{$black};
@@ -29,6 +36,7 @@ $padd: 120px;
 body {
 	background: var(--black);
 	color: var(--white);
+	font-family: "Rubik", sans-serif;
 }
 
 // ██╗   ██╗████████╗██╗██╗     ██╗████████╗██╗███████╗███████╗
@@ -68,6 +76,7 @@ body {
 .color-white {
 	color: var(--white);
 }
+
 .padd {
 	padding-block: var(--padd);
 }
@@ -96,6 +105,11 @@ body {
 	font-size: 100px;
 	line-height: 1.2;
 }
+.subtitle {
+	font-family: "Rubik", sans-serif;
+	font-size: 14px;
+	font-weight: 300;
+}
 
 // ███╗   ██╗ █████╗ ██╗   ██╗
 // ████╗  ██║██╔══██╗██║   ██║
@@ -103,7 +117,7 @@ body {
 // ██║╚██╗██║██╔══██║╚██╗ ██╔╝
 // ██║ ╚████║██║  ██║ ╚████╔╝
 // ╚═╝  ╚═══╝╚═╝  ╚═╝  ╚═══╝
-#nav {
+.nav {
 }
 
 // ██╗  ██╗███████╗██████╗  ██████╗
@@ -157,8 +171,16 @@ body {
 	columns: 300px;
 	column-gap: var(--gutter);
 
-	& > div {
+	&__item {
+		transition: all 0.25s $bezier;
 		margin: 0 0 var(--gutter);
+		cursor: zoom-in;
+
+		&:hover {
+			position: relative;
+			transform: scale(1.25);
+			box-shadow: 0 15px 50px rgba(0, 0, 0, 0.75);
+		}
 
 		img {
 			width: 100%;

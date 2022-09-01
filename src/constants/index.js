@@ -7,24 +7,20 @@ export const photos = [
 	},
 ];
 
-// export const navLinks = [
-//    {
-//       id: "home",
-//       title: "Home",
-//    },
-//    {
-//       id: "features",
-//       title: "Features",
-//    },
-//    {
-//       id: "product",
-//       title: "Product",
-//    },
-//    {
-//       id: "clients",
-//       title: "Clients",
-//    },
-// ];
+export const navLinks = [
+	{
+		id: "accueil",
+		title: "Accueil",
+	},
+	{
+		id: "galerie",
+		title: "Galerie",
+	},
+	{
+		id: "contact",
+		title: "Contact",
+	},
+];
 
 // export const features = [
 //    {

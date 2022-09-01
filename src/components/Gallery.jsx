@@ -7,7 +7,7 @@ const Gallery = () => {
 
 	if (!toggle) {
 		return (
-			<section className="padd wrap">
+			<section id="galerie" className="padd wrap">
 				<div className="wrapper">
 					<GalleryTab />
 				</div>
@@ -15,8 +15,10 @@ const Gallery = () => {
 		);
 	} else {
 		return (
-			<section>
-				<GalleryTab />
+			<section id="galerie" className="padd wrap">
+				<div className="wrapper">
+					<GalleryTab />
+				</div>
 			</section>
 		);
 	}
