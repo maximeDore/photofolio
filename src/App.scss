@@ -1,0 +1,168 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+$black: #1d1d1d;
+$dark: #2d2d2d;
+$primary: #ffd24e;
+$secondary: #a9a9a9;
+$white: #ffffff;
+
+$wrap: 5vw;
+$wrapper: 1200px;
+$padd: 120px;
+
+:root {
+	--black: #{$black};
+	--dark: #{$dark};
+	--primary: #{$primary};
+	--secondary: #{$secondary};
+	--white: #{$white};
+
+	--wrap: #{$wrap};
+	--wrapper: #{$wrapper};
+	--padd: #{$padd};
+}
+
+body {
+	background: var(--black);
+	color: var(--white);
+}
+
+// ██╗   ██╗████████╗██╗██╗     ██╗████████╗██╗███████╗███████╗
+// ██║   ██║╚══██╔══╝██║██║     ██║╚══██╔══╝██║██╔════╝██╔════╝
+// ██║   ██║   ██║   ██║██║     ██║   ██║   ██║█████╗  ███████╗
+// ██║   ██║   ██║   ██║██║     ██║   ██║   ██║██╔══╝  ╚════██║
+// ╚██████╔╝   ██║   ██║███████╗██║   ██║   ██║███████╗███████║
+//  ╚═════╝    ╚═╝   ╚═╝╚══════╝╚═╝   ╚═╝   ╚═╝╚══════╝╚══════╝
+.bg-black {
+	background-color: var(--black);
+}
+.bg-dark {
+	background-color: var(--dark);
+}
+.bg-primary {
+	background-color: var(--primary);
+}
+.bg-secondary {
+	background-color: var(--secondary);
+}
+.bg-white {
+	background-color: var(--white);
+}
+
+.color-black {
+	color: var(--black);
+}
+.color-dark {
+	color: var(--dark);
+}
+.color-primary {
+	color: var(--primary);
+}
+.color-secondary {
+	color: var(--secondary);
+}
+.color-white {
+	color: var(--white);
+}
+.padd {
+	padding-block: var(--padd);
+}
+.padd-top {
+	padding-top: var(--padd);
+}
+.padd-bottom {
+	padding-bottom: var(--padd);
+}
+.wrap {
+	padding-inline: var(--wrap);
+}
+.wrap-left {
+	padding-left: var(--wrap);
+}
+.wrap-right {
+	padding-right: var(--wrap);
+}
+.wrapper {
+	max-width: var(--wrapper);
+	margin: 0 auto;
+}
+
+.h1 {
+	font-family: "Rubik", sans-serif;
+	font-size: 100px;
+	line-height: 1.2;
+}
+
+// ███╗   ██╗ █████╗ ██╗   ██╗
+// ████╗  ██║██╔══██╗██║   ██║
+// ██╔██╗ ██║███████║██║   ██║
+// ██║╚██╗██║██╔══██║╚██╗ ██╔╝
+// ██║ ╚████║██║  ██║ ╚████╔╝
+// ╚═╝  ╚═══╝╚═╝  ╚═╝  ╚═══╝
+#nav {
+}
+
+// ██╗  ██╗███████╗██████╗  ██████╗
+// ██║  ██║██╔════╝██╔══██╗██╔═══██╗
+// ███████║█████╗  ██████╔╝██║   ██║
+// ██╔══██║██╔══╝  ██╔══██╗██║   ██║
+// ██║  ██║███████╗██║  ██║╚██████╔╝
+// ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝ ╚═════╝
+.hero {
+	--thumb-size: 150px;
+	height: 100vh;
+
+	&__content {
+		&::after {
+			content: "";
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			height: 75vh;
+			background: linear-gradient(to top, var(--black), rgba(255, 255, 255, 0));
+			pointer-events: none;
+			z-index: 1;
+		}
+	}
+	&__sidebar {
+		width: 200px;
+	}
+
+	.slider {
+		&__nav {
+			position: absolute;
+			right: calc(100% - calc(var(--thumb-size) / 2));
+			width: var(--thumb-size);
+			height: calc(var(--thumb-size) * 1.66);
+			bottom: var(--padd);
+		}
+	}
+}
+
+//  ██████╗  █████╗ ██╗     ██╗     ███████╗██████╗ ██╗   ██╗
+// ██╔════╝ ██╔══██╗██║     ██║     ██╔════╝██╔══██╗╚██╗ ██╔╝
+// ██║  ███╗███████║██║     ██║     █████╗  ██████╔╝ ╚████╔╝
+// ██║   ██║██╔══██║██║     ██║     ██╔══╝  ██╔══██╗  ╚██╔╝
+// ╚██████╔╝██║  ██║███████╗███████╗███████╗██║  ██║   ██║
+//  ╚═════╝ ╚═╝  ╚═╝╚══════╝╚══════╝╚══════╝╚═╝  ╚═╝   ╚═╝
+.gallery {
+	--gutter: 2rem;
+	--columns: 3;
+
+	columns: 300px;
+	column-gap: var(--gutter);
+
+	& > div {
+		margin: 0 0 var(--gutter);
+
+		img {
+			width: 100%;
+			object-fit: contain;
+		}
+	}
+}
