@@ -5,10 +5,10 @@ module.exports = {
 	theme: {
 		extend: {
 			colors: {
-				black: "#1d1d1d",
-				dark: "#2d2d2d",
-				primary: "#ffd24e",
-				secondary: "#a9a9a9",
+				black: "var(--black)",
+				dark: "var(--dark)",
+				primary: "var(--primary)",
+				secondary: "var(--secondary)",
 			},
 			fontFamily: {
 				rubik: ["Rubik", "sans-serif"],
@@ -21,6 +21,9 @@ module.exports = {
 			md: "1060px",
 			lg: "1200px",
 			xl: "1700px",
+		},
+		transitionDuration: {
+			DEFAULT: "250ms",
 		},
 	},
 	plugins: [],

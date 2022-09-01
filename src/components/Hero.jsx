@@ -1,8 +1,8 @@
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 
 import { Autoplay, A11y, Controller, Lazy, EffectCoverflow } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { hero1 } from "../assets";
+import { hero1, lightmode, darkmode } from "../assets";
 
 // Import Swiper styles
 import "swiper/css";
@@ -14,6 +14,8 @@ import "swiper/css/effect-coverflow";
 const Hero = () => {
 	const swiper1Ref = useRef(null);
 	const swiper2Ref = useRef(null);
+
+	const [lightMode, setLightMode] = useState(false);
 
 	const swiperParams = {
 		modules: [Autoplay, A11y, Controller, Lazy, EffectCoverflow],
@@ -29,10 +31,22 @@ const Hero = () => {
 		watchSlidesProgress: true,
 	};
 
+	const toggleLightMode = () => {
+		setLightMode((current) => !current);
+	};
+
 	useEffect(() => {
 		swiper1Ref.current.controller.control = swiper2Ref.current;
 		swiper2Ref.current.controller.control = swiper1Ref.current;
 	}, []);
+
+	useEffect(() => {
+		if (lightMode) {
+			document.getElementsByTagName("BODY")[0].classList.add("light-mode");
+		} else {
+			document.getElementsByTagName("BODY")[0].classList.remove("light-mode");
+		}
+	}, [lightMode]);
 
 	return (
 		<section id="hero" className="hero flex">
@@ -41,7 +55,7 @@ const Hero = () => {
 				{/* Title */}
 				<div className="wrap padd absolute bottom-0 left-0 right-0 z-[2] pointer-events-none">
 					<div className="wrapper">
-						<h1 className="h1 inline-block pointer-events-auto">
+						<h1 className="h1 inline-block pointer-events-auto drop-shadow-md shadow-black">
 							<span className="inline-block" data-aos="fade-left" data-aos-duration="750" data-aos-easing="ease">
 								Maxime
 							</span>{" "}
@@ -90,8 +104,30 @@ const Hero = () => {
 					</Swiper>
 				</div>
 			</div>
+
 			{/* Right sidebar */}
-			<div className="hero__sidebar bg-white text-black shrink-0 relative">
+			<div className="hero__sidebar bg-white text-black shrink-0 relative ">
+				{/* Lightmode button */}
+				<button
+					className="absolute top-[20px] right-[50%] translate-x-[50%] w-[40px] h-[40px] shadow-md transition-all hover:shadow-lg hover:scale-125 rounded-full"
+					onClick={toggleLightMode}
+				>
+					<img
+						src={darkmode}
+						className={`transition-opacity w-[28px] h-[28px] absolute bottom-[50%] right-[50%] translate-[50%] translate-x-1/2 translate-y-1/2 ${
+							!lightMode ? "opacity-0" : ""
+						}`}
+						alt="toggle-light-mode"
+					/>
+					<img
+						src={lightmode}
+						className={`transition-opacity w-[28px] h-[28px] absolute bottom-[50%] right-[50%] translate-x-1/2 translate-y-1/2 ${
+							lightMode ? "opacity-0" : ""
+						}`}
+						alt="toggle-dark-mode"
+					/>
+				</button>
+
 				{/* Thumbnail navigation */}
 				<div className="slider__nav">
 					{/* TODO: Au clic nextSlide */}

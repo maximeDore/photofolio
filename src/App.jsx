@@ -6,8 +6,8 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 const App = () => {
-	const [y, setY] = useState(window.scrollY);
 	const [isScrolled, setIsScrolled] = useState(false);
+	const [y, setY] = useState(window.scrollY);
 
 	const handleScroll = (e) => {
 		const window = e.currentTarget;
@@ -29,10 +29,13 @@ const App = () => {
 		};
 	}, [y]);
 
-	// AOS
+	// On load
 	useEffect(() => {
 		AOS.init();
 		AOS.refresh();
+
+		// Loaded class to body
+		document.getElementsByTagName("BODY")[0].classList.add("is-loaded");
 	}, []);
 
 	return (
