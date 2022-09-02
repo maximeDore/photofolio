@@ -2,7 +2,7 @@ import { logo } from "../assets";
 import { socialMedia } from "../constants";
 
 const Footer = () => (
-	<footer className="wrap padd-top bg-white color-black">
+	<footer className="wrap padd-top bg-white text-black">
 		<div className="wrapper flex">
 			<div className={` md:flex-row flex-col mb-8 w-full`}>
 				<div className="flex-1 flex flex-col justify-start mr-10">

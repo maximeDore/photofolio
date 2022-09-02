@@ -11,7 +11,7 @@ const App = () => {
 
 	const handleScroll = (e) => {
 		const window = e.currentTarget;
-		if (y > window.innerHeight) {
+		if (y > window.innerHeight * 0.9) {
 			setIsScrolled(true);
 		} else {
 			setIsScrolled(false);
