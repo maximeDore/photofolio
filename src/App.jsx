@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 
-import { Navbar, Hero, Gallery, Footer } from "./components";
+import { Navbar, Hero, Gallery, Footer, Spinner } from "./components";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
 
 const App = () => {
 	const [isScrolled, setIsScrolled] = useState(false);
+	const [isLoaded, setIsLoaded] = useState(false);
 	const [y, setY] = useState(window.scrollY);
 
 	const handleScroll = (e) => {
@@ -18,7 +19,6 @@ const App = () => {
 		}
 		setY(window.scrollY);
 	};
-
 	// Scroll state
 	useEffect(() => {
 		window.addEventListener("scroll", (e) => handleScroll(e));
@@ -31,25 +31,27 @@ const App = () => {
 
 	// On load
 	useEffect(() => {
-		AOS.init();
+		AOS.init({ duration: 1000 });
 		AOS.refresh();
 
-		// Loaded class to body
-		document.getElementsByTagName("BODY")[0].classList.add("is-loaded");
+		setIsLoaded(true);
 	}, []);
 
 	return (
-		<div className={`bg-black w-full overflow-hidden ${isScrolled ? "is-scrolled" : ""}`}>
-			{/* Nav */}
-			<Navbar isScrolled={isScrolled} />
+		<>
+			<Spinner className={`${isScrolled ? "is-scrolled" : ""}  ${isLoaded ? "is-loaded" : ""}`} />
+			<div className={`bg-black w-full ${isScrolled ? "is-scrolled" : ""}  ${isLoaded ? "is-loaded" : ""}`}>
+				{/* Nav */}
+				<Navbar isScrolled={isScrolled} />
 
-			{/* Hero */}
-			<Hero />
+				{/* Hero */}
+				<Hero />
 
-			{/* Content */}
-			<Gallery />
-			<Footer />
-		</div>
+				{/* Content */}
+				<Gallery />
+				<Footer />
+			</div>
+		</>
 	);
 };
 

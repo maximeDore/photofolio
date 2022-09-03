@@ -9,6 +9,7 @@ module.exports = {
 				dark: "var(--dark)",
 				primary: "var(--primary)",
 				secondary: "var(--secondary)",
+				white: "var(--white)",
 			},
 			fontFamily: {
 				rubik: ["Rubik", "sans-serif"],

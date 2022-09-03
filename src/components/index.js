@@ -3,4 +3,6 @@ import Hero from "./Hero";
 import Gallery from "./Gallery";
 import Footer from "./Footer";
 
-export { Navbar, Hero, Gallery, Footer };
+import Spinner from "./Spinner";
+
+export { Navbar, Hero, Gallery, Footer, Spinner };

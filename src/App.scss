@@ -91,13 +91,8 @@ body {
 	font-weight: 300;
 }
 
-// ███╗   ██╗ █████╗ ██╗   ██╗
-// ████╗  ██║██╔══██╗██║   ██║
-// ██╔██╗ ██║███████║██║   ██║
-// ██║╚██╗██║██╔══██║╚██╗ ██╔╝
-// ██║ ╚████║██║  ██║ ╚████╔╝
-// ╚═╝  ╚═══╝╚═╝  ╚═╝  ╚═══╝
-.nav {
+section {
+	position: relative;
 }
 
 // ██╗  ██╗███████╗██████╗  ██████╗
@@ -152,21 +147,45 @@ body {
 	column-gap: var(--gutter);
 
 	&__item {
-		transition: all 0.25s $bezier;
 		margin: 0 0 var(--gutter);
-		cursor: zoom-in;
 
-		&:hover {
-			position: relative;
-			transform: scale(1.25);
-			box-shadow: 0 15px 50px rgba(0, 0, 0, 0.75);
-		}
+		& > img {
+			transition: transform 0.25s $bezier, box-shadow 0.25s $bezier, opacity 1s 0.25s;
+			cursor: zoom-in;
 
-		img {
-			width: 100%;
-			object-fit: contain;
+			&:hover {
+				transform: scale(1.25);
+				box-shadow: 0 15px 50px rgba(0, 0, 0, 0.75);
+			}
 		}
 	}
+	.item {
+		&__popup {
+			transition: visibility 0s 0.35s, opacity 0.25s, transform 0.35s ease;
+			transform: translateY(25%);
+			opacity: 0;
+			visibility: hidden;
+
+			&.is-active {
+				transition: visibility 0s, opacity 0.25s, transform 0.35s ease;
+				transform: none;
+				opacity: 1;
+				visibility: visible;
+			}
+
+			&-img {
+				box-shadow: 0 0 0 100vmax rgba(29, 29, 29, 0.9);
+			}
+		}
+	}
+
+	// &__tabs {
+	// 	position: absolute;
+	// 	left: 0;
+	// 	top: var(--padd);
+	// 	bottom: var(--padd);
+
+	// }
 }
 
 // ███████╗██████╗ ██╗███╗   ██╗███╗   ██╗███████╗██████╗
@@ -176,6 +195,17 @@ body {
 // ███████║██║     ██║██║ ╚████║██║ ╚████║███████╗██║  ██║
 // ╚══════╝╚═╝     ╚═╝╚═╝  ╚═══╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝
 .spinner {
+	#root > &-container {
+		transition: opacity 0.5s 0.5s;
+		position: fixed;
+		bottom: 50%;
+		right: 50%;
+		transform: translate(50%, 50%);
+
+		&.is-loaded {
+			opacity: 0;
+		}
+	}
 	&__inner {
 		&::before {
 			content: "";

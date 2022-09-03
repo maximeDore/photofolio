@@ -50,14 +50,20 @@ const Hero = () => {
 	}, [lightMode]);
 
 	return (
-		<section id="accueil" className="hero flex">
+		<section id="accueil" className="hero flex" data-aos="fade" data-aos-delay="750">
 			{/* Left content */}
 			<div className="hero__content bg-black w-full relative overflow-hidden">
 				{/* Title */}
 				<div className="wrap padd absolute bottom-0 left-0 right-0 lg:-right-[200px] z-[2] pointer-events-none">
 					<div className="wrapper">
 						<h1 className="h1 inline-block pointer-events-auto drop-shadow-md shadow-black">
-							<span className="inline-block" data-aos="fade-left" data-aos-duration="750" data-aos-easing="ease">
+							<span
+								className="inline-block"
+								data-aos="fade-left"
+								data-aos-duration="750"
+								data-aos-delay="1000"
+								data-aos-easing="ease"
+							>
 								Maxime
 							</span>{" "}
 							{/* <br className="sm:block hidden" /> */}
@@ -65,19 +71,13 @@ const Hero = () => {
 								className="text-primary inline-block"
 								data-aos="fade-right"
 								data-aos-duration="750"
-								data-aos-delay="500"
+								data-aos-delay="1500"
 								data-aos-easing="ease"
 							>
 								Doré
 							</span>
 						</h1>
-						<p
-							className="subtitle pt-3 pl-1"
-							data-aos="fade"
-							data-aos-delay="1250"
-							data-aos-duration="1000"
-							data-aos-easing="ease"
-						>
+						<p className="subtitle pt-3 pl-1" data-aos="fade" data-aos-delay="2500" data-aos-easing="ease">
 							Développeur Web - <span className="text-primary">Photographe</span>
 						</p>
 					</div>
@@ -107,7 +107,7 @@ const Hero = () => {
 			</div>
 
 			{/* Right sidebar */}
-			<div className="hero__sidebar bg-white text-black shrink-0 relative ">
+			<div className="hero__sidebar bg-white text-black shrink-0 relative">
 				{/* Lightmode button */}
 				<button
 					className="absolute bottom-[30px] xl:bottom-0 xl:top-[20px] right-[50%] translate-x-[50%] w-[40px] h-[40px] shadow-md transition-all hover:shadow-lg hover:scale-125 rounded-full"
@@ -130,7 +130,7 @@ const Hero = () => {
 				</button>
 
 				{/* Thumbnail navigation */}
-				<div className="slider__nav">
+				<div className="slider__nav z-[1]" data-aos="fade-left" data-aos-delay="2000" data-aos-duration="750">
 					{/* TODO: Au clic nextSlide */}
 					<Swiper
 						{...swiperParams}
