@@ -16,7 +16,7 @@ const GalleryUnsplashItem = ({ photo }) => {
 	};
 
 	return (
-		<div className={`gallery__item bg-dark ${isActive ? "is-active" : ""}`}>
+		<div className={`gallery__item ${isActive ? "is-active" : ""}`} style={{ backgroundColor: color }}>
 			{/* Image */}
 			<img
 				src={src}

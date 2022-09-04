@@ -19,7 +19,7 @@ const Footer = () => (
 						<img
 							src={social.icon}
 							alt={social.id}
-							className={`w-[21px] h-[21px] object-contain cursor-pointer ${
+							className={`social w-[21px] h-[21px] object-contain cursor-pointer ${
 								index !== socialMedia.length - 1 ? "mr-6" : "mr-0"
 							}`}
 						/>

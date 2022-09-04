@@ -27,7 +27,7 @@ const gallery = [
 	{
 		id: 1,
 		src: photo1,
-		location: "Seefelder Spitze, Austria",
+		location: "Seefelder Spitze, Autriche",
 		description: "",
 		width: 0,
 		height: 0,

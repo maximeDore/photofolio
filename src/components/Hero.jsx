@@ -26,7 +26,9 @@ const Hero = () => {
 		modules: [Autoplay, A11y, Controller, Lazy, EffectCoverflow],
 		slidesPerView: 1,
 		// onSwiper: (swiper) => console.log(swiper),
-		// onSlideChange: () => console.log("slide change"),
+		// onSlideChange: () => {
+
+		// },
 		speed: 1000,
 		loop: true,
 		longSwipesRatio: 0.01,
@@ -47,6 +49,11 @@ const Hero = () => {
 	useEffect(() => {
 		swiper1Ref.current.controller.control = swiper2Ref.current;
 		swiper2Ref.current.controller.control = swiper1Ref.current;
+
+		window.addEventListener("resize", () => {
+			swiper1Ref.current.update();
+			swiper2Ref.current.update();
+		});
 	}, []);
 
 	useEffect(() => {
@@ -120,14 +127,14 @@ const Hero = () => {
 					<img
 						src={darkmode}
 						className={`transition-opacity w-[28px] h-[28px] absolute bottom-[50%] right-[50%] translate-[50%] translate-x-1/2 translate-y-1/2 ${
-							!lightMode ? "opacity-0" : ""
+							!lightMode ? "opacity-0" : "invert"
 						}`}
 						alt="toggle-light-mode"
 					/>
 					<img
 						src={lightmode}
 						className={`transition-opacity w-[28px] h-[28px] absolute bottom-[50%] right-[50%] translate-x-1/2 translate-y-1/2 ${
-							lightMode ? "opacity-0" : ""
+							lightMode ? "opacity-0 invert" : ""
 						}`}
 						alt="toggle-dark-mode"
 					/>
