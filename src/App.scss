@@ -5,6 +5,7 @@
 @tailwind utilities;
 
 // Colors
+$pitchBlack: #121212;
 $black: #1d1d1d;
 $dark: #2d2d2d;
 $primary: #ffd24e;
@@ -22,6 +23,7 @@ $bounce: cubic-bezier(0.79, 2.25, 0.65, 0.5);
 $animTime: 0.35s $bezier;
 
 :root {
+	--pitchBlack: #{$pitchBlack};
 	--black: #{$black};
 	--dark: #{$dark};
 	--primary: #{$primary};
@@ -32,6 +34,7 @@ $animTime: 0.35s $bezier;
 	--wrapper: #{$wrapper};
 	--padd: #{$padd};
 
+	// Smoothscroll on anchor
 	scroll-behavior: smooth;
 }
 
@@ -42,6 +45,7 @@ body {
 	font-family: "Rubik", sans-serif;
 
 	&.light-mode {
+		--pitchBlack: #{$white};
 		--black: #{$white};
 		--dark: #{$secondary};
 		--primary: #{$primary};
@@ -93,6 +97,116 @@ body {
 
 section {
 	position: relative;
+}
+
+.button {
+	transition: all 0.25s;
+	display: inline-flex;
+	align-items: center;
+	gap: 15px;
+	position: relative;
+	padding: 15px 25px;
+
+	&::before {
+		content: "";
+		transition: transform 0.25s $bezier, background 0.25s;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		transform-origin: left;
+		transform: scaleX(0);
+		background: var(--primary);
+	}
+
+	// Colors
+	&--black {
+		background: var(--black);
+		color: var(--white);
+
+		&::before {
+			background: var(--white);
+		}
+
+		&:hover {
+			color: var(--black);
+		}
+
+		.bg-black & {
+			background: var(--pitchBlack);
+		}
+		.bg-white &::before {
+			background: var(--white);
+		}
+	}
+	&--white {
+		background: var(--white);
+		color: var(--black);
+
+		&::before {
+			background: var(--black);
+		}
+
+		&:hover {
+			color: var(--white);
+		}
+
+		.bg-white & {
+			background: var(--secondary);
+		}
+		.bg-black &::before {
+			background: var(--pitchBlack);
+		}
+	}
+
+	// Types
+	&--sideways {
+		&::before {
+			transform-origin: bottom;
+			transform: scaleY(0);
+		}
+	}
+
+	// States
+	&.button--active {
+		color: var(--black);
+		cursor: default;
+
+		&::before {
+			background: var(--primary);
+			transform: none;
+		}
+	}
+	&.button--disabled {
+		opacity: 0.25;
+		cursor: not-allowed;
+	}
+
+	// Elements
+	&__line {
+		transition: all 0.25s $bezier;
+		height: 2px;
+		width: 30px;
+		background: currentColor;
+	}
+	img,
+	svg {
+		width: 24px;
+		height: 24px;
+	}
+
+	&:hover,
+	a:hover &,
+	label:hover & {
+		&::before {
+			transform: none;
+		}
+	}
+
+	span {
+		position: relative;
+	}
 }
 
 // ██╗  ██╗███████╗██████╗  ██████╗
@@ -179,13 +293,10 @@ section {
 		}
 	}
 
-	// &__tabs {
-	// 	position: absolute;
-	// 	left: 0;
-	// 	top: var(--padd);
-	// 	bottom: var(--padd);
-
-	// }
+	&__tabs {
+		transform: rotate(90deg) translateX(-55px);
+		transform-origin: bottom left;
+	}
 }
 
 // ███████╗██████╗ ██╗███╗   ██╗███╗   ██╗███████╗██████╗
