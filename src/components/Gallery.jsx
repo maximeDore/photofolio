@@ -1,7 +1,10 @@
 import { useState } from "react";
 
 import GalleryTab from "./GalleryTab";
-import GalleryTabUnsplash from "./GalleryTabUnsplash";
+import GalleryTabUnsplash from "./GalleryUnsplashTab";
+import Button from "./Button";
+
+import { unsplash } from "../assets";
 
 const Gallery = () => {
 	const [isUnsplash, setIsUnsplash] = useState(false);
@@ -18,26 +21,22 @@ const Gallery = () => {
 			<div className="absolute w-0 left-0 top-[var(--padd)] bottom-[var(--padd)] z-[9]">
 				<div className="sticky top-[100px]">
 					<div className="gallery__tabs flex">
-						<button
-							type="button"
+						<Button
 							className={`gallery__button button button--white button--sideways ${
 								!isUnsplash ? "button--active" : ""
 							}`}
 							onClick={disableUnsplash}
-						>
-							<span className="button__line"></span>
-							<span className="button__text">Galerie</span>
-						</button>
-						<button
-							type="button"
+							line="left"
+							text="Galerie"
+						/>
+						<Button
 							className={`gallery__button button button--white button--sideways ${
 								isUnsplash ? "button--active" : ""
 							}`}
 							onClick={enableUnsplash}
-						>
-							<span className="button__text">Unsplash</span>
-							<span className="button__line"></span>
-						</button>
+							text="Unsplash"
+							icon={unsplash}
+						/>
 					</div>
 				</div>
 			</div>

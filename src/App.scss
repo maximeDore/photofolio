@@ -150,6 +150,10 @@ section {
 
 		&:hover {
 			color: var(--white);
+
+			img {
+				filter: invert(1);
+			}
 		}
 
 		.bg-white & {
@@ -177,6 +181,10 @@ section {
 			background: var(--primary);
 			transform: none;
 		}
+
+		img {
+			filter: none;
+		}
 	}
 	&.button--disabled {
 		opacity: 0.25;
@@ -190,8 +198,8 @@ section {
 		width: 30px;
 		background: currentColor;
 	}
-	img,
-	svg {
+	img {
+		transition: filter 0.35s;
 		width: 24px;
 		height: 24px;
 	}
@@ -204,7 +212,8 @@ section {
 		}
 	}
 
-	span {
+	span,
+	img {
 		position: relative;
 	}
 }
@@ -226,7 +235,7 @@ section {
 			bottom: 0;
 			left: 0;
 			right: 0;
-			height: 75vh;
+			height: 100vh;
 			background: linear-gradient(to top, var(--black), rgba(255, 255, 255, 0));
 			pointer-events: none;
 			z-index: 1;
@@ -296,6 +305,9 @@ section {
 	&__tabs {
 		transform: rotate(90deg) translateX(-55px);
 		transform-origin: bottom left;
+	}
+	&__cta {
+		box-shadow: 0 -5rem 200px 200px var(--black);
 	}
 }
 

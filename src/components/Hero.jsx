@@ -2,7 +2,7 @@ import { useRef, useEffect, useState } from "react";
 
 import { Autoplay, A11y, Controller, Lazy, EffectCoverflow } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { hero1, lightmode, darkmode } from "../assets";
+import { heroList, lightmode, darkmode } from "../assets";
 
 // Import Swiper styles
 import "swiper/css";
@@ -17,6 +17,11 @@ const Hero = () => {
 
 	const [lightMode, setLightMode] = useState(false);
 
+	// Offset the images array for the navigation slider
+	let offsetHeroList = [...heroList];
+	const firstItem = offsetHeroList.shift();
+	offsetHeroList.push(firstItem);
+
 	const swiperParams = {
 		modules: [Autoplay, A11y, Controller, Lazy, EffectCoverflow],
 		slidesPerView: 1,
@@ -29,6 +34,10 @@ const Hero = () => {
 			loadPrevNext: true,
 		},
 		watchSlidesProgress: true,
+	};
+
+	const nextSlide = () => {
+		swiper1Ref.current.slideNext();
 	};
 
 	const toggleLightMode = () => {
@@ -92,16 +101,11 @@ const Hero = () => {
 						autoplay={true}
 						className="h-[100%]"
 					>
-						<SwiperSlide>
-							<img src={hero1} className="w-[100%] h-[100%] object-cover grayscale-[85%]" alt="" />
-						</SwiperSlide>
-						<SwiperSlide>
-							<img
-								src="https://picsum.photos/1720/945"
-								className="w-[100%] h-[100%] object-cover grayscale-[85%]"
-								alt=""
-							/>
-						</SwiperSlide>
+						{heroList.map((image) => (
+							<SwiperSlide>
+								<img src={image} className="w-[100%] h-[100%] object-cover grayscale-[85%]" alt="" />
+							</SwiperSlide>
+						))}
 					</Swiper>
 				</div>
 			</div>
@@ -130,31 +134,34 @@ const Hero = () => {
 				</button>
 
 				{/* Thumbnail navigation */}
-				<div className="slider__nav z-[1]" data-aos="fade-left" data-aos-delay="2000" data-aos-duration="750">
+				<div
+					className="slider__nav z-[1] cursor-pointer"
+					data-aos="fade-left"
+					data-aos-delay="2000"
+					data-aos-duration="750"
+					onClick={nextSlide}
+					title="Image suivante"
+				>
 					{/* TODO: Au clic nextSlide */}
 					<Swiper
 						{...swiperParams}
 						onSwiper={(swiper) => {
 							swiper2Ref.current = swiper;
 						}}
+						simulateTouch={false}
 						effect="coverflow"
 						className="h-[100%]"
 					>
 						{/* TODO: Offset d'une slide pour créer un thumbnail de la next slide */}
-						<SwiperSlide>
-							<img
-								src="https://picsum.photos/150/300"
-								className="w-[100%] h-[100%] object-cover transition-all grayscale-[50%] hover:grayscale-0"
-								alt=""
-							/>
-						</SwiperSlide>
-						<SwiperSlide>
-							<img
-								src={hero1}
-								className="w-[100%] h-[100%] object-cover transition-all grayscale-[50%] hover:grayscale-0"
-								alt=""
-							/>
-						</SwiperSlide>
+						{offsetHeroList.map((image) => (
+							<SwiperSlide>
+								<img
+									src={image}
+									className="w-[100%] h-[100%] object-cover transition-all grayscale-[50%] hover:grayscale-0"
+									alt=""
+								/>
+							</SwiperSlide>
+						))}
 					</Swiper>
 				</div>
 			</div>
