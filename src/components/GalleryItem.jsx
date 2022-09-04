@@ -3,6 +3,8 @@ import { useState } from "react";
 import { unsplash } from "../assets";
 
 const GalleryUnsplashItem = ({ photo }) => {
+	const { src, location, description, width, height, color } = photo;
+
 	const [isLoaded, setIsLoaded] = useState(false);
 	const [isActive, setIsActive] = useState(false);
 
@@ -17,7 +19,7 @@ const GalleryUnsplashItem = ({ photo }) => {
 		<div className={`gallery__item bg-dark ${isActive ? "is-active" : ""}`}>
 			{/* Image */}
 			<img
-				src={photo}
+				src={src}
 				// width={width}
 				// height={height}
 				alt=""
@@ -38,7 +40,7 @@ const GalleryUnsplashItem = ({ photo }) => {
 			>
 				<div className="relative flex justify-center items-center">
 					<img
-						src={photo}
+						src={src}
 						// width={width}
 						// height={height}
 						alt=""
@@ -48,6 +50,12 @@ const GalleryUnsplashItem = ({ photo }) => {
 							e.preventDefault();
 						}}
 					/>
+					<div className="item__infos absolute bottom-0 left-0 right-0 flex justify-between align-center p-4 opacity-50">
+						{location !== "" && <p className="item__location">{location}</p>}
+					</div>
+					<div className="item__sub-infos absolute top-full left-0 right-0 flex justify-center p-4">
+						{description !== "" && <p className="item__description">{description}</p>}
+					</div>
 				</div>
 			</div>
 		</div>

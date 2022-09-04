@@ -24,8 +24,8 @@ const GalleryUnsplashTab = () => {
 			.getPhotos({
 				username: "maxime_dore",
 				page: 1,
-				perPage: 10,
-				orderBy: "latest",
+				perPage: 30,
+				orderBy: "popular", // latest, oldest, popular, views, downloads
 				orientation: "landscape",
 			})
 			.then((result) => {
