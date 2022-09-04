@@ -50,9 +50,11 @@ const GalleryUnsplashItem = ({ photo }) => {
 							e.preventDefault();
 						}}
 					/>
+					{/* TODO: Contraster peu importe l'image */}
 					<div className="item__infos absolute bottom-0 left-0 right-0 flex justify-between align-center p-4 opacity-50">
 						{location !== "" && <p className="item__location">{location}</p>}
 					</div>
+					{/* TODO: Styler la description */}
 					<div className="item__sub-infos absolute top-full left-0 right-0 flex justify-center p-4">
 						{description !== "" && <p className="item__description">{description}</p>}
 					</div>

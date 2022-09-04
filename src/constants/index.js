@@ -9,16 +9,19 @@ export const photos = [
 
 export const navLinks = [
 	{
-		id: "accueil",
+		id: "",
 		title: "Accueil",
+		popup: null,
 	},
 	{
 		id: "galerie",
 		title: "Galerie",
+		popup: null,
 	},
 	{
 		id: "contact",
 		title: "Contact",
+		popup: "contact",
 	},
 ];
 

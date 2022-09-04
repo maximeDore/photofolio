@@ -108,8 +108,8 @@ const Hero = () => {
 						autoplay={true}
 						className="h-[100%]"
 					>
-						{heroList.map((image) => (
-							<SwiperSlide>
+						{heroList.map((image, index) => (
+							<SwiperSlide key={index}>
 								<img src={image} className="w-[100%] h-[100%] object-cover grayscale-[85%]" alt="" />
 							</SwiperSlide>
 						))}
@@ -149,7 +149,7 @@ const Hero = () => {
 					onClick={nextSlide}
 					title="Image suivante"
 				>
-					{/* TODO: Au clic nextSlide */}
+					{/* TODO: Ajouter un progress avant la prochaine slide */}
 					<Swiper
 						{...swiperParams}
 						onSwiper={(swiper) => {
@@ -159,9 +159,8 @@ const Hero = () => {
 						effect="coverflow"
 						className="h-[100%]"
 					>
-						{/* TODO: Offset d'une slide pour créer un thumbnail de la next slide */}
-						{offsetHeroList.map((image) => (
-							<SwiperSlide>
+						{offsetHeroList.map((image, index) => (
+							<SwiperSlide key={index}>
 								<img
 									src={image}
 									className="w-[100%] h-[100%] object-cover transition-all grayscale-[50%] hover:grayscale-0"

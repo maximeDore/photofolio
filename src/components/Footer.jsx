@@ -13,6 +13,8 @@ const Footer = () => (
 		<div className="w-full wrapper flex justify-between items-center md:flex-row flex-col pt-6 pb-6">
 			<p>© Maxime Doré, Tous droits réservés {new Date().getFullYear()} </p>
 
+			{/* TODO: Ajouter un disclaimer */}
+
 			<div className="flex flex-row md:mt-0 mt-6">
 				{socialMedia.map((social, index) => (
 					<a key={social.id} href={social.link} title={social.name} target="_blank">
