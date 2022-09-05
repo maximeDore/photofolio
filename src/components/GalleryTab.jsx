@@ -16,14 +16,15 @@ const GalleryTab = () => {
 
 	return (
 		<div className="gallery">
-			{gallery.map((photo) => (
+			{gallery.map((photo, index) => (
 				<GalleryItem
 					key={photo.id}
 					photo={photo}
 					onActivate={setActivePhoto}
 					onDeactivate={deactivatePhoto}
-					isActive={activeID === photo.id}
-					galleryLength={gallery.length}
+					isActive={activeID === index}
+					galleryLength={gallery.length - 1}
+					index={index}
 				/>
 			))}
 		</div>
