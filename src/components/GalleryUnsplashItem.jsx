@@ -2,14 +2,10 @@ import { useState } from "react";
 
 import { unsplash } from "../assets";
 
-const GalleryUnsplashItem = ({ photo }) => {
-	const { user, urls, width, height, color, links } = photo;
+const GalleryUnsplashItem = ({ photo, onActivate, onDeactivate, isActive, galleryLength, index }) => {
+	const { id, user, urls, width, height, color, links } = photo;
 	const [isLoaded, setIsLoaded] = useState(false);
-	const [isActive, setIsActive] = useState(false);
 
-	const toggleIsActive = () => {
-		setIsActive((isActive) => !isActive);
-	};
 	const toggleIsLoaded = () => {
 		setIsLoaded((isLoaded) => !isLoaded);
 	};
@@ -102,7 +98,7 @@ const GalleryUnsplashItem = ({ photo }) => {
 				className={`max-h-[100%] w-full object-cover cursor-zoom-in ${isLoaded ? "opacity-100" : "opacity-0"}`}
 				loading="lazy"
 				onLoad={toggleIsLoaded}
-				onClick={toggleIsActive}
+				onClick={() => onActivate(index)}
 				onContextMenu={(e) => {
 					e.preventDefault();
 				}}
@@ -112,8 +108,20 @@ const GalleryUnsplashItem = ({ photo }) => {
 				className={`item__popup fixed top-0 left-0 w-full h-full ${
 					isActive ? "is-active" : ""
 				} flex justify-center items-center pt-6 pb-6 wrap z-[9999] cursor-zoom-out`}
-				onClick={toggleIsActive}
+				onClick={onDeactivate}
 			>
+				{/* Prev */}
+				{index > 0 && (
+					<button
+						className="item__nav nav--prev absolute left-0 top-0 bottom-0 p-6 flex items-center justify-center z-[1]"
+						onClick={(e) => {
+							e.stopPropagation();
+							onActivate(index - 1);
+						}}
+					>
+						&lt;
+					</button>
+				)}
 				<div className="relative flex justify-center items-center">
 					<img
 						src={urls.regular}
@@ -153,6 +161,18 @@ const GalleryUnsplashItem = ({ photo }) => {
 						</div>
 					</div>
 				</div>
+				{/* Next */}
+				{index < galleryLength && (
+					<button
+						className="item__nav nav--next absolute right-0 top-0 bottom-0 p-6 flex items-center justify-center z-[1]"
+						onClick={(e) => {
+							e.stopPropagation();
+							onActivate(index + 1);
+						}}
+					>
+						&gt;
+					</button>
+				)}
 			</div>
 		</div>
 	);

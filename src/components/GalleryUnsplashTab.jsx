@@ -18,6 +18,14 @@ const api = createApi({
 
 const GalleryUnsplashTab = () => {
 	const [data, setPhotosResponse] = useState(null);
+	const [activeID, setActiveID] = useState(null);
+
+	const setActivePhoto = (newID) => {
+		setActiveID(newID);
+	};
+	const deactivatePhoto = () => {
+		setActiveID(null);
+	};
 
 	useEffect(() => {
 		api.users
@@ -43,12 +51,26 @@ const GalleryUnsplashTab = () => {
 		return (
 			<>
 				<div className="gallery gallery--unsplash">
-					{data.response.results.map((photo) => (
-						<GalleryUnsplashItem key={photo.id} photo={photo} />
+					{data.response.results.map((photo, index) => (
+						<GalleryUnsplashItem
+							key={photo.id}
+							photo={photo}
+							onActivate={setActivePhoto}
+							onDeactivate={deactivatePhoto}
+							isActive={activeID === index}
+							galleryLength={data.response.results.length - 1}
+							index={index}
+						/>
 					))}
 				</div>
 				<div className="gallery__cta relative flex justify-center items-center mt-20 z-[1]">
-					<Button className="button--white" icon={unsplash} text="Voir tout sur Unsplash" />
+					<Button
+						href={data.response.results[0].user.links.html}
+						className="button--white"
+						icon={unsplash}
+						target="_blank"
+						text="Voir tout sur Unsplash"
+					/>
 				</div>
 			</>
 		);
