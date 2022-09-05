@@ -88,6 +88,10 @@ body {
 	font-family: "Rubik", sans-serif;
 	font-size: 100px;
 	line-height: 1.2;
+
+	@media screen and (max-width: 768px) {
+		font-size: 65px;
+	}
 }
 .subtitle {
 	font-family: "Rubik", sans-serif;
@@ -250,7 +254,6 @@ section {
 		}
 	}
 	&__sidebar {
-		width: 200px;
 	}
 
 	.slider {
@@ -260,6 +263,11 @@ section {
 			width: var(--thumb-size);
 			height: calc(var(--thumb-size) * 1.66);
 			bottom: var(--padd);
+
+			@media screen and (max-width: 768px) {
+				right: 2rem;
+				font-size: 65px;
+			}
 		}
 	}
 }
