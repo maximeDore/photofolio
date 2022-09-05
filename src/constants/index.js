@@ -11,11 +11,11 @@ export const navLinks = [
 		title: "Galerie",
 		popup: null,
 	},
-	{
-		id: "contact",
-		title: "Contact",
-		popup: "contact",
-	},
+	// {
+	// 	id: "contact",
+	// 	title: "Contact",
+	// 	popup: "contact",
+	// },
 ];
 
 export const socialMedia = [
