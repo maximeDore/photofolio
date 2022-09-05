@@ -2,14 +2,7 @@ import { logo } from "../assets";
 import { socialMedia } from "../constants";
 
 const Footer = () => (
-	<footer className="wrap padd-top bg-white text-black">
-		<div className="wrapper flex">
-			<div className={` md:flex-row flex-col mb-8 w-full`}>
-				<div className="flex-1 flex flex-col justify-start mr-10">
-					<img src={logo} alt="Maxime Doré" className="w-[120px] h-[90px] object-contain" />
-				</div>
-			</div>
-		</div>
+	<footer className="wrap bg-white text-black relative">
 		<div className="w-full wrapper flex justify-between items-center md:flex-row flex-col pt-6 pb-6">
 			<p>© Maxime Doré, Tous droits réservés {new Date().getFullYear()} </p>
 

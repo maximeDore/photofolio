@@ -120,7 +120,7 @@ const Hero = () => {
 			{/* Right sidebar */}
 			<div className="hero__sidebar bg-white text-black shrink-0 relative">
 				{/* Lightmode button */}
-				<button
+				{/* <button
 					className="absolute bottom-[30px] xl:bottom-0 xl:top-[20px] right-[50%] translate-x-[50%] w-[40px] h-[40px] shadow-md transition-all hover:shadow-lg hover:scale-125 rounded-full"
 					onClick={toggleLightMode}
 				>
@@ -138,7 +138,7 @@ const Hero = () => {
 						}`}
 						alt="toggle-dark-mode"
 					/>
-				</button>
+				</button> */}
 
 				{/* Thumbnail navigation */}
 				<div
