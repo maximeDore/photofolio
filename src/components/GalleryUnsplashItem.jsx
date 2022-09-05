@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { unsplash } from "../assets";
+import { unsplash, chevronLeft, chevronRight } from "../assets";
 
 const GalleryUnsplashItem = ({ photo, onActivate, onDeactivate, isActive, galleryLength, index }) => {
 	const { id, user, urls, width, height, color, links } = photo;
@@ -119,7 +119,7 @@ const GalleryUnsplashItem = ({ photo, onActivate, onDeactivate, isActive, galler
 							onActivate(index - 1);
 						}}
 					>
-						&lt;
+						<img src={chevronLeft} className="w-[16px] h-[27px]" width="16" height="27" alt="précédent" />
 					</button>
 				)}
 				<div className="relative flex justify-center items-center">
@@ -170,7 +170,7 @@ const GalleryUnsplashItem = ({ photo, onActivate, onDeactivate, isActive, galler
 							onActivate(index + 1);
 						}}
 					>
-						&gt;
+						<img src={chevronRight} className="w-[16px] h-[27px]" width="16" height="27" alt="suivant" />
 					</button>
 				)}
 			</div>

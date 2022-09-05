@@ -1,6 +1,8 @@
 import { useState } from "react";
 
-const GalleryUnsplashItem = ({ photo, onActivate, onDeactivate, isActive, galleryLength }) => {
+import { chevronLeft, chevronRight, info } from "../assets";
+
+const GalleryUnsplashItem = ({ photo, onActivate, onDeactivate, isActive, galleryLength, index }) => {
 	const { id, src, location, description, width, height, color } = photo;
 
 	const [isLoaded, setIsLoaded] = useState(false);
@@ -11,7 +13,11 @@ const GalleryUnsplashItem = ({ photo, onActivate, onDeactivate, isActive, galler
 	};
 
 	return (
-		<div className={`gallery__item ${isActive ? "is-active" : ""}`} style={{ backgroundColor: color }}>
+		<div
+			className={`gallery__item ${isActive ? "is-active" : ""}`}
+			style={{ backgroundColor: color }}
+			data-index={index}
+		>
 			{/* Image */}
 			<img
 				src={src}
@@ -21,7 +27,7 @@ const GalleryUnsplashItem = ({ photo, onActivate, onDeactivate, isActive, galler
 				className={`max-h-[100%] w-full object-cover cursor-zoom-in ${isLoaded ? "opacity-100" : "opacity-0"}`}
 				loading="lazy"
 				onLoad={toggleIsLoaded}
-				onClick={() => onActivate(id)}
+				onClick={() => onActivate(index)}
 				onContextMenu={(e) => {
 					e.preventDefault();
 				}}
@@ -34,15 +40,15 @@ const GalleryUnsplashItem = ({ photo, onActivate, onDeactivate, isActive, galler
 				onClick={onDeactivate}
 			>
 				{/* Prev */}
-				{id > 0 && (
+				{index > 0 && (
 					<button
-						className="item__nav nav--prev absolute left-0 top-0 bottom-0 p-6 flex items-center justify-center z-[1]"
+						className="item__nav nav--prev absolute left-0 ss:top-0 top-1/3 ss:bottom-0 bottom-1/3 p-6 flex items-center justify-center z-[1]"
 						onClick={(e) => {
 							e.stopPropagation();
-							onActivate(id - 1);
+							onActivate(index - 1);
 						}}
 					>
-						&lt;
+						<img src={chevronLeft} className="w-[16px] h-[27px]" width="16" height="27" alt="précédent" />
 					</button>
 				)}
 				<div className="relative flex justify-center items-center">
@@ -58,24 +64,28 @@ const GalleryUnsplashItem = ({ photo, onActivate, onDeactivate, isActive, galler
 						}}
 					/>
 					{/* TODO: Contraster peu importe l'image */}
-					<div className="item__infos absolute bottom-0 left-0 right-0 flex justify-between align-center p-4 opacity-50">
-						{location !== "" && <p className="item__location">{location}</p>}
-					</div>
-					{/* TODO: Styler la description */}
-					<div className="item__sub-infos absolute top-full left-0 right-0 flex justify-center p-4">
-						{description !== "" && <p className="item__description">{description}</p>}
+					<div className="item__infos absolute bottom-0 left-0 right-0 flex justify-between items-center">
+						{location !== "" && <p className="item__location p-4 opacity-50">{location}</p>}
+						{description !== "" && (
+							<div className="item__info relative p-4 transition-opacity opacity-50 hover:opacity-100 cursor-help z-[2]">
+								<img src={info} width="16" height="16" alt="info" />
+								<p className="item__description p-4 absolute bottom-[110%] -right-[12px] ss:w-[400px] w-[90vw] bg-white text-black">
+									{description}
+								</p>
+							</div>
+						)}
 					</div>
 				</div>
 				{/* Next */}
-				{id < galleryLength && (
+				{index < galleryLength && (
 					<button
-						className="item__nav nav--next absolute right-0 top-0 bottom-0 p-6 flex items-center justify-center z-[1]"
+						className="item__nav nav--next absolute right-0 ss:top-0 top-1/3 ss:bottom-0 bottom-1/3 p-6 flex items-center justify-center z-[1]"
 						onClick={(e) => {
 							e.stopPropagation();
-							onActivate(id + 1);
+							onActivate(index + 1);
 						}}
 					>
-						&gt;
+						<img src={chevronRight} className="w-[16px] h-[27px]" width="16" height="27" alt="suivant" />
 					</button>
 				)}
 			</div>

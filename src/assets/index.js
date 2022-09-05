@@ -2,6 +2,9 @@ import logo from "./logo.svg";
 import instagram from "./instagram.svg";
 import linkedin from "./linkedin.svg";
 import unsplash from "./unsplash.svg";
+import chevronLeft from "./chevron-left.svg";
+import chevronRight from "./chevron-right.svg";
+import info from "./info.svg";
 import lightmode from "./lightmode.png";
 import darkmode from "./darkmode.png";
 
@@ -12,4 +15,4 @@ import hero4 from "./P1083782.jpg";
 
 const heroList = [hero1, hero2, hero3, hero4];
 
-export { logo, instagram, linkedin, unsplash, lightmode, darkmode, heroList };
+export { logo, instagram, linkedin, unsplash, chevronLeft, chevronRight, info, lightmode, darkmode, heroList };
