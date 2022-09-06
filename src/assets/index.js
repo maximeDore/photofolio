@@ -13,6 +13,20 @@ import hero2 from "./P1083447.jpg";
 import hero3 from "./P1094314.jpg";
 import hero4 from "./P1083782.jpg";
 
+import footerSeparator from "./footer.jpg";
+
 const heroList = [hero1, hero2, hero3, hero4];
 
-export { logo, instagram, linkedin, unsplash, chevronLeft, chevronRight, info, lightmode, darkmode, heroList };
+export {
+	logo,
+	instagram,
+	linkedin,
+	unsplash,
+	chevronLeft,
+	chevronRight,
+	info,
+	lightmode,
+	darkmode,
+	heroList,
+	footerSeparator,
+};

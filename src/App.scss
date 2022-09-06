@@ -15,7 +15,8 @@ $white: #ffffff;
 // Sizes
 $wrap: 5vw;
 $wrapper: 1200px;
-$padd: 150px;
+$padd: 125px;
+$mobilePadd: 10vh;
 
 // Anims
 $bezier: cubic-bezier(0.68, 0.16, 0.39, 0.98);
@@ -36,6 +37,10 @@ $animTime: 0.35s $bezier;
 
 	// Smoothscroll on anchor
 	scroll-behavior: smooth;
+
+	@media screen and (max-width: 768px) {
+		--padd: #{$mobilePadd};
+	}
 }
 
 body {
@@ -280,9 +285,9 @@ section {
 //  ╚═════╝ ╚═╝  ╚═╝╚══════╝╚══════╝╚══════╝╚═╝  ╚═╝   ╚═╝
 .gallery {
 	--gutter: 2rem;
-	--columns: 3;
+	--columns: 300px;
 
-	columns: 300px;
+	columns: var(--columns);
 	column-gap: var(--gutter);
 
 	&__tab {
@@ -301,13 +306,13 @@ section {
 	&__item {
 		margin: 0 0 var(--gutter);
 
-		@media screen and (min-width: 700px) {
+		@media screen and (min-width: 769px) and (hover: hover) {
 			& > img {
 				transition: transform 0.25s $bezier, box-shadow 0.25s $bezier, opacity 1s 0.25s;
 
 				&:hover {
 					transform: scale(1.25);
-					box-shadow: 0 15px 50px rgba(0, 0, 0, 0.75);
+					box-shadow: 0 0 35px rgba(0, 0, 0, 0.5);
 				}
 			}
 		}
@@ -391,11 +396,16 @@ section {
 	}
 
 	&__tabs {
-		transform: rotate(90deg) translateX(-55px);
+		transform: rotate(90deg) translateX(-54px);
 		transform-origin: bottom left;
 	}
 	&__cta {
 		box-shadow: 0 -5rem 200px 200px var(--black);
+	}
+
+	@media screen and (max-width: 768px) {
+		--gutter: 1rem;
+		--columns: 2;
 	}
 }
 

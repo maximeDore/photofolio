@@ -7,6 +7,9 @@ import { gallery } from "../gallery";
 const GalleryTab = () => {
 	const [activeID, setActiveID] = useState(null);
 
+	// Sort gallery by date
+	gallery.sort((a, b) => b.date - a.date);
+
 	const setActivePhoto = (newID) => {
 		setActiveID(newID);
 	};

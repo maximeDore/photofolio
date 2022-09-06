@@ -3,7 +3,7 @@ import { useState } from "react";
 import { chevronLeft, chevronRight, info } from "../assets";
 
 const GalleryUnsplashItem = ({ photo, onActivate, onDeactivate, isActive, galleryLength, index }) => {
-	const { id, src, location, description, width, height, color } = photo;
+	const { id, src, location, description, width, height, color, date } = photo;
 
 	const [isLoaded, setIsLoaded] = useState(false);
 	// const [isActive, setIsActive] = useState(false);
