@@ -29,6 +29,8 @@ import photo28 from "./P1037214.jpg";
 import photo29 from "./P1037770.jpg";
 import photo30 from "./P1038980.jpg";
 import photo31 from "./P1038985.jpg";
+import photo32 from "./P1308972.jpg";
+import photo33 from "./P1309014.jpg";
 
 const gallery = [
 	{
@@ -399,6 +401,30 @@ const gallery = [
 		link: "",
 		date: new Date("2021-09-17"),
 		width: 810,
+		height: 1080,
+		color: "var(--dark)",
+		categories: [],
+	},
+	{
+		id: 32,
+		src: photo32,
+		location: "Réserve faunique La Vérendrye",
+		description: "",
+		link: "",
+		date: new Date("2022-08-26"),
+		width: 1440,
+		height: 1080,
+		color: "var(--dark)",
+		categories: [],
+	},
+	{
+		id: 33,
+		src: photo33,
+		location: "Réserve faunique La Vérendrye",
+		description: "",
+		link: "",
+		date: new Date("2022-08-26"),
+		width: 1440,
 		height: 1080,
 		color: "var(--dark)",
 		categories: [],
