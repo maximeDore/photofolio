@@ -12,10 +12,11 @@ import hero1 from "./P1232212.jpg";
 import hero2 from "./P1083447.jpg";
 import hero3 from "./P1094314.jpg";
 import hero4 from "./P1083782.jpg";
+import hero5 from "./P1309014.jpg";
 
 import footerSeparator from "./footer.jpg";
 
-const heroList = [hero1, hero2, hero3, hero4];
+const heroList = [hero1, hero2, hero3, hero4, hero5];
 
 export {
 	logo,
