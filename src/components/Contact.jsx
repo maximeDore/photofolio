@@ -1,5 +1,6 @@
 import React from "react";
 
+import { times } from "../assets";
 import Button from "./Button";
 
 const Contact = ({ active, onClosePopup }) => {
@@ -9,13 +10,14 @@ const Contact = ({ active, onClosePopup }) => {
 				active ? "is-active" : ""
 			}`}
 		>
+			{/* TODO: Ajouter une icône */}
 			<button
 				type="button"
 				className="absolute top-0 right-0 p-6 cursor-pointer z-[2]"
 				onClick={onClosePopup}
 				title="Fermer"
 			>
-				X
+				<img src={times} width="24" height="24" alt="fermer" />
 			</button>
 			<div className="w-full h-full wrap padd bg-white relative text-center md:text-left z-[1] overflow-auto">
 				<div className="wrapper flex md:flex-nowrap flex-wrap items-center content-center h-full gap-4">

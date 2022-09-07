@@ -5,6 +5,7 @@ import unsplash from "./unsplash.svg";
 import chevronLeft from "./chevron-left.svg";
 import chevronRight from "./chevron-right.svg";
 import info from "./info.svg";
+import times from "./times.svg";
 import lightmode from "./lightmode.png";
 import darkmode from "./darkmode.png";
 
@@ -26,6 +27,7 @@ export {
 	chevronLeft,
 	chevronRight,
 	info,
+	times,
 	lightmode,
 	darkmode,
 	heroList,

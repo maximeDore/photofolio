@@ -304,6 +304,20 @@ section {
 	}
 }
 
+//  █████╗ ██████╗  ██████╗ ██╗   ██╗████████╗
+// ██╔══██╗██╔══██╗██╔═══██╗██║   ██║╚══██╔══╝
+// ███████║██████╔╝██║   ██║██║   ██║   ██║
+// ██╔══██║██╔══██╗██║   ██║██║   ██║   ██║
+// ██║  ██║██████╔╝╚██████╔╝╚██████╔╝   ██║
+// ╚═╝  ╚═╝╚═════╝  ╚═════╝  ╚═════╝    ╚═╝
+.about {
+	visibility: hidden;
+
+	&.is-active {
+		visibility: visible;
+	}
+}
+
 // ██╗  ██╗███████╗██████╗  ██████╗
 // ██║  ██║██╔════╝██╔══██╗██╔═══██╗
 // ███████║█████╗  ██████╔╝██║   ██║
@@ -327,18 +341,18 @@ section {
 			z-index: 1;
 		}
 	}
-	&__sidebar {
-	}
 
 	.slider {
 		&__nav {
 			position: absolute;
+			bottom: var(--padd);
 			right: calc(100% - calc(var(--thumb-size) / 2));
 			width: var(--thumb-size);
 			height: calc(var(--thumb-size) * 1.66);
-			bottom: var(--padd);
 
 			@media screen and (max-width: 768px) {
+				--thumb-size: 100px;
+
 				right: 2rem;
 				font-size: 65px;
 			}
