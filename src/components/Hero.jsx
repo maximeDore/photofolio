@@ -72,7 +72,7 @@ const Hero = () => {
 				{/* Title */}
 				<div className="wrap padd absolute bottom-0 left-0 right-0 lg:-right-[200px] z-[2] pointer-events-none">
 					<div className="wrapper">
-						<h1 className="h1 inline-block pointer-events-auto drop-shadow-md shadow-black">
+						<h1 className="h1 inline-block pointer-events-auto drop-shadow-md shadow-black mr-10">
 							<span
 								className="inline-block"
 								data-aos="fade-left"
@@ -142,7 +142,7 @@ const Hero = () => {
 
 				{/* Thumbnail navigation */}
 				<div
-					className="slider__nav z-[1] cursor-pointer sm:block hidden"
+					className="slider__nav z-[1] cursor-pointer"
 					data-aos="fade-left"
 					data-aos-delay="2000"
 					data-aos-duration="750"

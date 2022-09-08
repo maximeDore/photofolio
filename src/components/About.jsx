@@ -1,7 +1,9 @@
 import React from "react";
 
 const About = () => {
-	return <div>About</div>;
+	// TODO: Ajouter un popup d'autobiographie
+
+	return <div className="about"></div>;
 };
 
 export default About;

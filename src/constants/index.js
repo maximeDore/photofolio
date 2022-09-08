@@ -2,20 +2,29 @@ import { instagram, linkedin, unsplash } from "../assets";
 
 export const navLinks = [
 	{
-		id: "",
+		id: 1,
+		htmlID: "accueil",
 		title: "Accueil",
 		popup: null,
 	},
 	{
-		id: "galerie",
+		id: 2,
+		htmlID: "galerie",
 		title: "Galerie",
 		popup: null,
 	},
 	// {
-	// 	id: "contact",
-	// 	title: "Contact",
-	// 	popup: "contact",
+	// 	id: 3,
+	// 	htmlID: "about",
+	// 	title: "À propos de moi",
+	// 	popup: "about",
 	// },
+	{
+		id: 4,
+		htmlID: "",
+		title: "Contact",
+		popup: "contact",
+	},
 ];
 
 export const socialMedia = [

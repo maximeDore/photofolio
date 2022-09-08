@@ -59,6 +59,43 @@ body {
 	}
 }
 
+// Chrome custom scrollbar width
+::-webkit-scrollbar {
+	width: 10px;
+}
+// Chrome custom scrollbar track color
+::-webkit-scrollbar-track {
+	background: var(--pitchBlack);
+}
+// Chrome custom scrollbar knob color
+::-webkit-scrollbar-thumb {
+	background: var(--primary);
+}
+
+// Firefox custom scrollbar colors and width
+* {
+	scrollbar-color: var(--primary) var(--pitchBlack);
+	scrollbar-width: thin;
+}
+
+// Selection highlight color
+*::selection {
+	background: rgba(var(--primary), 75%);
+	color: var(--black);
+}
+*::-moz-selection {
+	background: rgba(var(--primary), 75%);
+	color: var(--black);
+}
+
+// Focus highlight outline
+a,
+button {
+	&:focus-visible {
+		outline: var(--primary) solid 2px;
+	}
+}
+
 // ██╗   ██╗████████╗██╗██╗     ██╗████████╗██╗███████╗███████╗
 // ██║   ██║╚══██╔══╝██║██║     ██║╚══██╔══╝██║██╔════╝██╔════╝
 // ██║   ██║   ██║   ██║██║     ██║   ██║   ██║█████╗  ███████╗
@@ -89,6 +126,11 @@ body {
 	margin: 0 auto;
 }
 
+p {
+	& + & {
+		margin-top: 20px;
+	}
+}
 .h1 {
 	font-family: "Rubik", sans-serif;
 	font-size: 100px;
@@ -96,6 +138,16 @@ body {
 
 	@media screen and (max-width: 768px) {
 		font-size: 65px;
+	}
+}
+
+.h2 {
+	font-family: "Rubik", sans-serif;
+	font-size: 40px;
+	line-height: 1.2;
+
+	@media screen and (max-width: 768px) {
+		font-size: 32px;
 	}
 }
 .subtitle {
@@ -146,7 +198,7 @@ section {
 			background: var(--pitchBlack);
 		}
 		.bg-white &::before {
-			background: var(--white);
+			background: var(--primary);
 		}
 	}
 	&--white {
@@ -235,6 +287,79 @@ section {
 	}
 }
 
+//  ██████╗ ██████╗ ███╗   ██╗████████╗ █████╗  ██████╗████████╗
+// ██╔════╝██╔═══██╗████╗  ██║╚══██╔══╝██╔══██╗██╔════╝╚══██╔══╝
+// ██║     ██║   ██║██╔██╗ ██║   ██║   ███████║██║        ██║
+// ██║     ██║   ██║██║╚██╗██║   ██║   ██╔══██║██║        ██║
+// ╚██████╗╚██████╔╝██║ ╚████║   ██║   ██║  ██║╚██████╗   ██║
+//  ╚═════╝ ╚═════╝ ╚═╝  ╚═══╝   ╚═╝   ╚═╝  ╚═╝ ╚═════╝   ╚═╝
+.contact {
+	display: none;
+	transition: visibility 0s 0.8s, transform 0.8s $bezier;
+	transform: translateX(120%);
+	visibility: hidden;
+
+	.is-loaded & {
+		display: block;
+	}
+
+	&.is-active {
+		transition: visibility 0s, transform 0.8s $bezier;
+		visibility: visible;
+		transform: none;
+
+		&::before {
+			transition: transform 0.6s $bezier;
+			transform: translateX(-50%);
+		}
+		&::after {
+			transition: transform 1s $bezier;
+			transform: translateX(-25%);
+		}
+
+		.wrapper {
+			transform: none;
+		}
+	}
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: var(--dark);
+		transition: transform 0.8s $bezier;
+		transform: translateX(-20%);
+	}
+	&::after {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: var(--primary);
+		transition: transform 0.6s $bezier;
+		transform: translateX(-15%);
+	}
+}
+
+//  █████╗ ██████╗  ██████╗ ██╗   ██╗████████╗
+// ██╔══██╗██╔══██╗██╔═══██╗██║   ██║╚══██╔══╝
+// ███████║██████╔╝██║   ██║██║   ██║   ██║
+// ██╔══██║██╔══██╗██║   ██║██║   ██║   ██║
+// ██║  ██║██████╔╝╚██████╔╝╚██████╔╝   ██║
+// ╚═╝  ╚═╝╚═════╝  ╚═════╝  ╚═════╝    ╚═╝
+.about {
+	visibility: hidden;
+
+	&.is-active {
+		visibility: visible;
+	}
+}
+
 // ██╗  ██╗███████╗██████╗  ██████╗
 // ██║  ██║██╔════╝██╔══██╗██╔═══██╗
 // ███████║█████╗  ██████╔╝██║   ██║
@@ -253,23 +378,24 @@ section {
 			left: 0;
 			right: 0;
 			height: 100vh;
-			background: linear-gradient(to top, var(--black), rgba(255, 255, 255, 0));
+			// background: linear-gradient(to top, var(--black), rgba(255, 255, 255, 0));
+			background: linear-gradient(to top, var(--black) 1%, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 0.2));
 			pointer-events: none;
 			z-index: 1;
 		}
-	}
-	&__sidebar {
 	}
 
 	.slider {
 		&__nav {
 			position: absolute;
+			bottom: var(--padd);
 			right: calc(100% - calc(var(--thumb-size) / 2));
 			width: var(--thumb-size);
 			height: calc(var(--thumb-size) * 1.66);
-			bottom: var(--padd);
 
 			@media screen and (max-width: 768px) {
+				--thumb-size: 100px;
+
 				right: 2rem;
 				font-size: 65px;
 			}
@@ -332,7 +458,7 @@ section {
 			}
 
 			&-img {
-				box-shadow: 0 0 0 100vmax rgba(29, 29, 29, 0.9);
+				box-shadow: 0 0 30px 0 var(--black), 0 0 0 100vmax rgba(29, 29, 29, 0.9);
 			}
 		}
 		&__nav {
@@ -360,6 +486,9 @@ section {
 					filter: invert(0);
 				}
 			}
+		}
+		&__infos {
+			background: linear-gradient(to top, var(--black), rgba(255, 255, 255, 0));
 		}
 		&__info {
 			&:hover {
