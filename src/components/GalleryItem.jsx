@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { chevronLeft, chevronRight, info } from "../assets";
+import { chevronLeft, chevronRight, info, calendar } from "../assets";
 
 const GalleryUnsplashItem = ({ photo, onActivate, onDeactivate, isActive, galleryLength, index }) => {
 	const { id, src, location, description, width, height, color, date } = photo;
@@ -33,6 +33,7 @@ const GalleryUnsplashItem = ({ photo, onActivate, onDeactivate, isActive, galler
 				}}
 			/>
 			{/* Popup */}
+			{/* TODO: Ajouter une navigation clavier */}
 			<div
 				className={`item__popup fixed top-0 left-0 w-full h-full ${
 					isActive ? "is-active" : ""
@@ -51,7 +52,7 @@ const GalleryUnsplashItem = ({ photo, onActivate, onDeactivate, isActive, galler
 						<img src={chevronLeft} className="w-[16px] h-[27px]" width="16" height="27" alt="précédent" />
 					</button>
 				)}
-				<div className="relative flex justify-center items-center">
+				<div className="relative flex justify-center">
 					<img
 						src={src}
 						width={width > 0 && width}
@@ -63,17 +64,26 @@ const GalleryUnsplashItem = ({ photo, onActivate, onDeactivate, isActive, galler
 							e.preventDefault();
 						}}
 					/>
-					{/* TODO: Contraster peu importe l'image */}
 					<div className="item__infos absolute bottom-0 left-0 right-0 flex justify-between items-center">
-						{location !== "" && <p className="item__location p-4 opacity-50">{location}</p>}
-						{description !== "" && (
-							<div className="item__info relative p-4 transition-opacity opacity-50 hover:opacity-100 cursor-help z-[2]">
-								<img src={info} width="16" height="16" alt="info" />
-								<p className="item__description p-4 absolute bottom-[110%] -right-[12px] ss:w-[400px] w-[90vw] bg-white text-black">
-									{description}
-								</p>
-							</div>
-						)}
+						{location !== "" && <p className="item__location px-4 py-3 opacity-75">{location}</p>}
+						<div className="flex items-center px-2">
+							{date && (
+								<div className="item__info relative px-2 py-3 cursor-help z-[2]">
+									<img src={calendar} width="16" height="16" alt="info" className="opacity-75" />
+									<div className="item__description p-4 absolute bottom-[125%] -right-[20px] ss:w-[400px] w-[90vw] max-w-[200px] shadow-md bg-white text-black text-center capitalize">
+										{date && <p>{date.toLocaleDateString("fr-CA", { year: "numeric", month: "long" })}</p>}
+									</div>
+								</div>
+							)}
+							{description !== "" && (
+								<div className="item__info relative px-2 py-3 cursor-help z-[2]">
+									<img src={info} width="16" height="16" alt="info" className="opacity-75" />
+									<p className="item__description p-4 absolute bottom-[125%] -right-[20px] ss:w-[400px] w-[90vw] bg-white text-black">
+										{description}
+									</p>
+								</div>
+							)}
+						</div>
 					</div>
 				</div>
 				{/* Next */}

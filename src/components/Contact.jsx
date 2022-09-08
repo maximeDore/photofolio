@@ -10,10 +10,9 @@ const Contact = ({ active, onClosePopup }) => {
 				active ? "is-active" : ""
 			}`}
 		>
-			{/* TODO: Ajouter une icône */}
 			<button
 				type="button"
-				className="absolute top-0 right-0 p-6 cursor-pointer z-[2]"
+				className="transition-shadow absolute top-0 right-0 p-10 cursor-pointer z-[2] rounded-bl-[60px] shadow-md hover:shadow-xl"
 				onClick={onClosePopup}
 				title="Fermer"
 			>

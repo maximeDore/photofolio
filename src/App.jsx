@@ -5,6 +5,8 @@ import { Navbar, Hero, Gallery, Footer, Spinner } from "./components";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
+// TODO: Version bilingue
+
 const App = () => {
 	const [isScrolled, setIsScrolled] = useState(false);
 	const [isLoaded, setIsLoaded] = useState(false);
@@ -35,6 +37,39 @@ const App = () => {
 		AOS.refresh();
 
 		setIsLoaded(true);
+
+		// KONAMI CODE
+		const konamicode = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
+		let kc = 0;
+		document.onkeyup = keyUp;
+
+		// KONAMI CODE
+		function checker() {
+			if (kc == 10) {
+				kc = 0;
+
+				document.getElementsByTagName("BODY")[0].classList.add("konami");
+			}
+		}
+		function keyUp(e) {
+			var keynum;
+			if (window.event) {
+				keynum = event.keyCode;
+			} else if (e.which) {
+				keynum = e.which;
+			}
+			for (let i = 0; i < 222; i++) {
+				var kx = konamicode[kc];
+				if (keynum == i) {
+					if (i != kx) {
+						kc = 0;
+					} else {
+						kc++;
+					}
+				}
+			}
+			checker();
+		}
 	}, []);
 
 	return (

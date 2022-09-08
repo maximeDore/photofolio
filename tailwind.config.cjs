@@ -5,6 +5,7 @@ module.exports = {
 	theme: {
 		extend: {
 			colors: {
+				pitchBlack: "var(--pitchBlack)",
 				black: "var(--black)",
 				dark: "var(--dark)",
 				primary: "var(--primary)",

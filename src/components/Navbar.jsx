@@ -25,15 +25,15 @@ const Navbar = ({ isScrolled }) => {
 				<a href="/" className="logo pointer-events-auto pt-2 pb-2" title="Retour en haut">
 					<img src={logo} alt="Maxime Doré" className="xs:w-[120px] w-[60px] xs:h-[80px] h-[45px]" />
 				</a>
-				<ul className={`flex items-center justify-end ${isScrolled ? "text-white" : "text-dark"}`}>
+				<ul className={`flex items-center justify-end ${isScrolled ? "text-white" : "text-black"}`}>
 					{navLinks.map((link, index) => (
 						<li key={link.id}>
 							{/* TODO: Contraster peu importe le bg */}
 							{/* TODO: Ajouter un état actif au scroll */}
 							<a
-								className={`nav__link transition-colors hover:text-white ${
-									index !== navLinks.length - 1 ? "xs:mr-10 mr-6" : ""
-								} drop-shadow-md shadow-black pointer-events-auto`}
+								className={`nav__link transition-colors ${
+									isScrolled ? " hover:text-primary" : " hover:text-white"
+								} ${index !== navLinks.length - 1 ? "xs:mr-10 mr-6" : ""}  pointer-events-auto`}
 								href={`#${link.htmlID}`}
 								onClick={(e) => togglePopup(e, link.popup)}
 								data-popup={link.popup}

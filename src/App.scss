@@ -59,6 +59,43 @@ body {
 	}
 }
 
+// Chrome custom scrollbar width
+::-webkit-scrollbar {
+	width: 10px;
+}
+// Chrome custom scrollbar track color
+::-webkit-scrollbar-track {
+	background: var(--pitchBlack);
+}
+// Chrome custom scrollbar knob color
+::-webkit-scrollbar-thumb {
+	background: var(--primary);
+}
+
+// Firefox custom scrollbar colors and width
+* {
+	scrollbar-color: var(--primary) var(--pitchBlack);
+	scrollbar-width: thin;
+}
+
+// Selection highlight color
+*::selection {
+	background: rgba(var(--primary), 75%);
+	color: var(--black);
+}
+*::-moz-selection {
+	background: rgba(var(--primary), 75%);
+	color: var(--black);
+}
+
+// Focus highlight outline
+a,
+button {
+	&:focus-visible {
+		outline: var(--primary) solid 2px;
+	}
+}
+
 // ██╗   ██╗████████╗██╗██╗     ██╗████████╗██╗███████╗███████╗
 // ██║   ██║╚══██╔══╝██║██║     ██║╚══██╔══╝██║██╔════╝██╔════╝
 // ██║   ██║   ██║   ██║██║     ██║   ██║   ██║█████╗  ███████╗
@@ -257,9 +294,14 @@ section {
 // ╚██████╗╚██████╔╝██║ ╚████║   ██║   ██║  ██║╚██████╗   ██║
 //  ╚═════╝ ╚═════╝ ╚═╝  ╚═══╝   ╚═╝   ╚═╝  ╚═╝ ╚═════╝   ╚═╝
 .contact {
+	display: none;
 	transition: visibility 0s 0.8s, transform 0.8s $bezier;
 	transform: translateX(120%);
 	visibility: hidden;
+
+	.is-loaded & {
+		display: block;
+	}
 
 	&.is-active {
 		transition: visibility 0s, transform 0.8s $bezier;
@@ -336,7 +378,8 @@ section {
 			left: 0;
 			right: 0;
 			height: 100vh;
-			background: linear-gradient(to top, var(--black), rgba(255, 255, 255, 0));
+			// background: linear-gradient(to top, var(--black), rgba(255, 255, 255, 0));
+			background: linear-gradient(to top, var(--black) 1%, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 0.2));
 			pointer-events: none;
 			z-index: 1;
 		}
@@ -415,7 +458,7 @@ section {
 			}
 
 			&-img {
-				box-shadow: 0 0 0 100vmax rgba(29, 29, 29, 0.9);
+				box-shadow: 0 0 30px 0 var(--black), 0 0 0 100vmax rgba(29, 29, 29, 0.9);
 			}
 		}
 		&__nav {
@@ -443,6 +486,9 @@ section {
 					filter: invert(0);
 				}
 			}
+		}
+		&__infos {
+			background: linear-gradient(to top, var(--black), rgba(255, 255, 255, 0));
 		}
 		&__info {
 			&:hover {
