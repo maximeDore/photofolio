@@ -28,7 +28,6 @@ const Navbar = ({ isScrolled }) => {
 				<ul className={`flex items-center justify-end ${isScrolled ? "text-white" : "text-black"}`}>
 					{navLinks.map((link, index) => (
 						<li key={link.id}>
-							{/* TODO: Contraster peu importe le bg */}
 							{/* TODO: Ajouter un état actif au scroll */}
 							<a
 								className={`nav__link transition-colors ${
