@@ -2,7 +2,6 @@
 import { useState, useEffect, useCallback } from "react";
 // Components
 import GalleryItem from "./GalleryItem";
-import GalleryUnsplashItem from "./GalleryUnsplashItem";
 import Button from "./Button";
 // Unsplash icon
 import { unsplash } from "../assets";
@@ -46,13 +45,14 @@ const GalleryTab = ({ source, type }) => {
 		};
 	}, [activeID]);
 
-	if (type !== "unsplash") {
-		return (
-			<div className="gallery">
+	return (
+		<>
+			<div className={`gallery ${type && "gallery--" + type}`}>
 				{source.map((photo, index) => (
 					<GalleryItem
 						key={photo.id}
 						photo={photo}
+						type={type}
 						onActivate={setActivePhoto}
 						onDeactivate={deactivatePhoto}
 						isActive={activeID === index}
@@ -61,23 +61,7 @@ const GalleryTab = ({ source, type }) => {
 					/>
 				))}
 			</div>
-		);
-	} else if (type === "unsplash") {
-		return (
-			<>
-				<div className="gallery gallery--unsplash">
-					{source.map((photo, index) => (
-						<GalleryUnsplashItem
-							key={photo.id}
-							photo={photo}
-							onActivate={setActivePhoto}
-							onDeactivate={deactivatePhoto}
-							isActive={activeID === index}
-							galleryLength={source.length - 1}
-							index={index}
-						/>
-					))}
-				</div>
+			{type === "unsplash" && (
 				<div className="gallery__cta relative flex justify-center items-center mt-20 z-[1]">
 					<Button
 						href={source[0].user.links.html}
@@ -87,9 +71,9 @@ const GalleryTab = ({ source, type }) => {
 						text="Voir tout sur Unsplash"
 					/>
 				</div>
-			</>
-		);
-	}
+			)}
+		</>
+	);
 };
 
 export default GalleryTab;
