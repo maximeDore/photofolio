@@ -149,7 +149,7 @@ const Hero = () => {
 					onClick={nextSlide}
 					title="Image suivante"
 				>
-					{/* TODO: Ajouter un progress avant la prochaine slide */}
+					{/* TODO: Ajouter un progress avant la prochaine slide. Idée : transitionner le grayscale */}
 					<Swiper
 						{...swiperParams}
 						onSwiper={(swiper) => {

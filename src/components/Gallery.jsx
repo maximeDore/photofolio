@@ -55,6 +55,7 @@ const Gallery = () => {
 					<div className={`gallery__tab ${isUnsplash ? "" : "tab--hidden"}`}>
 						<div className="wrapper">{isUnsplashLoaded && <GalleryTabUnsplash />}</div>
 					</div>
+					{/* TODO: Intégrer l'API Instagram pour un tab de feed custom */}
 				</div>
 			</div>
 		</section>

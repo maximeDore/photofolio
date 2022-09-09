@@ -4,7 +4,7 @@ import Button from "./Button";
 
 import { unsplash } from "../assets";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 
 import { createApi } from "unsplash-js";
 
@@ -26,6 +26,28 @@ const GalleryUnsplashTab = () => {
 	const deactivatePhoto = () => {
 		setActiveID(null);
 	};
+
+	const handleKeyDown = useCallback((e) => {
+		if (activeID !== null && e.key && data !== null) {
+			if (e.key === "ArrowLeft" && activeID > 0) {
+				setActiveID(activeID - 1);
+			} else if (e.key === "ArrowRight" && activeID < data.response.results.length - 1) {
+				setActiveID(activeID + 2);
+			} else if (e.key === "Escape") {
+				deactivatePhoto();
+			}
+		}
+	});
+
+	// Keydown event
+	useEffect(() => {
+		window.addEventListener("keydown", handleKeyDown);
+
+		return () => {
+			// Cleanup
+			window.removeEventListener("keydown", handleKeyDown);
+		};
+	}, [activeID]);
 
 	useEffect(() => {
 		api.users
