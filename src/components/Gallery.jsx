@@ -1,10 +1,15 @@
+// Hooks
 import { useState } from "react";
-
+// Components
 import GalleryTab from "./GalleryTab";
 import GalleryTabUnsplash from "./GalleryUnsplashTab";
 import Button from "./Button";
-
+// Gallery data
+import { gallery } from "../gallery";
+// Unsplash Icon
 import { unsplash } from "../assets";
+
+// TODO: Ajouter un hash à l'URL et ouvrir l'image concernée au load
 
 const Gallery = () => {
 	const [isUnsplash, setIsUnsplash] = useState(false);
@@ -45,15 +50,15 @@ const Gallery = () => {
 			</div>
 
 			{/* Gallery content */}
-			<div className=" wrap padd overflow-hidden">
+			<div className="wrap padd overflow-hidden">
 				<div className="wrapper">
 					{/* Regular gallery */}
 					<div className={`gallery__tab ${!isUnsplash ? "" : "tab--hidden"}`}>
-						<GalleryTab />
+						<GalleryTab source={gallery} />
 					</div>
 					{/* Unsplash gallery */}
 					<div className={`gallery__tab ${isUnsplash ? "" : "tab--hidden"}`}>
-						<div className="wrapper">{isUnsplashLoaded && <GalleryTabUnsplash />}</div>
+						<div className="wrapper">{isUnsplashLoaded && <GalleryTab source="unsplash" />}</div>
 					</div>
 					{/* TODO: Intégrer l'API Instagram pour un tab de feed custom */}
 				</div>

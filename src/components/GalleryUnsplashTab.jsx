@@ -56,7 +56,6 @@ const GalleryUnsplashTab = () => {
 				page: 1,
 				perPage: 30,
 				orderBy: "popular", // latest, oldest, popular, views, downloads
-				orientation: "landscape",
 			})
 			.then((result) => {
 				setPhotosResponse(result);
