@@ -3,50 +3,18 @@ import { useState, useEffect, useCallback } from "react";
 // Components
 import GalleryItem from "./GalleryItem";
 import GalleryUnsplashItem from "./GalleryUnsplashItem";
-import Spinner from "./Spinner";
 import Button from "./Button";
-// Unsplash API key
-const unsplash_access = "8sTE-SoLOIgv4NGA7NoyQ-PLy8N24rpsWfZZK71AqPA";
 // Unsplash icon
 import { unsplash } from "../assets";
-// Unsplash API plugin
-import { createApi } from "unsplash-js";
-// Unsplash API
-const api = createApi({
-	// Don't forget to set your access token here!
-	// See https://unsplash.com/developers
-	accessKey: unsplash_access,
-});
 
-const GalleryTab = ({ source }) => {
-	// Unsplash API data state
-	const [data, setPhotosResponse] = useState(null);
+const GalleryTab = ({ source, type }) => {
 	// Image popup state
 	const [activeID, setActiveID] = useState(null);
 	// Size of the data response or gallery object
-	let dataSize = 0;
 
-	if (typeof source === "object") {
+	if (source[0].date) {
 		// Sort gallery by date
 		source.sort((a, b) => b.date - a.date);
-		dataSize = source.length;
-	} else if (source == "unsplash") {
-		useEffect(() => {
-			api.users
-				.getPhotos({
-					username: "maxime_dore",
-					page: 1,
-					perPage: 30,
-					orderBy: "popular", // latest, oldest, popular, views, downloads
-				})
-				.then((result) => {
-					setPhotosResponse(result);
-					dataSize = result.response.results.length;
-				})
-				.catch((e) => {
-					console.log("Une erreur s'est produite en appelant l'API Unsplash.", e);
-				});
-		}, []);
 	}
 
 	const setActivePhoto = (newID) => {
@@ -60,7 +28,7 @@ const GalleryTab = ({ source }) => {
 		if (activeID !== null && e.key) {
 			if (e.key === "ArrowLeft" && activeID > 0) {
 				setActivePhoto(activeID - 1);
-			} else if (e.key === "ArrowRight" && activeID < dataSize - 1) {
+			} else if (e.key === "ArrowRight" && activeID < source.length - 1) {
 				setActivePhoto(activeID + 1);
 			} else if (e.key === "Escape") {
 				deactivatePhoto();
@@ -78,7 +46,7 @@ const GalleryTab = ({ source }) => {
 		};
 	}, [activeID]);
 
-	if (typeof source === "object") {
+	if (type !== "unsplash") {
 		return (
 			<div className="gallery">
 				{source.map((photo, index) => (
@@ -88,44 +56,39 @@ const GalleryTab = ({ source }) => {
 						onActivate={setActivePhoto}
 						onDeactivate={deactivatePhoto}
 						isActive={activeID === index}
-						galleryLength={dataSize - 1}
+						galleryLength={source.length - 1}
 						index={index}
 					/>
 				))}
 			</div>
 		);
-	} else if (source === "unsplash") {
-		if (data === null) {
-			return <Spinner />;
-		} else {
-			// console.log(data.response.results[0]);
-			return (
-				<>
-					<div className="gallery gallery--unsplash">
-						{data.response.results.map((photo, index) => (
-							<GalleryUnsplashItem
-								key={photo.id}
-								photo={photo}
-								onActivate={setActivePhoto}
-								onDeactivate={deactivatePhoto}
-								isActive={activeID === index}
-								galleryLength={data.response.results.length - 1}
-								index={index}
-							/>
-						))}
-					</div>
-					<div className="gallery__cta relative flex justify-center items-center mt-20 z-[1]">
-						<Button
-							href={data.response.results[0].user.links.html}
-							className="button--white"
-							icon={unsplash}
-							target="_blank"
-							text="Voir tout sur Unsplash"
+	} else if (type === "unsplash") {
+		return (
+			<>
+				<div className="gallery gallery--unsplash">
+					{source.map((photo, index) => (
+						<GalleryUnsplashItem
+							key={photo.id}
+							photo={photo}
+							onActivate={setActivePhoto}
+							onDeactivate={deactivatePhoto}
+							isActive={activeID === index}
+							galleryLength={source.length - 1}
+							index={index}
 						/>
-					</div>
-				</>
-			);
-		}
+					))}
+				</div>
+				<div className="gallery__cta relative flex justify-center items-center mt-20 z-[1]">
+					<Button
+						href={source[0].user.links.html}
+						className="button--white"
+						icon={unsplash}
+						target="_blank"
+						text="Voir tout sur Unsplash"
+					/>
+				</div>
+			</>
+		);
 	}
 };
 
