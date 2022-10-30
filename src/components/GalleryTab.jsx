@@ -11,7 +11,7 @@ const GalleryTab = ({ source, type }) => {
 	const [activeID, setActiveID] = useState(null);
 	// Size of the data response or gallery object
 
-	if (source[0].date) {
+	if (source.length && source[0].date) {
 		// Sort gallery by date
 		source.sort((a, b) => b.date - a.date);
 	}
@@ -50,7 +50,7 @@ const GalleryTab = ({ source, type }) => {
 			<div className={`gallery ${type && "gallery--" + type}`}>
 				{source.map((photo, index) => (
 					<GalleryItem
-						key={photo.id}
+						key={photo.id ?? index}
 						photo={photo}
 						type={type}
 						onActivate={setActivePhoto}

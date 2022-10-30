@@ -6,6 +6,7 @@ import GalleryTab from "./GalleryTab";
 import Button from "./Button";
 // Gallery data
 import { gallery } from "../gallery";
+import { dump } from "/dump";
 
 // Unsplash API key
 const unsplash_access = "8sTE-SoLOIgv4NGA7NoyQ-PLy8N24rpsWfZZK71AqPA";
@@ -23,16 +24,13 @@ const api = createApi({
 // TODO: Ajouter un hash à l'URL et ouvrir l'image concernée au load
 
 const Gallery = () => {
-	const [isUnsplash, setIsUnsplash] = useState(false);
+	const [activeTab, setActiveTab] = useState("portfolio");
 	// Unsplash API data state
 	const [data, setPhotosResponse] = useState(null);
 
-	const disableUnsplash = () => {
-		setIsUnsplash(false);
-	};
-	const enableUnsplash = () => {
-		setIsUnsplash(true);
-	};
+	const changeTab = (slug) => {
+		setActiveTab(slug);
+	}
 
 	useEffect(() => {
 		// Unsplash API Call
@@ -56,22 +54,32 @@ const Gallery = () => {
 			{/* Gallery nav */}
 			<div className="absolute w-0 left-0 top-[var(--padd)] bottom-[var(--padd)] z-[9]">
 				<div className="sticky top-[100px]">
-					<div className="gallery__tabs flex">
+					<div className="gallery__tabs flex whitespace-nowrap">
 						<Button
 							className={`gallery__button button button--white button--sideways ${
-								!isUnsplash ? "button--active" : ""
+								activeTab == "portfolio" ? "button--active" : ""
 							}`}
-							onClick={disableUnsplash}
-							line="left"
+							onClick={() => { changeTab("portfolio") }}
+							line="right"
 							text="Galerie"
 						/>
+						{dump.length > 0 &&
 						<Button
 							className={`gallery__button button button--white button--sideways ${
-								isUnsplash ? "button--active" : ""
+								activeTab == "bloc-hop" ? "button--active" : ""
 							}`}
-							onClick={enableUnsplash}
-							text="Unsplash"
+							onClick={() => { changeTab("bloc-hop") }}
+							line="right"
+							text="Bloc-Hop"
+						/>
+						}
+						<Button
+							className={`gallery__button button button--white button--sideways ${
+								activeTab == "unsplash" ? "button--active" : ""
+							}`}
+							onClick={() => { changeTab("unsplash") }}
 							icon={unsplash}
+							text="Unsplash"
 						/>
 					</div>
 				</div>
@@ -81,11 +89,19 @@ const Gallery = () => {
 			<div className="wrap padd overflow-hidden">
 				<div className="wrapper">
 					{/* Regular gallery */}
-					<div className={`gallery__tab ${!isUnsplash ? "" : "tab--hidden"}`}>
-						<GalleryTab source={gallery} />
-					</div>
+					{gallery.length > 0 &&
+						<div className={`gallery__tab ${activeTab == "portfolio" ? "" : "tab--hidden"}`}>
+							<GalleryTab source={gallery} />
+						</div>
+						}
+					{/* Event gallery */}
+					{dump.length > 0 &&
+						<div className={`gallery__tab ${activeTab == "bloc-hop" ? "" : "tab--hidden"}`}>
+							<GalleryTab source={dump} type="dump" />
+						</div>
+					}
 					{/* Unsplash gallery */}
-					<div className={`gallery__tab ${isUnsplash ? "" : "tab--hidden"}`}>
+					<div className={`gallery__tab ${activeTab == "unsplash" ? "" : "tab--hidden"}`}>
 						<div className="wrapper">
 							{data === null ? <Spinner /> : <GalleryTab source={data.response.results} type="unsplash" />}
 						</div>

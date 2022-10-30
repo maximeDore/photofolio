@@ -1,0 +1,1 @@
+export const dump = Object.keys(import.meta.glob("./*"));

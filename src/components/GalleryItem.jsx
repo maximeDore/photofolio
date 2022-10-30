@@ -8,11 +8,12 @@ const GalleryUnsplashItem = ({ photo, type, onActivate, onDeactivate, isActive, 
 	const { description, width, height, color, categories } = photo;
 
 	const isUnsplash = type === "unsplash";
+	const isDump = type === "dump";
 
-	const thumbSrc = isUnsplash ? photo.urls.small : photo.src;
-	const src = isUnsplash ? photo.urls.regular : photo.src;
-	const location = isUnsplash ? "" : photo.location;
-	const date = isUnsplash ? new Date(photo.created_at) : photo.date;
+	const thumbSrc = isUnsplash ? photo.urls.small : !isDump ? photo.src : null;
+	const src = isUnsplash ? photo.urls.regular : !isDump ? photo.src : "/src/dump/" + photo.slice(2);
+	const location = (isUnsplash || isDump) ? "" : photo.location;
+	const date = photo.created_at ? new Date(photo.created_at) : isUnsplash ? photo.date : null;
 
 	const [isLoaded, setIsLoaded] = useState(false);
 	// const [isActive, setIsActive] = useState(false);
@@ -23,15 +24,21 @@ const GalleryUnsplashItem = ({ photo, type, onActivate, onDeactivate, isActive, 
 
 	return (
 		<div
-			className={`gallery__item ${isActive ? "is-active" : ""}`}
-			style={{ backgroundColor: color }}
+			className={`group gallery__item ${isActive ? "is-active" : ""}`}
+			style={{ backgroundColor: color ?? "var(--dark)" }}
 			data-index={index}
 		>
+			{isDump > 0 && (
+				<div 
+					className="relative h-0 w-full pr-4 text-white drop-shadow-lg opacity-50 text-[30px] font-bold text-right 
+						group-hover:opacity-0 transition-opacity z-2 transform-cpu"
+				>{ (index + 1) }</div>
+			)}
 			{/* Image */}
 			<img
-				src={thumbSrc}
-				width={width > 0 && width}
-				height={height > 0 && height}
+				src={thumbSrc ?? src}
+				width={(width && width > 0) && width}
+				height={(height && height > 0) && height}
 				alt=""
 				className={`max-h-[100%] w-full object-cover cursor-zoom-in ${isLoaded ? "opacity-100" : "opacity-0"}`}
 				loading="lazy"
@@ -42,7 +49,6 @@ const GalleryUnsplashItem = ({ photo, type, onActivate, onDeactivate, isActive, 
 				}}
 			/>
 			{/* Popup */}
-			{/* TODO: Ajouter une navigation clavier */}
 			<div
 				className={`item__popup fixed top-0 left-0 w-full h-full ${
 					isActive ? "is-active" : ""
@@ -64,8 +70,8 @@ const GalleryUnsplashItem = ({ photo, type, onActivate, onDeactivate, isActive, 
 				<div className="relative flex justify-center">
 					<img
 						src={src}
-						width={width > 0 && width}
-						height={height > 0 && height}
+						width={(width && width > 0) && width}
+						height={(height && height > 0) && height}
 						alt=""
 						className="item__popup-img max-h-[95vh] w-auto object-cover"
 						loading="lazy"
@@ -130,7 +136,7 @@ const GalleryUnsplashItem = ({ photo, type, onActivate, onDeactivate, isActive, 
 						</div>
 					) : (
 						<div className="item__infos absolute bottom-0 left-0 right-0 flex justify-between items-center">
-							{location !== null && <p className="item__location px-4 py-3 opacity-75">{location}</p>}
+							{location && location !== null && <p className="item__location px-4 py-3 opacity-75">{location}</p>}
 							<div className="flex items-center px-2">
 								{date && (
 									<div className="item__info relative px-2 py-3 cursor-help z-[2]">
@@ -146,7 +152,7 @@ const GalleryUnsplashItem = ({ photo, type, onActivate, onDeactivate, isActive, 
 										</div>
 									</div>
 								)}
-								{description !== null && (
+								{description && description !== null && (
 									<div className="item__info relative px-2 py-3 cursor-help z-[2]">
 										<img
 											src={info}
