@@ -31,6 +31,9 @@ import photo30 from "./P1038980.jpg";
 import photo31 from "./P1038985.jpg";
 import photo32 from "./P1308972.jpg";
 import photo33 from "./P1309014.jpg";
+import photo34 from "./ACP02559.jpg";
+import photo35 from "./ACP02869.jpg";
+import photo36 from "./ACP04100.jpg";
 
 const gallery = [
 	{
@@ -557,6 +560,54 @@ const gallery = [
 		date: new Date("2022-08-26"),
 		width: 1440,
 		height: 1080,
+		color: "var(--dark)",
+		alt: null,
+		categories: [],
+	},
+	{
+		id: 34,
+		src: photo34,
+		location: "Kinadapt, Québec, Canada",
+		title: null,
+		description: null,
+		links: {
+			html: null,
+		},
+		date: new Date("2022-09-17"),
+		width: 2000,
+		height: 1333,
+		color: "var(--dark)",
+		alt: null,
+		categories: [],
+	},
+	{
+		id: 35,
+		src: photo35,
+		location: "Kinadapt, Québec, Canada",
+		title: null,
+		description: null,
+		links: {
+			html: null,
+		},
+		date: new Date("2022-09-17"),
+		width: 2000,
+		height: 1333,
+		color: "var(--dark)",
+		alt: null,
+		categories: [],
+	},
+	{
+		id: 36,
+		src: photo36,
+		location: "Kinadapt, Québec, Canada",
+		title: null,
+		description: null,
+		links: {
+			html: null,
+		},
+		date: new Date("2022-09-17"),
+		width: 2000,
+		height: 1333,
 		color: "var(--dark)",
 		alt: null,
 		categories: [],
