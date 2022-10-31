@@ -6,7 +6,17 @@ import GalleryTab from "./GalleryTab";
 import Button from "./Button";
 // Gallery data
 import { gallery } from "../gallery";
-import { dump } from "/dump";
+// const dump = import.meta.env.DEV ? import.meta.glob("/public/dump/*.jpg") : import.meta.glob("/dump/*.jpg");
+
+const dumpImages = import.meta.glob('/public/dump/*.jpg');
+const dump = [];
+
+for (const path in dumpImages) {
+	dumpImages[path]().then(() => {
+		const p = new URL(path, import.meta.url)
+		dump.push(p)
+	})
+}
 
 // Unsplash API key
 const unsplash_access = "8sTE-SoLOIgv4NGA7NoyQ-PLy8N24rpsWfZZK71AqPA";
@@ -16,8 +26,6 @@ import { unsplash } from "../assets";
 import { createApi } from "unsplash-js";
 // Unsplash API
 const api = createApi({
-	// Don't forget to set your access token here!
-	// See https://unsplash.com/developers
 	accessKey: unsplash_access,
 });
 

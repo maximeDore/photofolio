@@ -10,8 +10,9 @@ const GalleryUnsplashItem = ({ photo, type, onActivate, onDeactivate, isActive, 
 	const isUnsplash = type === "unsplash";
 	const isDump = type === "dump";
 
-	const thumbSrc = isUnsplash ? photo.urls.small : !isDump ? photo.src : null;
-	const src = isUnsplash ? photo.urls.regular : !isDump ? photo.src : "/src/dump/" + photo.slice(2);
+
+	const thumbSrc = isUnsplash ? photo.urls.small : isDump ? null : photo.src;
+	const src = isUnsplash ? photo.urls.regular : isDump ? photo.href.replace('public/', '') : photo.src;
 	const location = (isUnsplash || isDump) ? "" : photo.location;
 	const date = photo.created_at ? new Date(photo.created_at) : isUnsplash ? photo.date : null;
 
@@ -31,7 +32,7 @@ const GalleryUnsplashItem = ({ photo, type, onActivate, onDeactivate, isActive, 
 			{isDump > 0 && (
 				<div 
 					className="relative h-0 w-full pr-4 text-white drop-shadow-lg opacity-50 text-[30px] font-bold text-right 
-						group-hover:opacity-0 transition-opacity z-2 transform-cpu"
+						group-hover:opacity-0 transition-opacity z-2"
 				>{ (index + 1) }</div>
 			)}
 			{/* Image */}
@@ -40,7 +41,7 @@ const GalleryUnsplashItem = ({ photo, type, onActivate, onDeactivate, isActive, 
 				width={(width && width > 0) && width}
 				height={(height && height > 0) && height}
 				alt=""
-				className={`max-h-[100%] w-full object-cover cursor-zoom-in ${isLoaded ? "opacity-100" : "opacity-0"}`}
+				className={`max-h-[100%] min-h-[100px] w-full object-cover cursor-zoom-in ${isLoaded ? "opacity-100" : "opacity-0"}`}
 				loading="lazy"
 				onLoad={toggleIsLoaded}
 				onClick={() => onActivate(index)}
