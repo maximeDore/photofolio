@@ -6,5 +6,7 @@ import Gallery from "./Gallery";
 import Footer from "./Footer";
 
 import Spinner from "./Spinner";
+import BackToTop from "./BackToTop";
+import Konami from "./Konami";
 
-export { Navbar, Contact, About, Hero, Gallery, Footer, Spinner };
+export { Navbar, Contact, About, Hero, Gallery, Footer, Spinner , BackToTop, Konami };

@@ -3,6 +3,8 @@ import { useState, useEffect, useCallback } from "react";
 // Components
 import GalleryItem from "./GalleryItem";
 import Button from "./Button";
+// Utilities
+import { LazyLoadComponent } from 'react-lazy-load-image-component';
 // Unsplash icon
 import { unsplash } from "../assets";
 
@@ -46,7 +48,7 @@ const GalleryTab = ({ source, type }) => {
 	}, [activeID]);
 
 	return (
-		<>
+		<LazyLoadComponent>
 			<div className={`gallery ${type && "gallery--" + type}`}>
 				{source.map((photo, index) => (
 					<GalleryItem
@@ -72,7 +74,7 @@ const GalleryTab = ({ source, type }) => {
 					/>
 				</div>
 			)}
-		</>
+		</LazyLoadComponent>
 	);
 };
 

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import { Navbar, Hero, Gallery, Footer, Spinner } from "./components";
+import { Navbar, Hero, Gallery, Footer, Spinner, BackToTop, Konami } from "./components";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -10,6 +10,7 @@ import "aos/dist/aos.css";
 const App = () => {
 	const [isScrolled, setIsScrolled] = useState(false);
 	const [isLoaded, setIsLoaded] = useState(false);
+	const [isKonami, setIsKonami] = useState(false);
 	const [y, setY] = useState(window.scrollY);
 
 	const handleScroll = (e) => {
@@ -49,6 +50,7 @@ const App = () => {
 				kc = 0;
 
 				document.getElementsByTagName("BODY")[0].classList.add("konami");
+				setIsKonami(true);
 			}
 		}
 		function keyUp(e) {
@@ -72,6 +74,10 @@ const App = () => {
 		}
 	}, []);
 
+	if (isKonami) {
+		return <Konami />
+	}
+
 	return (
 		<>
 			<Spinner className={`${isScrolled ? "is-scrolled" : ""}  ${isLoaded ? "is-loaded" : ""}`} />
@@ -83,8 +89,11 @@ const App = () => {
 				<Hero />
 
 				{/* Content */}
-				<Gallery />
-				<Footer />
+				<main>
+					<Gallery />
+					<BackToTop isScrolled={isScrolled} />
+					<Footer />
+				</main>
 			</div>
 		</>
 	);

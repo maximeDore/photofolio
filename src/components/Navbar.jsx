@@ -5,6 +5,8 @@ import { navLinks } from "../constants";
 import About from "./About";
 import Contact from "./Contact";
 
+import { ReactComponent as Logo } from "../assets/logo.svg";
+
 const Navbar = ({ isScrolled }) => {
 	const [popup, setPopup] = useState("");
 
@@ -23,7 +25,8 @@ const Navbar = ({ isScrolled }) => {
 			<Contact active={popup === "contact" ? true : false} onClosePopup={() => togglePopup()} />
 			<div className="wrapper w-full flex justify-between items-center" data-aos="fade-down">
 				<a href="/" className="logo pointer-events-auto pt-2 pb-2" title="Retour en haut">
-					<img src={logo} alt="Maxime Doré" className="xs:w-[120px] w-[60px] xs:h-[80px] h-[45px]" />
+					<Logo alt="Maxime Doré" className="xs:w-[120px] w-[60px] xs:h-[80px] h-[45px]" />
+					<img src={logo} alt="Maxime Doré" className="xs:w-[120px] w-[60px] xs:h-[80px] h-[45px] hidden" />
 				</a>
 				<ul className={`flex items-center justify-end ${isScrolled ? "text-white" : "text-black"}`}>
 					{navLinks.map((link, index) => (

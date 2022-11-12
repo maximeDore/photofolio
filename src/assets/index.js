@@ -7,6 +7,7 @@ import chevronRight from "./chevron-right.svg";
 import info from "./info.svg";
 import times from "./times.svg";
 import calendar from "./calendar.svg";
+import download from "./download.svg";
 import lightmode from "./lightmode.png";
 import darkmode from "./darkmode.png";
 
@@ -30,6 +31,7 @@ export {
 	info,
 	times,
 	calendar,
+	download,
 	lightmode,
 	darkmode,
 	heroList,

@@ -1,8 +1,10 @@
 import { useRef, useEffect, useState } from "react";
 
+import Img from "./Img";
+
 import { Autoplay, A11y, Controller, Lazy, EffectCoverflow } from "swiper";
-import { Swiper, SwiperSlide } from "swiper/react";
 import { heroList, lightmode, darkmode } from "../assets";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
 import "swiper/css";
@@ -66,7 +68,7 @@ const Hero = () => {
 	}, [lightMode]);
 
 	return (
-		<section id="accueil" className="hero flex" data-aos="fade" data-aos-delay="750">
+		<header id="accueil" className="hero flex overflow-hidden" data-aos="fade" data-aos-delay="750">
 			{/* Left content */}
 			<div className="hero__content bg-black w-full relative overflow-hidden">
 				{/* Title */}
@@ -82,7 +84,6 @@ const Hero = () => {
 							>
 								Maxime
 							</span>{" "}
-							{/* <br className="sm:block hidden" /> */}
 							<span
 								className="text-primary inline-block"
 								data-aos="fade-right"
@@ -99,18 +100,23 @@ const Hero = () => {
 					</div>
 				</div>
 				{/* Slider */}
-				<div className="slider slider--home absolute left-0 top-0 bottom-0 w-[100%]">
+				<div className="slider slider--home absolute left-0 top-0 bottom-0 w-full">
 					<Swiper
 						{...swiperParams}
 						onSwiper={(swiper) => {
 							swiper1Ref.current = swiper;
 						}}
 						autoplay={true}
-						className="h-[100%]"
+						className="h-full"
 					>
 						{heroList.map((image, index) => (
 							<SwiperSlide key={index}>
-								<img src={image} className="w-[100%] h-[100%] object-cover grayscale-[85%]" alt="" />
+								<Img
+									src={image} 
+									className="w-full h-full object-cover grayscale-[85%]" 
+									alt="" 
+									loading="eager"
+								/>
 							</SwiperSlide>
 						))}
 					</Swiper>
@@ -157,13 +163,14 @@ const Hero = () => {
 						}}
 						simulateTouch={false}
 						effect="coverflow"
-						className="h-[100%]"
+						className="h-full"
 					>
 						{offsetHeroList.map((image, index) => (
 							<SwiperSlide key={index}>
-								<img
+								<Img
 									src={image}
-									className="w-[100%] h-[100%] object-cover transition-all grayscale-[50%] hover:grayscale-0"
+									className="w-full h-full object-cover transition-all grayscale-[50%] hover:grayscale-0"
+									loading="eager"
 									alt=""
 								/>
 							</SwiperSlide>
@@ -171,7 +178,7 @@ const Hero = () => {
 					</Swiper>
 				</div>
 			</div>
-		</section>
+		</header>
 	);
 };
 

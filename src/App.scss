@@ -396,6 +396,8 @@ section {
 			@media screen and (max-width: 768px) {
 				--thumb-size: 100px;
 
+				top: calc(var(--padd) * 1.5);
+				bottom: unset;
 				right: 2rem;
 				font-size: 65px;
 			}

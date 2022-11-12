@@ -9,6 +9,7 @@ import { gallery } from "../gallery";
 // const dump = import.meta.env.DEV ? import.meta.glob("/public/dump/*.jpg") : import.meta.glob("/dump/*.jpg");
 
 const dumpImages = import.meta.glob('/public/dump/*.jpg');
+// const dumpImages = import.meta.glob('/public/dump/*.jpg');
 const dump = [];
 
 for (const path in dumpImages) {
@@ -17,6 +18,10 @@ for (const path in dumpImages) {
 		dump.push(p)
 	})
 }
+// for (const path in dumpImages) {
+// 	const p = new URL(path, import.meta.url)
+// 	dump.push(p)
+// }
 
 // Unsplash API key
 const unsplash_access = "8sTE-SoLOIgv4NGA7NoyQ-PLy8N24rpsWfZZK71AqPA";
@@ -38,6 +43,7 @@ const Gallery = () => {
 
 	const changeTab = (slug) => {
 		setActiveTab(slug);
+		window.scrollTo({top: window.innerHeight, behavior: 'smooth'});
 	}
 
 	useEffect(() => {
@@ -110,9 +116,7 @@ const Gallery = () => {
 					}
 					{/* Unsplash gallery */}
 					<div className={`gallery__tab ${activeTab == "unsplash" ? "" : "tab--hidden"}`}>
-						<div className="wrapper">
-							{data === null ? <Spinner /> : <GalleryTab source={data.response.results} type="unsplash" />}
-						</div>
+						{data === null || data.response === null ? <Spinner /> : <GalleryTab source={data.response.results} type="unsplash" />}
 					</div>
 					{/* TODO: Intégrer l'API Instagram pour un tab de feed custom */}
 				</div>
