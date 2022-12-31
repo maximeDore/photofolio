@@ -10,7 +10,7 @@ const BackToTop = ({ isScrolled }) => {
    return (
       <button 
          type="button" 
-         className={`fixed bottom-0 right-0 p-4 rotate-90 ${translate} transition-transform z-2`}
+         className={`fixed bottom-0 right-0 p-4 rotate-90 ${translate} transition-transform z-[2]`}
          onClick={scrollUp}
          aria-label="Retour en haut"
          title="Retour en haut"

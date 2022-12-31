@@ -4,6 +4,7 @@ import Img from "./Img";
 import { unsplash, chevronLeft, chevronRight, info, calendar, download } from "../assets";
 
 // TODO: Intégrer des vidéos
+// TODO: Intégrer des groupes d'images
 
 const GalleryItem = ({ photo, type, onActivate, onDeactivate, isActive, galleryLength, index }) => {
 	const { description, width, height, color, categories } = photo;
@@ -17,7 +18,6 @@ const GalleryItem = ({ photo, type, onActivate, onDeactivate, isActive, galleryL
 	const date = photo.created_at ? new Date(photo.created_at) : isUnsplash ? photo.date : null;
 
 	const [isLoaded, setIsLoaded] = useState(false);
-	// const [isActive, setIsActive] = useState(false);
 
 	const toggleIsLoaded = () => {
 		setIsLoaded((isLoaded) => !isLoaded);
@@ -33,7 +33,7 @@ const GalleryItem = ({ photo, type, onActivate, onDeactivate, isActive, galleryL
 			{/* {isDump > 0 && (
 				<div 
 					className="relative h-0 w-full pr-4 text-white drop-shadow-lg opacity-50 text-[30px] font-bold text-right 
-						group-hover:opacity-0 transition-opacity z-2"
+						group-hover:opacity-0 transition-opacity z-[2]"
 					aria-hidden="true"
 				>{ (index + 1) }</div>
 			)} */}
@@ -55,7 +55,7 @@ const GalleryItem = ({ photo, type, onActivate, onDeactivate, isActive, galleryL
 			<div
 				className={`item__popup fixed top-0 left-0 w-full h-full ${
 					isActive ? "is-active" : ""
-				} flex justify-center items-center pt-6 pb-6 wrap z-[9999] cursor-zoom-out`}
+				} flex justify-center items-center pt-6 pb-6 wrap z-50 cursor-zoom-out`}
 				onClick={onDeactivate}
 			>
 				{/* Prev */}
@@ -66,6 +66,7 @@ const GalleryItem = ({ photo, type, onActivate, onDeactivate, isActive, galleryL
 							e.stopPropagation();
 							onActivate(index - 1);
 						}}
+						aria-label="Image précédente"
 					>
 						<img src={chevronLeft} width="16" height="27" alt="précédent" />
 					</button>
@@ -197,6 +198,7 @@ const GalleryItem = ({ photo, type, onActivate, onDeactivate, isActive, galleryL
 				{index < galleryLength && (
 					<button
 						className="item__nav nav--next absolute right-0 ss:top-0 top-1/3 ss:bottom-0 bottom-1/3 p-6 flex items-center justify-center z-[1]"
+						aria-label="Image suivante"
 						onClick={(e) => {
 							e.stopPropagation();
 							onActivate(index + 1);

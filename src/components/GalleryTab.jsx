@@ -8,6 +8,8 @@ import { LazyLoadComponent } from 'react-lazy-load-image-component';
 // Unsplash icon
 import { unsplash } from "../assets";
 
+// TODO: Infinite scroll
+
 const GalleryTab = ({ source, type }) => {
 	// Image popup state
 	const [activeID, setActiveID] = useState(null);
@@ -36,6 +38,11 @@ const GalleryTab = ({ source, type }) => {
 			}
 		}
 	});
+
+	// Trigger scroll on load
+	useEffect(() => {
+		window.dispatchEvent(new CustomEvent('scroll'))
+	}, []);
 
 	// Keydown event
 	useEffect(() => {

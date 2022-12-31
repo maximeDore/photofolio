@@ -88,13 +88,13 @@ const Hero = () => {
 								className="text-primary inline-block"
 								data-aos="fade-right"
 								data-aos-duration="750"
-								data-aos-delay="1500"
+								data-aos-delay="1250"
 								data-aos-easing="ease"
 							>
 								Doré
 							</span>
 						</h1>
-						<p className="subtitle pt-3 pl-1" data-aos="fade" data-aos-delay="2500" data-aos-easing="ease">
+						<p className="subtitle pt-3 pl-1" data-aos="fade" data-aos-delay="2000" data-aos-easing="ease">
 							Développeur Web - <span className="text-primary">Photographe</span>
 						</p>
 					</div>
@@ -150,7 +150,7 @@ const Hero = () => {
 				<div
 					className="slider__nav z-[1] cursor-pointer"
 					data-aos="fade-left"
-					data-aos-delay="2000"
+					data-aos-delay="1500"
 					data-aos-duration="750"
 					onClick={nextSlide}
 					title="Image suivante"
