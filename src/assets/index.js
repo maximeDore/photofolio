@@ -11,6 +11,8 @@ import download from "./download.svg";
 import lightmode from "./lightmode.png";
 import darkmode from "./darkmode.png";
 
+import about from "./about-max.jpg";
+
 import hero1 from "./P1232212.jpg";
 import hero2 from "./P1083447.jpg";
 import hero3 from "./P1094314.jpg";
@@ -34,6 +36,7 @@ export {
 	download,
 	lightmode,
 	darkmode,
+	about,
 	heroList,
 	footerSeparator,
 };

@@ -20,9 +20,12 @@ const Navbar = ({ isScrolled }) => {
 	};
 
 	return (
-		<nav id="nav" className="w-full fixed top-0 left-0 wrap z-[999] pointer-events-none">
-			<About active={popup === "contact" ? true : false} />
+		<nav id="nav" className="w-full fixed top-0 left-0 wrap z-40 pointer-events-none">
+
+			<About active={popup === "about" ? true : false} onClosePopup={() => togglePopup()} />
+
 			<Contact active={popup === "contact" ? true : false} onClosePopup={() => togglePopup()} />
+			
 			<div className="wrapper w-full flex justify-between items-center" data-aos="fade-down">
 				<a href="/" className="logo pointer-events-auto pt-2 pb-2" title="Retour en haut">
 					<Logo alt="Maxime Doré" className="xs:w-[120px] w-[60px] xs:h-[80px] h-[45px]" />

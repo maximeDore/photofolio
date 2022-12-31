@@ -1,24 +1,24 @@
 import { instagram, linkedin, unsplash } from "../assets";
 
 export const navLinks = [
-	{
-		id: 1,
-		htmlID: "accueil",
-		title: "Accueil",
-		popup: null,
-	},
-	{
-		id: 2,
-		htmlID: "galerie",
-		title: "Galerie",
-		popup: null,
-	},
 	// {
-	// 	id: 3,
-	// 	htmlID: "about",
-	// 	title: "À propos de moi",
-	// 	popup: "about",
+	// 	id: 1,
+	// 	htmlID: "accueil",
+	// 	title: "Accueil",
+	// 	popup: null,
 	// },
+	// {
+	// 	id: 2,
+	// 	htmlID: "galerie",
+	// 	title: "Galerie",
+	// 	popup: null,
+	// },
+	{
+		id: 3,
+		htmlID: "",
+		title: "À propos",
+		popup: "about",
+	},
 	{
 		id: 4,
 		htmlID: "",

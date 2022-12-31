@@ -5,7 +5,7 @@ import { Navbar, Hero, Gallery, Footer, Spinner, BackToTop, Konami } from "./com
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-// TODO: Version bilingue
+// TODO: Version bilingue?
 
 const App = () => {
 	const [isScrolled, setIsScrolled] = useState(false);
@@ -22,6 +22,50 @@ const App = () => {
 		}
 		setY(window.scrollY);
 	};
+
+	// KONAMI CODE
+	const konamicode = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
+	let kc = 0;
+
+	// KONAMI CODE
+	const checker = () => {
+		if (kc == 10) {
+			kc = 0;
+
+			document.getElementsByTagName("BODY")[0].classList.add("konami");
+			setIsKonami(true);
+		}
+	}
+	const keyUp = (e) => {
+		var keynum;
+		if (window.event) {
+			keynum = event.keyCode;
+		} else if (e.which) {
+			keynum = e.which;
+		}
+		for (let i = 0; i < 222; i++) {
+			var kx = konamicode[kc];
+			if (keynum == i) {
+				if (i != kx) {
+					kc = 0;
+				} else {
+					kc++;
+				}
+			}
+		}
+		checker();
+	}
+
+	// On load
+	useEffect(() => {
+		AOS.init({ duration: 1000 });
+		AOS.refresh();
+
+		document.onkeyup = keyUp;
+
+		setIsLoaded(true);
+	}, []);
+
 	// Scroll state
 	useEffect(() => {
 		window.addEventListener("scroll", (e) => handleScroll(e));
@@ -31,48 +75,6 @@ const App = () => {
 			window.removeEventListener("scroll", (e) => handleScroll(e));
 		};
 	}, [y]);
-
-	// On load
-	useEffect(() => {
-		AOS.init({ duration: 1000 });
-		AOS.refresh();
-
-		setIsLoaded(true);
-
-		// KONAMI CODE
-		const konamicode = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
-		let kc = 0;
-		document.onkeyup = keyUp;
-
-		// KONAMI CODE
-		function checker() {
-			if (kc == 10) {
-				kc = 0;
-
-				document.getElementsByTagName("BODY")[0].classList.add("konami");
-				setIsKonami(true);
-			}
-		}
-		function keyUp(e) {
-			var keynum;
-			if (window.event) {
-				keynum = event.keyCode;
-			} else if (e.which) {
-				keynum = e.which;
-			}
-			for (let i = 0; i < 222; i++) {
-				var kx = konamicode[kc];
-				if (keynum == i) {
-					if (i != kx) {
-						kc = 0;
-					} else {
-						kc++;
-					}
-				}
-			}
-			checker();
-		}
-	}, []);
 
 	if (isKonami) {
 		return <Konami />
