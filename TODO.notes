@@ -1,0 +1,20 @@
+Important:
+[ ] Lien vers instagram dans la nav et le footer
+[ ] Changer le layout des onglets en responsive mobile pour cacher un minimum de contenu
+
+
+* Pertinent *
+[ ] Groupes d'images (une image dans la mosaique ouvrant une galerie de plusieurs images dans le lightbox)
+   [ ] Trouver une façon de grouper les images dans la structure json
+   [ ] Choisir le comportement des boutons de navigation une fois dans un groupe
+      [ ] Naviguer à travers toutes les images d'un groupe même si le groupe n'a pas été cliqué directement ?
+      [ ] Naviguer en ignorant le contenu du groupe pour seulement afficher la première image ?
+         [ ] Ajouter un élément UI permettant de parcourir toutes les images du groupe
+[ ] Permettre l'affichage de vidéos dans la mosaique
+   [ ] Afficher un preview au hover ?
+[ ] Ajouter un élément UI permettant de Filtrer les images par catégories
+
+
+# QoL #
+[ ] Ajouter un élément UI permettant d'ordonner par différents critères
+   [ ] Filtrer les résultats Unsplash par plus récents
