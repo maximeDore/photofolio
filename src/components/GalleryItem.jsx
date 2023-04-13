@@ -13,9 +13,9 @@ const GalleryItem = ({ photo, type, onActivate, onDeactivate, isActive, galleryL
 	const isDump = type === "dump";
 
 	const thumbSrc = isUnsplash ? photo.urls.small : isDump ? null : photo.src;
-	const src = isUnsplash ? photo.urls.regular : isDump ? photo.href.replace('public/', '') : photo.src;
-	const location = (isUnsplash || isDump) ? "" : photo.location;
-	const date = photo.created_at ? new Date(photo.created_at) : isUnsplash ? photo.date : null;
+	const src = isUnsplash ? photo.urls.regular : isDump ? photo.href.replace("public/", "") : photo.src;
+	const location = isUnsplash || isDump ? "" : photo.location;
+	const date = photo.created_at ? new Date(photo.created_at) : photo.date;
 
 	const [isLoaded, setIsLoaded] = useState(false);
 
@@ -40,10 +40,12 @@ const GalleryItem = ({ photo, type, onActivate, onDeactivate, isActive, galleryL
 			{/* Image */}
 			<Img
 				src={thumbSrc ?? src}
-				width={(width && width > 0) && width}
-				height={(height && height > 0) && height}
+				width={width && width > 0 && width}
+				height={height && height > 0 && height}
 				alt=""
-				className={`max-h-full min-h-[100px] w-full object-cover cursor-zoom-in ${isLoaded ? "opacity-100" : "opacity-0"}`}
+				className={`max-h-full min-h-[100px] w-full object-cover cursor-zoom-in ${
+					isLoaded ? "opacity-100" : "opacity-0"
+				}`}
 				onLoad={toggleIsLoaded}
 				onClick={() => onActivate(index)}
 				onContextMenu={(e) => {
@@ -74,8 +76,8 @@ const GalleryItem = ({ photo, type, onActivate, onDeactivate, isActive, galleryL
 				<div className="relative flex justify-center">
 					<Img
 						src={src}
-						width={(width && width > 0) && width}
-						height={(height && height > 0) && height}
+						width={width && width > 0 && width}
+						height={height && height > 0 && height}
 						loading="lazy"
 						alt=""
 						className="item__popup-img max-h-[95vh] w-auto object-cover"
@@ -173,11 +175,7 @@ const GalleryItem = ({ photo, type, onActivate, onDeactivate, isActive, galleryL
 									</div>
 								)}
 								{isDump && (
-									<a 
-										href={src}
-										className="item__info relative px-2 py-3 cursor-pointer z-[2]"
-										download
-									>
+									<a href={src} className="item__info relative px-2 py-3 cursor-pointer z-[2]" download>
 										<img
 											src={download}
 											width="16"

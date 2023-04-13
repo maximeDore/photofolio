@@ -1,3 +1,5 @@
+// TODO: Rendre plus dynamique l'intégration de nouvelles images
+
 import photo1 from "./P1232212.jpg";
 import photo2 from "./P1049668.jpg";
 import photo3 from "./P1050348.jpg";
@@ -20,8 +22,8 @@ import photo19 from "./P1140028.jpg";
 import photo20 from "./P1151587.jpg";
 import photo21 from "./P1151740.jpg";
 import photo22 from "./P1175226.jpg";
-import photo23 from "./P1208181.jpg";
-import photo24 from "./P1208191.jpg";
+// import photo23 from "./P1208181.jpg";
+// import photo24 from "./P1208191.jpg";
 import photo25 from "./IMG_6166.jpg";
 import photo26 from "./IMG_6184.jpg";
 import photo27 from "./P1013283.jpg";
@@ -34,6 +36,14 @@ import photo33 from "./P1309014.jpg";
 import photo34 from "./ACP02559.jpg";
 import photo35 from "./ACP02869.jpg";
 import photo36 from "./ACP04100.jpg";
+import photo37 from "./ACP01511.jpg";
+import photo38 from "./ACP04176.jpg";
+import photo39 from "./ACP04572.jpg";
+import photo40 from "./ACP06853.jpg";
+import photo41 from "./ACP06976.jpg";
+import photo42 from "./ACP07254.jpg";
+import photo43 from "./P1037796.jpg";
+import photo44 from "./P1174927.jpg";
 
 const gallery = [
 	{
@@ -132,86 +142,86 @@ const gallery = [
 		alt: null,
 		categories: [],
 	},
-	{
-		id: 7,
-		src: photo7,
-		location: "Mont Ouareau, Québec, Canada",
-		title: null,
-		description: null,
-		links: {
-			html: null,
-		},
-		date: new Date("2021-11-06"),
-		width: 1920,
-		height: 1080,
-		color: "var(--dark)",
-		alt: null,
-		categories: [],
-	},
-	{
-		id: 8,
-		src: photo8,
-		location: "Mont Ouareau, Québec, Canada",
-		title: null,
-		description: null,
-		links: {
-			html: null,
-		},
-		date: new Date("2021-11-06"),
-		width: 1440,
-		height: 1080,
-		color: "var(--dark)",
-		alt: null,
-		categories: [],
-	},
-	{
-		id: 9,
-		src: photo9,
-		location: "Mont Ouareau, Québec, Canada",
-		title: null,
-		description: null,
-		links: {
-			html: null,
-		},
-		date: new Date("2021-11-06"),
-		width: 1440,
-		height: 1080,
-		color: "var(--dark)",
-		alt: null,
-		categories: [],
-	},
-	{
-		id: 10,
-		src: photo10,
-		location: "Saint-Hippolyte, Québec, Canada",
-		title: null,
-		description: null,
-		links: {
-			html: null,
-		},
-		date: new Date("2021-11-13"),
-		width: 1512,
-		height: 1080,
-		color: "var(--dark)",
-		alt: null,
-		categories: [],
-	},
-	{
-		id: 11,
-		src: photo11,
-		location: "Saint-Hippolyte, Québec, Canada",
-		title: null,
-		description: null,
-		links: {
-			html: null,
-		},
-		date: new Date("2021-11-13"),
-		width: 1440,
-		height: 1080,
-		color: "var(--dark)",
-		alt: null,
-		categories: [],
-	},
+	// {
+	// 	id: 7,
+	// 	src: photo7,
+	// 	location: "Mont Ouareau, Québec, Canada",
+	// 	title: null,
+	// 	description: null,
+	// 	links: {
+	// 		html: null,
+	// 	},
+	// 	date: new Date("2021-11-06"),
+	// 	width: 1920,
+	// 	height: 1080,
+	// 	color: "var(--dark)",
+	// 	alt: null,
+	// 	categories: [],
+	// },
+	// {
+	// 	id: 8,
+	// 	src: photo8,
+	// 	location: "Mont Ouareau, Québec, Canada",
+	// 	title: null,
+	// 	description: null,
+	// 	links: {
+	// 		html: null,
+	// 	},
+	// 	date: new Date("2021-11-06"),
+	// 	width: 1440,
+	// 	height: 1080,
+	// 	color: "var(--dark)",
+	// 	alt: null,
+	// 	categories: [],
+	// },
+	// {
+	// 	id: 9,
+	// 	src: photo9,
+	// 	location: "Mont Ouareau, Québec, Canada",
+	// 	title: null,
+	// 	description: null,
+	// 	links: {
+	// 		html: null,
+	// 	},
+	// 	date: new Date("2021-11-06"),
+	// 	width: 1440,
+	// 	height: 1080,
+	// 	color: "var(--dark)",
+	// 	alt: null,
+	// 	categories: [],
+	// },
+	// {
+	// 	id: 10,
+	// 	src: photo10,
+	// 	location: "Saint-Hippolyte, Québec, Canada",
+	// 	title: null,
+	// 	description: null,
+	// 	links: {
+	// 		html: null,
+	// 	},
+	// 	date: new Date("2021-11-13"),
+	// 	width: 1512,
+	// 	height: 1080,
+	// 	color: "var(--dark)",
+	// 	alt: null,
+	// 	categories: [],
+	// },
+	// {
+	// 	id: 11,
+	// 	src: photo11,
+	// 	location: "Saint-Hippolyte, Québec, Canada",
+	// 	title: null,
+	// 	description: null,
+	// 	links: {
+	// 		html: null,
+	// 	},
+	// 	date: new Date("2021-11-13"),
+	// 	width: 1440,
+	// 	height: 1080,
+	// 	color: "var(--dark)",
+	// 	alt: null,
+	// 	categories: [],
+	// },
 	{
 		id: 12,
 		src: photo12,
@@ -388,38 +398,38 @@ const gallery = [
 		alt: null,
 		categories: [],
 	},
-	{
-		id: 23,
-		src: photo23,
-		location: "Toscane, Italie",
-		title: null,
-		description: null,
-		links: {
-			html: null,
-		},
-		date: new Date("2022-05-20"),
-		width: 1920,
-		height: 1080,
-		color: "var(--dark)",
-		alt: null,
-		categories: [],
-	},
-	{
-		id: 24,
-		src: photo24,
-		location: "San Quirico d'Orcia, Sienne, Italie",
-		title: null,
-		description: null,
-		links: {
-			html: null,
-		},
-		date: new Date("2022-05-20"),
-		width: 1440,
-		height: 1080,
-		color: "var(--dark)",
-		alt: null,
-		categories: [],
-	},
+	// {
+	// 	id: 23,
+	// 	src: photo23,
+	// 	location: "Toscane, Italie",
+	// 	title: null,
+	// 	description: null,
+	// 	links: {
+	// 		html: null,
+	// 	},
+	// 	date: new Date("2022-05-20"),
+	// 	width: 1920,
+	// 	height: 1080,
+	// 	color: "var(--dark)",
+	// 	alt: null,
+	// 	categories: [],
+	// },
+	// {
+	// 	id: 24,
+	// 	src: photo24,
+	// 	location: "San Quirico d'Orcia, Sienne, Italie",
+	// 	title: null,
+	// 	description: null,
+	// 	links: {
+	// 		html: null,
+	// 	},
+	// 	date: new Date("2022-05-20"),
+	// 	width: 1440,
+	// 	height: 1080,
+	// 	color: "var(--dark)",
+	// 	alt: null,
+	// 	categories: [],
+	// },
 	{
 		id: 25,
 		src: photo25,
@@ -608,6 +618,134 @@ const gallery = [
 		date: new Date("2022-09-17"),
 		width: 2000,
 		height: 1333,
+		color: "var(--dark)",
+		alt: null,
+		categories: [],
+	},
+	{
+		id: 37,
+		src: photo37,
+		location: "Bloc Shop Hochelaga",
+		title: "Bloc-Hop 2022",
+		description: null,
+		links: {
+			html: null,
+		},
+		date: new Date("2022-10-29"),
+		width: 864,
+		height: 1080,
+		color: "var(--dark)",
+		alt: null,
+		categories: [],
+	},
+	{
+		id: 38,
+		src: photo38,
+		location: "Kinadapt, Québec, Canada",
+		title: null,
+		description: null,
+		links: {
+			html: null,
+		},
+		date: new Date("2022-09-17"),
+		width: 2000,
+		height: 1333,
+		color: "var(--dark)",
+		alt: null,
+		categories: [],
+	},
+	{
+		id: 39,
+		src: photo39,
+		location: "Montréal, Québec, Canada",
+		title: null,
+		description: null,
+		links: {
+			html: null,
+		},
+		date: new Date("2022-09-20"),
+		width: 720,
+		height: 1080,
+		color: "var(--dark)",
+		alt: null,
+		categories: [],
+	},
+	{
+		id: 40,
+		src: photo40,
+		location: "Kinadapt, Québec, Canada",
+		title: null,
+		description: null,
+		links: {
+			html: null,
+		},
+		date: new Date("2022-10-02"),
+		width: 720,
+		height: 1080,
+		color: "var(--dark)",
+		alt: null,
+		categories: [],
+	},
+	{
+		id: 41,
+		src: photo41,
+		location: "Cabane à Sucre Oswald, Saint-Esprit",
+		title: null,
+		description: null,
+		links: {
+			html: null,
+		},
+		date: new Date("2023-02-04"),
+		width: 1620,
+		height: 1080,
+		color: "var(--dark)",
+		alt: null,
+		categories: [],
+	},
+	{
+		id: 42,
+		src: photo42,
+		location: "Cabane à Sucre Oswald, Saint-Esprit",
+		title: null,
+		description: null,
+		links: {
+			html: null,
+		},
+		date: new Date("2023-02-04"),
+		width: 720,
+		height: 1080,
+		color: "var(--dark)",
+		alt: null,
+		categories: [],
+	},
+	{
+		id: 43,
+		src: photo43,
+		location: "Montréal, Québec, Canada",
+		title: null,
+		description: null,
+		links: {
+			html: null,
+		},
+		date: new Date("2021-09-06"),
+		width: 810,
+		height: 1080,
+		color: "var(--dark)",
+		alt: null,
+		categories: [],
+	},
+	{
+		id: 44,
+		src: photo44,
+		location: "Montréal, Québec, Canada",
+		title: null,
+		description: null,
+		links: {
+			html: null,
+		},
+		date: new Date("2022-05-07"),
+		width: 810,
+		height: 1080,
 		color: "var(--dark)",
 		alt: null,
 		categories: [],
