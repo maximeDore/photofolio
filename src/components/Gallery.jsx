@@ -64,7 +64,7 @@ const Gallery = () => {
 	}, []);
 
 	return (
-		<section id="galerie" className="bg-black">
+		<section id="galerie" className="bg-black min-h-screen">
 			{/* Gallery nav */}
 			<div className="absolute w-0 left-0 top-[var(--padd)] bottom-[var(--padd)] z-[9]">
 				<div className="sticky top-[100px]">

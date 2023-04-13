@@ -287,12 +287,12 @@ section {
 	}
 }
 
-// ██████╗  ██████╗ ██████╗ ██╗   ██╗██████╗ 
+// ██████╗  ██████╗ ██████╗ ██╗   ██╗██████╗
 // ██╔══██╗██╔═══██╗██╔══██╗██║   ██║██╔══██╗
 // ██████╔╝██║   ██║██████╔╝██║   ██║██████╔╝
-// ██╔═══╝ ██║   ██║██╔═══╝ ██║   ██║██╔═══╝ 
-// ██║     ╚██████╔╝██║     ╚██████╔╝██║     
-// ╚═╝      ╚═════╝ ╚═╝      ╚═════╝ ╚═╝   
+// ██╔═══╝ ██║   ██║██╔═══╝ ██║   ██║██╔═══╝
+// ██║     ╚██████╔╝██║     ╚██████╔╝██║
+// ╚═╝      ╚═════╝ ╚═╝      ╚═════╝ ╚═╝
 .popup {
 	display: none;
 	transition: visibility 0s 0.8s, transform 0.8s $bezier;
@@ -345,7 +345,6 @@ section {
 		transform: translateX(15%);
 	}
 }
-
 
 //  ██████╗ ██████╗ ███╗   ██╗████████╗ █████╗  ██████╗████████╗
 // ██╔════╝██╔═══██╗████╗  ██║╚══██╔══╝██╔══██╗██╔════╝╚══██╔══╝
@@ -440,14 +439,13 @@ section {
 
 	.slider {
 		&--home {
-			.swiper-slide img{
+			.swiper-slide img {
 				transition: filter 4s ease-in;
-				filter: grayscale(.75);
+				filter: grayscale(0.75);
 			}
-			.swiper-slide-active img{
+			.swiper-slide-active img {
 				filter: grayscale(0);
 			}
-			
 		}
 		&__nav {
 			position: absolute;
@@ -594,7 +592,7 @@ section {
 		transform-origin: bottom left;
 	}
 	&__cta {
-		box-shadow: 0 -5rem 200px 200px var(--black);
+		box-shadow: 0 0 200px 400px var(--black);
 	}
 
 	@media screen and (max-width: 768px) {

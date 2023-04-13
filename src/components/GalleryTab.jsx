@@ -4,7 +4,7 @@ import { useState, useEffect, useCallback } from "react";
 import GalleryItem from "./GalleryItem";
 import Button from "./Button";
 // Utilities
-import { LazyLoadComponent } from 'react-lazy-load-image-component';
+import { LazyLoadComponent } from "react-lazy-load-image-component";
 // Unsplash icon
 import { unsplash } from "../assets";
 
@@ -41,7 +41,7 @@ const GalleryTab = ({ source, type }) => {
 
 	// Trigger scroll on load
 	useEffect(() => {
-		window.dispatchEvent(new CustomEvent('scroll'))
+		window.dispatchEvent(new CustomEvent("scroll"));
 	}, []);
 
 	// Keydown event
@@ -71,7 +71,7 @@ const GalleryTab = ({ source, type }) => {
 				))}
 			</div>
 			{type === "unsplash" && (
-				<div className="gallery__cta relative flex justify-center items-center mt-20 z-[1]">
+				<div className="gallery__cta relative flex justify-center items-center z-[1] bg-black -mt-[100px]">
 					<Button
 						href={source[0].user.links.html}
 						className="button--white"
