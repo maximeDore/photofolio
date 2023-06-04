@@ -1,0 +1,18 @@
+/* base layer */
+@import "./base/root.scss";
+
+/* utilities layer */
+@import "./utilities/utilities.scss";
+
+/* components layer */
+@import "./components/popup.scss";
+@import "./components/contact.scss";
+@import "./components/about.scss";
+@import "./components/hero.scss";
+@import "./components/gallery.scss";
+@import "./components/spinner.scss";
+@import "./components/footer.scss";
+
+@tailwind base;
+@tailwind utilities;
+@tailwind components;

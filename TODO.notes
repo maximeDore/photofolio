@@ -3,7 +3,7 @@ Important:
 [ ] Changer le layout des onglets en responsive mobile pour cacher un minimum de contenu
 
 
-* Pertinent *
+* Pertinent: *
 [ ] Groupes d'images (une image dans la mosaique ouvrant une galerie de plusieurs images dans le lightbox)
    [ ] Trouver une façon de grouper les images dans la structure json
    [ ] Choisir le comportement des boutons de navigation une fois dans un groupe
@@ -15,6 +15,12 @@ Important:
 [ ] Ajouter un élément UI permettant de Filtrer les images par catégories
 
 
-# QoL #
+# QoL: #
 [ ] Ajouter un élément UI permettant d'ordonner par différents critères
    [ ] Filtrer les résultats Unsplash par plus récents
+
+
+Visuel:
+[ ] Animation on-scroll des images (fade-in à l'entrée dans le viewport)
+[ ] Animation side-to-side à la navigation dans le lightbox
+[ ] Animation to-top à la sortie du lightbox (inverse de l'entrée du lightbox)

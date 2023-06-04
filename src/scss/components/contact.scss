@@ -1,0 +1,52 @@
+@layer components {
+	//  ██████╗ ██████╗ ███╗   ██╗████████╗ █████╗  ██████╗████████╗
+	// ██╔════╝██╔═══██╗████╗  ██║╚══██╔══╝██╔══██╗██╔════╝╚══██╔══╝
+	// ██║     ██║   ██║██╔██╗ ██║   ██║   ███████║██║        ██║
+	// ██║     ██║   ██║██║╚██╗██║   ██║   ██╔══██║██║        ██║
+	// ╚██████╗╚██████╔╝██║ ╚████║   ██║   ██║  ██║╚██████╗   ██║
+	//  ╚═════╝ ╚═════╝ ╚═╝  ╚═══╝   ╚═╝   ╚═╝  ╚═╝ ╚═════╝   ╚═╝
+	.popup--contact {
+		transition: visibility 0s 0.8s, transform 0.8s var(--bezier);
+		transform: translateX(120%);
+
+		&.is-active {
+			transition: visibility 0s, transform 0.8s var(--bezier);
+
+			&::before {
+				transition: transform 0.6s var(--bezier);
+				transform: translateX(-50%);
+			}
+			&::after {
+				transition: transform 1s var(--bezier);
+				transform: translateX(-25%);
+			}
+		}
+
+		&::before {
+			transition: transform 0.8s var(--bezier);
+			transform: translateX(-20%);
+		}
+		&::after {
+			transition: transform 0.6s var(--bezier);
+			transform: translateX(-15%);
+		}
+	}
+
+	@keyframes loader {
+		0% {
+			transform: scaleX(0);
+			transform-origin: left;
+		}
+		49% {
+			transform-origin: left;
+		}
+		50% {
+			transform: scaleX(100%);
+			transform-origin: right;
+		}
+		100% {
+			transform-origin: right;
+			transform: scaleX(0);
+		}
+	}
+}
