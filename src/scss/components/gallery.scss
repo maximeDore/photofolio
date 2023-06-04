@@ -121,11 +121,18 @@
 		}
 
 		&__tabs {
-			transform: rotate(90deg) translateX(-54px);
 			transform-origin: bottom left;
+
+			@screen sm {
+				transform: rotate(90deg) translateX(-54px);
+			}
 		}
 		&__cta {
-			box-shadow: 0 0 200px 400px var(--black);
+			box-shadow: 0 0 10vw 20vw var(--black);
+
+			@screen xl {
+				box-shadow: 0 0 200px 400px var(--black);
+			}
 		}
 
 		@media screen and (max-width: 768px) {

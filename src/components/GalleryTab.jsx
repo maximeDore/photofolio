@@ -71,7 +71,7 @@ const GalleryTab = ({ source, type }) => {
 				))}
 			</div>
 			{type === "unsplash" && (
-				<div className="gallery__cta relative flex justify-center items-center z-[1] bg-black -mt-[100px]">
+				<div className="gallery__cta relative flex justify-center items-center z-[1] bg-black -mt-[100px] mb-32 sm:mb-0">
 					<Button
 						href={source[0].user.links.html}
 						className="button--white"
