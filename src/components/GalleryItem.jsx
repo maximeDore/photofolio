@@ -99,7 +99,12 @@ const GalleryItem = ({ photo, type, onActivate, onDeactivate, isActive, galleryL
 							</div>
 							<div className="flex">
 								{date && (
-									<div className="item__info relative px-2 py-3 cursor-help z-[2]">
+									<div
+										className="item__info relative px-2 py-3 cursor-help z-[2]"
+										onClick={(e) => {
+											e.stopPropagation();
+										}}
+									>
 										<img
 											src={calendar}
 											width="16"
@@ -113,7 +118,12 @@ const GalleryItem = ({ photo, type, onActivate, onDeactivate, isActive, galleryL
 									</div>
 								)}
 								{description !== null && (
-									<div className="item__info relative px-2 py-3 cursor-help z-[2]">
+									<div
+										className="item__info relative px-2 py-3 cursor-help z-[2]"
+										onClick={(e) => {
+											e.stopPropagation();
+										}}
+									>
 										<img
 											src={info}
 											width="16"
@@ -147,7 +157,12 @@ const GalleryItem = ({ photo, type, onActivate, onDeactivate, isActive, galleryL
 							</div>
 							<div className="flex items-center px-2">
 								{date && (
-									<div className="item__info relative px-2 py-3 cursor-help z-[2]">
+									<div
+										className="item__info relative px-2 py-3 cursor-help z-[2]"
+										onClick={(e) => {
+											e.stopPropagation();
+										}}
+									>
 										<img
 											src={calendar}
 											width="16"
@@ -161,7 +176,12 @@ const GalleryItem = ({ photo, type, onActivate, onDeactivate, isActive, galleryL
 									</div>
 								)}
 								{description && description !== null && (
-									<div className="item__info relative px-2 py-3 cursor-help z-[2]">
+									<div
+										className="item__info relative px-2 py-3 cursor-help z-[2]"
+										onClick={(e) => {
+											e.stopPropagation();
+										}}
+									>
 										<img
 											src={info}
 											width="16"
@@ -175,7 +195,14 @@ const GalleryItem = ({ photo, type, onActivate, onDeactivate, isActive, galleryL
 									</div>
 								)}
 								{isDump && (
-									<a href={src} className="item__info relative px-2 py-3 cursor-pointer z-[2]" download>
+									<a
+										href={src}
+										className="item__info relative px-2 py-3 cursor-pointer z-[2]"
+										download
+										onClick={(e) => {
+											e.stopPropagation();
+										}}
+									>
 										<img
 											src={download}
 											width="16"

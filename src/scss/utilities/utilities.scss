@@ -1,0 +1,192 @@
+@layer utilities {
+	// ██╗   ██╗████████╗██╗██╗     ██╗████████╗██╗███████╗███████╗
+	// ██║   ██║╚══██╔══╝██║██║     ██║╚══██╔══╝██║██╔════╝██╔════╝
+	// ██║   ██║   ██║   ██║██║     ██║   ██║   ██║█████╗  ███████╗
+	// ██║   ██║   ██║   ██║██║     ██║   ██║   ██║██╔══╝  ╚════██║
+	// ╚██████╔╝   ██║   ██║███████╗██║   ██║   ██║███████╗███████║
+	//  ╚═════╝    ╚═╝   ╚═╝╚══════╝╚═╝   ╚═╝   ╚═╝╚══════╝╚══════╝
+
+	.padd {
+		padding-block: var(--padd);
+	}
+	.padd-top {
+		padding-top: var(--padd);
+	}
+	.padd-bottom {
+		padding-bottom: var(--padd);
+	}
+	.wrap {
+		padding-inline: var(--wrap);
+	}
+	.wrap-left {
+		padding-left: var(--wrap);
+	}
+	.wrap-right {
+		padding-right: var(--wrap);
+	}
+	.wrapper {
+		max-width: var(--wrapper);
+		margin: 0 auto;
+	}
+
+	p {
+		& + & {
+			margin-top: 20px;
+		}
+	}
+	.h1 {
+		font-family: "Rubik", sans-serif;
+		font-size: 100px;
+		line-height: 1.2;
+
+		@media screen and (max-width: 768px) {
+			font-size: 65px;
+		}
+	}
+
+	.h2 {
+		font-family: "Rubik", sans-serif;
+		font-size: 40px;
+		line-height: 1.2;
+
+		@media screen and (max-width: 768px) {
+			font-size: 32px;
+		}
+	}
+	.subtitle {
+		font-family: "Rubik", sans-serif;
+		font-size: 14px;
+		font-weight: 300;
+	}
+
+	section {
+		position: relative;
+	}
+
+	.button {
+		transition: all 0.25s;
+		display: inline-flex;
+		align-items: center;
+		gap: 15px;
+		position: relative;
+		padding: 15px 25px;
+
+		&::before {
+			content: "";
+			transition: transform 0.25s var(--bezier), background 0.25s;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			transform-origin: left;
+			transform: scaleX(0);
+			background: var(--primary);
+		}
+
+		// Colors
+		&--black {
+			background: var(--black);
+			color: var(--white);
+
+			&::before {
+				background: var(--white);
+			}
+
+			&:hover {
+				color: var(--black);
+			}
+
+			.bg-black & {
+				background: var(--pitchBlack);
+			}
+			.bg-white &::before {
+				background: var(--primary);
+			}
+		}
+		&--white {
+			background: var(--white);
+			color: var(--black);
+
+			&::before {
+				background: var(--black);
+			}
+
+			&:hover {
+				color: var(--white);
+
+				img {
+					filter: invert(1);
+				}
+			}
+
+			.bg-white & {
+				background: var(--secondary);
+			}
+			.bg-black &::before {
+				background: var(--pitchBlack);
+			}
+		}
+
+		// Types
+		&--sideways {
+			&::before {
+				transform-origin: bottom;
+				transform: scaleY(0);
+			}
+		}
+
+		// States
+		&.button--active {
+			color: var(--black);
+			cursor: default;
+
+			&::before {
+				background: var(--primary);
+				transform: none;
+			}
+
+			img {
+				filter: none;
+			}
+		}
+		&.button--disabled {
+			opacity: 0.25;
+			cursor: not-allowed;
+		}
+
+		// Elements
+		&__line {
+			transition: all 0.25s var(--bezier);
+			height: 2px;
+			width: 30px;
+			background: currentColor;
+		}
+
+		&:hover,
+		a:hover &,
+		label:hover & {
+			&::before {
+				transform: none;
+			}
+
+			.light-mode & img {
+				filter: invert(0);
+			}
+		}
+
+		span,
+		img {
+			position: relative;
+		}
+		img {
+			transition: filter 0.35s;
+			width: 24px;
+			height: 24px;
+
+			.light-mode & {
+				filter: invert(1);
+			}
+		}
+	}
+}

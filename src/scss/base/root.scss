@@ -1,0 +1,99 @@
+@layer base {
+	@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800;900&display=swap");
+
+	// Colors
+	$pitchBlack: #121212;
+	$black: #1d1d1d;
+	$dark: #2d2d2d;
+	$primary: #ffd24e;
+	$secondary: #a9a9a9;
+	$white: #ffffff;
+
+	// Sizes
+	$wrap: 5vw;
+	$wrapper: 1200px;
+	$padd: 125px;
+	$mobilePadd: 10vh;
+
+	// Anims
+	$bezier: cubic-bezier(0.68, 0.16, 0.39, 0.98);
+	$bounce: cubic-bezier(0.79, 2.25, 0.65, 0.5);
+	$animTime: 0.35s;
+
+	:root {
+		--pitchBlack: #{$pitchBlack};
+		--black: #{$black};
+		--dark: #{$dark};
+		--primary: #{$primary};
+		--secondary: #{$secondary};
+		--white: #{$white};
+
+		--wrap: #{$wrap};
+		--wrapper: #{$wrapper};
+		--padd: #{$padd};
+
+		--bezier: #{$bezier};
+		--bounce: #{$bounce};
+		--transition: #{$animTime} #{$bezier};
+
+		// Smoothscroll on anchor
+		scroll-behavior: smooth;
+
+		@media screen and (max-width: 768px) {
+			--padd: #{$mobilePadd};
+		}
+	}
+
+	body {
+		background: var(--black);
+		color: var(--white);
+
+		font-family: "Rubik", sans-serif;
+
+		&.light-mode {
+			--pitchBlack: #{$white};
+			--black: #{$white};
+			--dark: #{$secondary};
+			--primary: #{$primary};
+			--secondary: #{$secondary};
+			--white: #{$black};
+		}
+	}
+
+	// Chrome custom scrollbar width
+	::-webkit-scrollbar {
+		width: 10px;
+	}
+	// Chrome custom scrollbar track color
+	::-webkit-scrollbar-track {
+		background: var(--pitchBlack);
+	}
+	// Chrome custom scrollbar knob color
+	::-webkit-scrollbar-thumb {
+		background: var(--primary);
+	}
+
+	// Firefox custom scrollbar colors and width
+	* {
+		scrollbar-color: var(--primary) var(--pitchBlack);
+		scrollbar-width: thin;
+	}
+
+	// Selection highlight color
+	*::selection {
+		background: rgba(var(--primary), 75%);
+		color: var(--black);
+	}
+	*::-moz-selection {
+		background: rgba(var(--primary), 75%);
+		color: var(--black);
+	}
+
+	// Focus highlight outline
+	a,
+	button {
+		&:focus-visible {
+			outline: var(--primary) solid 2px;
+		}
+	}
+}

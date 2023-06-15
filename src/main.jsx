@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import TagManager from "react-gtm-module";
 
 import App from "./App";
-import "./App.scss";
+import "./scss/App.scss";
 
 const tagManagerArgs = {
 	gtmId: "GTM-PCMT8G2",

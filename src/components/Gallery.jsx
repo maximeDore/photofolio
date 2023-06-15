@@ -8,15 +8,15 @@ import Button from "./Button";
 import { gallery } from "../gallery";
 // const dump = import.meta.env.DEV ? import.meta.glob("/public/dump/*.jpg") : import.meta.glob("/dump/*.jpg");
 
-const dumpImages = import.meta.glob('/public/dump/*.jpg');
+const dumpImages = import.meta.glob("/public/dump/*.jpg");
 // const dumpImages = import.meta.glob('/public/dump/*.jpg');
 const dump = [];
 
 for (const path in dumpImages) {
 	dumpImages[path]().then(() => {
-		const p = new URL(path, import.meta.url)
-		dump.push(p)
-	})
+		const p = new URL(path, import.meta.url);
+		dump.push(p);
+	});
 }
 // for (const path in dumpImages) {
 // 	const p = new URL(path, import.meta.url)
@@ -43,8 +43,8 @@ const Gallery = () => {
 
 	const changeTab = (slug) => {
 		setActiveTab(slug);
-		window.scrollTo({top: window.innerHeight, behavior: 'smooth'});
-	}
+		window.scrollTo({ top: window.innerHeight, behavior: "smooth" });
+	};
 
 	useEffect(() => {
 		// Unsplash API Call
@@ -66,32 +66,38 @@ const Gallery = () => {
 	return (
 		<section id="galerie" className="bg-black min-h-screen">
 			{/* Gallery nav */}
-			<div className="absolute w-0 left-0 top-[var(--padd)] bottom-[var(--padd)] z-[9]">
-				<div className="sticky top-[100px]">
-					<div className="gallery__tabs flex whitespace-nowrap">
+			<div className="absolute inset-x-0 sm:right-auto top-[var(--padd)] bottom-[var(--padd)] z-[9] flex items-end sm:items-start pointer-events-none">
+				<div className="sticky bottom-0 sm:top-[100px] xs:mx-auto sm:mx-0 sm:w-0">
+					<div className="gallery__tabs flex whitespace-nowrap pointer-events-auto">
 						<Button
 							className={`gallery__button button button--white button--sideways ${
 								activeTab == "portfolio" ? "button--active" : ""
 							}`}
-							onClick={() => { changeTab("portfolio") }}
+							onClick={() => {
+								changeTab("portfolio");
+							}}
 							line="right"
 							text="Galerie"
 						/>
-						{dump.length > 0 &&
-						<Button
-							className={`gallery__button button button--white button--sideways ${
-								activeTab == "bloc-hop" ? "button--active" : ""
-							}`}
-							onClick={() => { changeTab("bloc-hop") }}
-							line="right"
-							text="Bloc-Hop"
-						/>
-						}
+						{dump.length > 0 && (
+							<Button
+								className={`gallery__button button button--white button--sideways ${
+									activeTab == "bloc-hop" ? "button--active" : ""
+								}`}
+								onClick={() => {
+									changeTab("bloc-hop");
+								}}
+								line="right"
+								text="Bloc-Hop"
+							/>
+						)}
 						<Button
 							className={`gallery__button button button--white button--sideways ${
 								activeTab == "unsplash" ? "button--active" : ""
 							}`}
-							onClick={() => { changeTab("unsplash") }}
+							onClick={() => {
+								changeTab("unsplash");
+							}}
 							icon={unsplash}
 							text="Unsplash"
 						/>
@@ -103,20 +109,24 @@ const Gallery = () => {
 			<div className="wrap padd overflow-hidden">
 				<div className="wrapper">
 					{/* Regular gallery */}
-					{gallery.length > 0 &&
+					{gallery.length > 0 && (
 						<div className={`gallery__tab ${activeTab == "portfolio" ? "" : "tab--hidden"}`}>
 							<GalleryTab source={gallery} />
 						</div>
-						}
+					)}
 					{/* Event gallery */}
-					{dump.length > 0 &&
+					{dump.length > 0 && (
 						<div className={`gallery__tab ${activeTab == "bloc-hop" ? "" : "tab--hidden"}`}>
 							<GalleryTab source={dump} type="dump" />
 						</div>
-					}
+					)}
 					{/* Unsplash gallery */}
 					<div className={`gallery__tab ${activeTab == "unsplash" ? "" : "tab--hidden"}`}>
-						{data === null || data.response === null ? <Spinner /> : <GalleryTab source={data.response.results} type="unsplash" />}
+						{data === null || data.response === null ? (
+							<Spinner />
+						) : (
+							<GalleryTab source={data.response.results} type="unsplash" />
+						)}
 					</div>
 					{/* TODO: Intégrer l'API Instagram pour un tab de feed custom */}
 				</div>

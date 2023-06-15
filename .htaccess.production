@@ -1,0 +1,18 @@
+<IfModule mod_rewrite.c>
+   RewriteEngine On
+
+   RewriteCond %{HTTPS} off
+   RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+</IfModule>
+
+<IfModule mod_headers.c>
+  Header always set Permissions-Policy: interest-cohort=()
+  Header always set X-FRAME-OPTIONS "SAMEORIGIN"
+  Header always set Strict-Transport-Security "max-age=31536000"
+
+  # Cache images and CSS files
+    <filesMatch ".(css|js|svg|woff2|gif|png|jpg|jpeg|ico|pdf)$">
+      Header set Cache-Control "max-age=31536000"
+    </filesMatch>
+</ifModule>

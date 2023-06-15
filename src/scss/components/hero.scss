@@ -1,0 +1,55 @@
+@layer components {
+	// ██╗  ██╗███████╗██████╗  ██████╗
+	// ██║  ██║██╔════╝██╔══██╗██╔═══██╗
+	// ███████║█████╗  ██████╔╝██║   ██║
+	// ██╔══██║██╔══╝  ██╔══██╗██║   ██║
+	// ██║  ██║███████╗██║  ██║╚██████╔╝
+	// ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝ ╚═════╝
+	.hero {
+		--thumb-size: 150px;
+		height: 100vh;
+
+		&__content {
+			&::after {
+				content: "";
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				height: 100vh;
+				// background: linear-gradient(to top, var(--black), rgba(255, 255, 255, 0));
+				background: linear-gradient(to top, var(--black) 1%, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 0.2));
+				pointer-events: none;
+				z-index: 1;
+			}
+		}
+
+		.slider {
+			&--home {
+				.swiper-slide img {
+					transition: filter 4s ease-in;
+					filter: grayscale(0.75);
+				}
+				.swiper-slide-active img {
+					filter: grayscale(0);
+				}
+			}
+			&__nav {
+				position: absolute;
+				bottom: var(--padd);
+				right: calc(100% - calc(var(--thumb-size) / 2));
+				width: var(--thumb-size);
+				height: calc(var(--thumb-size) * 1.66);
+
+				@media screen and (max-width: 768px) {
+					--thumb-size: 100px;
+
+					top: calc(var(--padd) * 1.5);
+					bottom: unset;
+					right: 2rem;
+					font-size: 65px;
+				}
+			}
+		}
+	}
+}
