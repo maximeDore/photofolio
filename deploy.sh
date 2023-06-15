@@ -8,7 +8,7 @@ FTP_USERNAME=$FTP_USERNAME_SECRET
 FTP_PASSWORD=$FTP_PASSWORD_SECRET
 
 # Local build directory
-LOCAL_DIR="./build"
+LOCAL_DIR="./dist"
 
 # Remote directory on the cPanel account
 REMOTE_DIR="/public_html"
