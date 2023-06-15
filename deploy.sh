@@ -2,6 +2,10 @@
 
 echo "Starting deployment..."
 
+# Install lftp
+apt-get update
+apt-get install -y lftp
+
 # FTP connection details
 FTP_HOST="ftp.maxime-dore.com"
 FTP_USERNAME=$FTP_USERNAME_SECRET
