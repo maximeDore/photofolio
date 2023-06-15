@@ -3,10 +3,8 @@
 echo "Starting deployment..."
 
 # Install lftp
-curl -O https://lftp.yar.ru/ftp/lftp-4.9.2.tar.gz
-tar xvzf lftp-4.9.2.tar.gz
-cd lftp-4.9.2
-./configure && make && sudo make install
+sudo apt-get update
+sudo apt-get install -y lftp
 
 # FTP connection details
 FTP_HOST="ftp.maxime-dore.com"
