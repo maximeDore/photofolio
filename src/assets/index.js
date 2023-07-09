@@ -5,6 +5,7 @@ import unsplash from "./unsplash.svg";
 import chevronLeft from "./chevron-left.svg";
 import chevronRight from "./chevron-right.svg";
 import info from "./info.svg";
+import heart from "./heart.svg";
 import times from "./times.svg";
 import calendar from "./calendar.svg";
 import download from "./download.svg";
@@ -31,6 +32,7 @@ export {
 	chevronLeft,
 	chevronRight,
 	info,
+	heart,
 	times,
 	calendar,
 	download,

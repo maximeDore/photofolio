@@ -5,11 +5,12 @@ Important:
 
 * Pertinent: *
 [ ] Groupes d'images (une image dans la mosaique ouvrant une galerie de plusieurs images dans le lightbox)
-   [ ] Trouver une façon de grouper les images dans la structure json
+   [ ] Grouper les images dans la structure json et ajouter une propriété `type` pour différencier les components à include
    [ ] Choisir le comportement des boutons de navigation une fois dans un groupe
       [ ] Naviguer à travers toutes les images d'un groupe même si le groupe n'a pas été cliqué directement ?
       [ ] Naviguer en ignorant le contenu du groupe pour seulement afficher la première image ?
          [ ] Ajouter un élément UI permettant de parcourir toutes les images du groupe
+         [ ] Ajouter une navigation thumbnails sur un des côtés ou en bas (surtout pour mobile)
 [ ] Permettre l'affichage de vidéos dans la mosaique
    [ ] Afficher un preview au hover ?
 [ ] Ajouter un élément UI permettant de Filtrer les images par catégories

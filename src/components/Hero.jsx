@@ -72,7 +72,7 @@ const Hero = () => {
 			{/* Left content */}
 			<div className="hero__content bg-black w-full relative overflow-hidden">
 				{/* Title */}
-				<div className="wrap padd absolute bottom-0 left-0 right-0 lg:-right-[200px] z-[2] pointer-events-none">
+				<div className="wrap padd absolute bottom-0 left-0 right-0 lg:-right-sidebar z-[2] pointer-events-none">
 					<div className="wrapper">
 						<h1 className="h1 inline-block pointer-events-auto drop-shadow-md shadow-black mr-10">
 							<span
@@ -111,12 +111,7 @@ const Hero = () => {
 					>
 						{heroList.map((image, index) => (
 							<SwiperSlide key={index}>
-								<Img
-									src={image} 
-									className="w-full h-full object-cover grayscale-[85%]" 
-									alt="" 
-									loading="eager"
-								/>
+								<Img src={image} className="w-full h-full object-cover grayscale-[85%]" alt="" loading="eager" />
 							</SwiperSlide>
 						))}
 					</Swiper>
@@ -124,7 +119,7 @@ const Hero = () => {
 			</div>
 
 			{/* Right sidebar */}
-			<div className="hero__sidebar bg-white sm:w-[200px] w-[50px] text-black shrink-0 relative">
+			<div className="hero__sidebar bg-white sm:w-sidebar w-mobile-sidebar text-black shrink-0 relative">
 				{/* Lightmode button */}
 				{/* <button
 					className="absolute bottom-[30px] xl:bottom-0 xl:top-[20px] right-[50%] translate-x-[50%] w-[40px] h-[40px] shadow-md transition-all hover:shadow-lg hover:scale-125 rounded-full"

@@ -15,6 +15,10 @@ module.exports = {
 			fontFamily: {
 				rubik: ["Rubik", "sans-serif"],
 			},
+			spacing: {
+				"mobile-sidebar": "50px",
+				sidebar: "200px",
+			},
 		},
 		screens: {
 			xs: "480px",
