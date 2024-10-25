@@ -5,6 +5,7 @@ import unsplash from "./unsplash.svg";
 import chevronLeft from "./chevron-left.svg";
 import chevronRight from "./chevron-right.svg";
 import info from "./info.svg";
+import heart from "./heart.svg";
 import times from "./times.svg";
 import calendar from "./calendar.svg";
 import download from "./download.svg";
@@ -17,11 +18,11 @@ import hero1 from "./P1232212.jpg";
 import hero2 from "./P1083447.jpg";
 import hero3 from "./ACP06976.jpg";
 import hero4 from "./P1083782.jpg";
-// import hero5 from "./.jpg";
+import hero5 from "./ACP04227.jpg";
 
 import footerSeparator from "./footer.jpg";
 
-const heroList = [hero1, hero2, hero3, hero4];
+const heroList = [hero5, hero1, hero2, hero3, hero4];
 
 export {
 	logo,
@@ -31,6 +32,7 @@ export {
 	chevronLeft,
 	chevronRight,
 	info,
+	heart,
 	times,
 	calendar,
 	download,

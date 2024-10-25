@@ -6,11 +6,11 @@ import photo3 from "./P1050348.jpg";
 import photo4 from "./P1050420.jpg";
 import photo5 from "./P1050468.jpg";
 import photo6 from "./P1050604.jpg";
-import photo7 from "./P1083411.jpg";
-import photo8 from "./P1083443.jpg";
-import photo9 from "./P1083447.jpg";
-import photo10 from "./P1083782.jpg";
-import photo11 from "./P1083862.jpg";
+// import photo7 from "./P1083411.jpg";
+// import photo8 from "./P1083443.jpg";
+// import photo9 from "./P1083447.jpg";
+// import photo10 from "./P1083782.jpg";
+// import photo11 from "./P1083862.jpg";
 import photo12 from "./P1094314.jpg";
 import photo13 from "./P1106223.jpg";
 import photo14 from "./P1106227.jpg";
@@ -44,6 +44,20 @@ import photo41 from "./ACP06976.jpg";
 import photo42 from "./ACP07254.jpg";
 import photo43 from "./P1037796.jpg";
 import photo44 from "./P1174927.jpg";
+import photo45 from "./ACP00744.jpg";
+import photo46 from "./ACP01313.jpg";
+import photo47 from "./ACP01416.jpg";
+import photo48 from "./ACP02690.jpg";
+import photo49 from "./ACP03632.jpg";
+import photo50 from "./ACP03636.jpg";
+import photo51 from "./ACP04227.jpg";
+import photo52 from "./ACP04230.jpg";
+import photo53 from "./ACP07749.jpg";
+import photo54 from "./ACP08184.jpg";
+import photo55 from "./ACP09066.jpg";
+import photo56 from "./DJI_0110.jpg";
+import photo57 from "./DJI_0142.jpg";
+import photo58 from "./DSC05138.jpg";
 
 const gallery = [
 	{
@@ -749,6 +763,230 @@ const gallery = [
 		color: "var(--dark)",
 		alt: null,
 		categories: [],
+	},
+	{
+		id: 45,
+		src: photo45,
+		location: "Montréal, Québec, Canada",
+		title: null,
+		description: null,
+		links: {
+			html: null,
+		},
+		date: new Date("2023-06-03"),
+		width: 720,
+		height: 1080,
+		color: "var(--dark)",
+		alt: null,
+		categories: ["produit"],
+	},
+	{
+		id: 46,
+		src: photo46,
+		location: "Montréal, Québec, Canada",
+		title: "Yatai MTL",
+		description: "Montreal Shamisen Project",
+		links: {
+			html: null,
+		},
+		date: new Date("2023-06-12"),
+		width: 720,
+		height: 1080,
+		color: "var(--dark)",
+		alt: null,
+		categories: ["evenement"],
+	},
+	{
+		id: 47,
+		src: photo47,
+		location: "Montréal, Québec, Canada",
+		title: null,
+		description: null,
+		links: {
+			html: null,
+		},
+		date: new Date("2023-06-19"),
+		width: 1620,
+		height: 1080,
+		color: "var(--dark)",
+		alt: null,
+		categories: [],
+	},
+	{
+		id: 48,
+		src: photo48,
+		location: "Montréal, Québec, Canada",
+		title: null,
+		description: null,
+		links: {
+			html: null,
+		},
+		date: new Date("2022-11-20"),
+		width: 720,
+		height: 1080,
+		color: "var(--dark)",
+		alt: null,
+		categories: ["urbain"],
+	},
+	{
+		id: 49,
+		src: photo49,
+		location: "High Peaks Wilderness, NY, USA",
+		title: null,
+		description: null,
+		links: {
+			html: null,
+		},
+		date: new Date("2023-07-30"),
+		width: 1920,
+		height: 1080,
+		color: "var(--dark)",
+		alt: null,
+		categories: ["paysage"],
+	},
+	{
+		id: 50,
+		src: photo50,
+		location: "High Peaks Wilderness, NY, USA",
+		title: null,
+		description: null,
+		links: {
+			html: null,
+		},
+		date: new Date("2023-07-30"),
+		width: 864,
+		height: 1080,
+		color: "var(--dark)",
+		alt: null,
+		categories: ["paysage"],
+	},
+	{
+		id: 51,
+		src: photo51,
+		location: "Lac-Saint-Paul, Québec, Canada",
+		title: null,
+		description: null,
+		links: {
+			html: null,
+		},
+		date: new Date("2023-08-05"),
+		width: 1620,
+		height: 1080,
+		color: "var(--dark)",
+		alt: null,
+		categories: ["paysage"],
+	},
+	{
+		id: 52,
+		src: photo52,
+		location: "Lac-Saint-Paul, Québec, Canada",
+		title: null,
+		description: null,
+		links: {
+			html: null,
+		},
+		date: new Date("2023-08-05"),
+		width: 1620,
+		height: 1080,
+		color: "var(--dark)",
+		alt: null,
+		categories: ["paysage"],
+	},
+	{
+		id: 53,
+		src: photo53,
+		location: "Kinadapt",
+		title: null,
+		description: null,
+		links: {
+			html: null,
+		},
+		date: new Date("2023-03-06"),
+		width: 720,
+		height: 1080,
+		color: "var(--dark)",
+		alt: null,
+		categories: ["animal"],
+	},
+	{
+		id: 54,
+		src: photo54,
+		location: "Kinadapt",
+		title: null,
+		description: null,
+		links: {
+			html: null,
+		},
+		date: new Date("2023-03-06"),
+		width: 720,
+		height: 1080,
+		color: "var(--dark)",
+		alt: null,
+		categories: ["portrait"],
+	},
+	{
+		id: 55,
+		src: photo55,
+		location: "Sunrise, FL, USA",
+		title: null,
+		description: null,
+		links: {
+			html: null,
+		},
+		date: new Date("2023-03-14"),
+		width: 1530,
+		height: 1080,
+		color: "var(--dark)",
+		alt: null,
+		categories: ["portrait", "sport"],
+	},
+	{
+		id: 56,
+		src: photo56,
+		location: "Peanut Island, FL, USA",
+		title: null,
+		description: null,
+		links: {
+			html: null,
+		},
+		date: new Date("2023-03-14"),
+		width: 1440,
+		height: 1080,
+		color: "var(--dark)",
+		alt: null,
+		categories: ["paysage", "drone"],
+	},
+	{
+		id: 57,
+		src: photo57,
+		location: "Montréal, Québec, Canada",
+		title: "Yatai MTL",
+		description: null,
+		links: {
+			html: null,
+		},
+		date: new Date("2023-06-11"),
+		width: 1440,
+		height: 1080,
+		color: "var(--dark)",
+		alt: null,
+		categories: ["evenement", "drone", "urbain"],
+	},
+	{
+		id: 58,
+		src: photo58,
+		location: "Montréal, Québec, Canada",
+		title: "Yatai MTL",
+		description: null,
+		links: {
+			html: null,
+		},
+		date: new Date("2023-06-10"),
+		width: 1440,
+		height: 1080,
+		color: "var(--dark)",
+		alt: null,
+		categories: ["evenement", "animal", "portrait"],
 	},
 ];
 

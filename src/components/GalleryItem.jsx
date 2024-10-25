@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Img from "./Img";
 
-import { unsplash, chevronLeft, chevronRight, info, calendar, download } from "../assets";
+import { unsplash, chevronLeft, chevronRight, info, heart, calendar, download } from "../assets";
 
 // TODO: Intégrer des vidéos
 // TODO: Intégrer des groupes d'images
@@ -14,6 +14,8 @@ const GalleryItem = ({ photo, type, onActivate, onDeactivate, isActive, galleryL
 
 	const thumbSrc = isUnsplash ? photo.urls.small : isDump ? null : photo.src;
 	const src = isUnsplash ? photo.urls.regular : isDump ? photo.href.replace("public/", "") : photo.src;
+	const alt = isUnsplash ? photo.alt_description : "";
+	const likes = isUnsplash ? photo.likes : 0;
 	const location = isUnsplash || isDump ? "" : photo.location;
 	const date = photo.created_at ? new Date(photo.created_at) : photo.date;
 
@@ -42,7 +44,7 @@ const GalleryItem = ({ photo, type, onActivate, onDeactivate, isActive, galleryL
 				src={thumbSrc ?? src}
 				width={width && width > 0 && width}
 				height={height && height > 0 && height}
-				alt=""
+				alt={alt}
 				className={`max-h-full min-h-[100px] w-full object-cover cursor-zoom-in ${
 					isLoaded ? "opacity-100" : "opacity-0"
 				}`}
@@ -79,15 +81,15 @@ const GalleryItem = ({ photo, type, onActivate, onDeactivate, isActive, galleryL
 						width={width && width > 0 && width}
 						height={height && height > 0 && height}
 						loading="lazy"
-						alt=""
+						alt={alt}
 						className="item__popup-img max-h-[95vh] w-auto object-cover"
 						onContextMenu={(e) => {
 							e.preventDefault();
 						}}
 					/>
 					{isUnsplash ? (
-						<div className="item__infos absolute bottom-0 left-0 right-0 flex justify-between align-bottom">
-							<div className="flex">
+						<div className="item__infos absolute bottom-0 left-0 right-0 flex justify-between align-bottom z-[2]">
+							<div className="flex items-end">
 								<a
 									href={photo.links.html}
 									className="transition-all shadow-md w-[40px] h-[40px] hover:shadow-lg hover:scale-125 rounded-tr-[30px] pt-1 pr-1 bg-white flex justify-center items-center"
@@ -96,11 +98,22 @@ const GalleryItem = ({ photo, type, onActivate, onDeactivate, isActive, galleryL
 								>
 									<img src={unsplash} className=" w-[28px] h-[28px]" alt="unsplash" />
 								</a>
+								{likes > 0 && (
+									<div
+										className="item__info relative px-2 py-2 flex items-center ml-1"
+										onClick={(e) => {
+											e.stopPropagation();
+										}}
+									>
+										<img src={heart} width="16" height="16" alt="likes" />
+										<p className="ml-1 sm:ml-2">{likes}</p>
+									</div>
+								)}
 							</div>
-							<div className="flex">
+							<div className="flex items-end">
 								{date && (
 									<div
-										className="item__info relative px-2 py-3 cursor-help z-[2]"
+										className="item__info relative px-2 py-2 cursor-help"
 										onClick={(e) => {
 											e.stopPropagation();
 										}}
@@ -112,14 +125,14 @@ const GalleryItem = ({ photo, type, onActivate, onDeactivate, isActive, galleryL
 											alt="info"
 											className="opacity-75 transition-opacity hover:opacity-100"
 										/>
-										<div className="item__description p-4 absolute bottom-[125%] -right-[20px] ss:w-[400px] w-[90vw] max-w-[200px] shadow-md bg-white text-black text-center capitalize">
+										<div className="item__description p-4 absolute bottom-[125%] -right-[20px] ss:w-[400px] w-[80vw] max-w-[200px] shadow-md bg-white text-black text-center capitalize">
 											{date && <p>{date.toLocaleDateString("fr-CA", { year: "numeric", month: "long" })}</p>}
 										</div>
 									</div>
 								)}
 								{description !== null && (
 									<div
-										className="item__info relative px-2 py-3 cursor-help z-[2]"
+										className="item__info relative px-2 py-2 cursor-help"
 										onClick={(e) => {
 											e.stopPropagation();
 										}}
@@ -131,7 +144,7 @@ const GalleryItem = ({ photo, type, onActivate, onDeactivate, isActive, galleryL
 											alt="info"
 											className="opacity-75 transition-opacity hover:opacity-100"
 										/>
-										<p className="item__description p-4 absolute bottom-[125%] -right-[20px] ss:w-[400px] w-[90vw] bg-white text-black text-center">
+										<p className="item__description p-4 absolute bottom-[125%] -right-[20px] ss:w-[400px] w-[80vw] bg-white text-black text-center">
 											{description}
 										</p>
 									</div>
@@ -151,14 +164,14 @@ const GalleryItem = ({ photo, type, onActivate, onDeactivate, isActive, galleryL
 							</div>
 						</div>
 					) : (
-						<div className="item__infos absolute bottom-0 left-0 right-0 flex justify-between items-center">
+						<div className="item__infos absolute bottom-0 left-0 right-0 flex justify-between items-center z-[2]">
 							<div>
-								{location && location !== null && <p className="item__location px-4 py-3 opacity-75">{location}</p>}
+								{location && location !== null && <p className="item__location px-4 py-2 opacity-75">{location}</p>}
 							</div>
 							<div className="flex items-center px-2">
 								{date && (
 									<div
-										className="item__info relative px-2 py-3 cursor-help z-[2]"
+										className="item__info relative px-2 py-2 cursor-help"
 										onClick={(e) => {
 											e.stopPropagation();
 										}}
@@ -170,14 +183,14 @@ const GalleryItem = ({ photo, type, onActivate, onDeactivate, isActive, galleryL
 											alt="info"
 											className="opacity-75 transition-opacity hover:opacity-100"
 										/>
-										<div className="item__description p-4 absolute bottom-[125%] -right-[20px] ss:w-[400px] w-[90vw] max-w-[200px] shadow-md bg-white text-black text-center capitalize">
+										<div className="item__description p-4 absolute bottom-[125%] -right-[20px] ss:w-[400px] w-[80vw] max-w-[200px] shadow-md bg-white text-black text-center capitalize">
 											{date && <p>{date.toLocaleDateString("fr-CA", { year: "numeric", month: "long" })}</p>}
 										</div>
 									</div>
 								)}
 								{description && description !== null && (
 									<div
-										className="item__info relative px-2 py-3 cursor-help z-[2]"
+										className="item__info relative px-2 py-2 cursor-help z-[2]"
 										onClick={(e) => {
 											e.stopPropagation();
 										}}
@@ -189,7 +202,7 @@ const GalleryItem = ({ photo, type, onActivate, onDeactivate, isActive, galleryL
 											alt="info"
 											className="opacity-75 transition-opacity hover:opacity-100"
 										/>
-										<p className="item__description p-4 absolute bottom-[125%] -right-[20px] ss:w-[400px] w-[90vw] bg-white text-black text-center">
+										<p className="item__description p-4 absolute bottom-[125%] -right-[20px] ss:w-[400px] w-[80vw] bg-white text-black text-center">
 											{description}
 										</p>
 									</div>
@@ -197,7 +210,7 @@ const GalleryItem = ({ photo, type, onActivate, onDeactivate, isActive, galleryL
 								{isDump && (
 									<a
 										href={src}
-										className="item__info relative px-2 py-3 cursor-pointer z-[2]"
+										className="item__info relative px-2 py-2 cursor-pointer z-[2]"
 										download
 										onClick={(e) => {
 											e.stopPropagation();
@@ -210,7 +223,7 @@ const GalleryItem = ({ photo, type, onActivate, onDeactivate, isActive, galleryL
 											alt="info"
 											className="opacity-75 transition-opacity hover:opacity-100"
 										/>
-										<p className="item__description p-4 absolute bottom-[125%] -right-[20px] ss:w-[150px] w-[90vw] bg-white text-black text-center">
+										<p className="item__description p-4 absolute bottom-[125%] -right-[20px] ss:w-[150px] w-[80vw] bg-white text-black text-center">
 											Télécharger
 										</p>
 									</a>
@@ -274,6 +287,8 @@ export default GalleryItem;
 		current_user_collections: [], 
 		sponsorship: null, 
 		topic_submissions: {}, 
+
+
 		user: { 
 			id: "bYXIqb54Ngo", 
 			updated_at: "2022-08-31T14:06:57Z", 
