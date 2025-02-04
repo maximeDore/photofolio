@@ -33,7 +33,7 @@
 					transition: transform 0.25s var(--bezier), box-shadow 0.25s var(--bezier), opacity 1s 0.25s;
 
 					&:hover {
-						transform: scale(1.25);
+						transform: scale(1.125);
 						box-shadow: 0 0 35px rgba(0, 0, 0, 0.5);
 					}
 				}
@@ -128,7 +128,13 @@
 			}
 		}
 		&__cta {
+			position: sticky;
+			bottom: 0;
 			box-shadow: 0 0 10vw 20vw var(--black);
+
+			.button {
+				margin-top: -7.5vw;
+			}
 
 			@screen xl {
 				box-shadow: 0 0 200px 400px var(--black);
