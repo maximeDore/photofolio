@@ -6,24 +6,14 @@ import photo3 from "./P1050348.jpg";
 import photo4 from "./P1050420.jpg";
 import photo5 from "./P1050468.jpg";
 import photo6 from "./P1050604.jpg";
-// import photo7 from "./P1083411.jpg";
-// import photo8 from "./P1083443.jpg";
-// import photo9 from "./P1083447.jpg";
-// import photo10 from "./P1083782.jpg";
-// import photo11 from "./P1083862.jpg";
-import photo12 from "./P1094314.jpg";
+import photo7 from "./P1083411.jpg";
 import photo13 from "./P1106223.jpg";
 import photo14 from "./P1106227.jpg";
-import photo15 from "./P1128772.jpg";
 import photo16 from "./P1128832.jpg";
-import photo17 from "./P1128924.jpg";
 import photo18 from "./P1139979.jpg";
 import photo19 from "./P1140028.jpg";
 import photo20 from "./P1151587.jpg";
-import photo21 from "./P1151740.jpg";
 import photo22 from "./P1175226.jpg";
-// import photo23 from "./P1208181.jpg";
-// import photo24 from "./P1208191.jpg";
 import photo25 from "./IMG_6166.jpg";
 import photo26 from "./IMG_6184.jpg";
 import photo27 from "./P1013283.jpg";
@@ -32,7 +22,6 @@ import photo29 from "./P1037770.jpg";
 import photo30 from "./P1038980.jpg";
 import photo31 from "./P1038985.jpg";
 import photo32 from "./P1308972.jpg";
-import photo33 from "./P1309014.jpg";
 import photo34 from "./ACP02559.jpg";
 import photo35 from "./ACP02869.jpg";
 import photo36 from "./ACP04100.jpg";
@@ -191,97 +180,17 @@ const gallery = [
 		alt: null,
 		categories: [],
 	},
-	// {
-	// 	id: 7,
-	// 	src: photo7,
-	// 	location: "Mont Ouareau, Québec, Canada",
-	// 	title: null,
-	// 	description: null,
-	// 	links: {
-	// 		html: null,
-	// 	},
-	// 	date: new Date("2021-11-06"),
-	// 	width: 1920,
-	// 	height: 1080,
-	// 	color: "var(--dark)",
-	// 	alt: null,
-	// 	categories: [],
-	// },
-	// {
-	// 	id: 8,
-	// 	src: photo8,
-	// 	location: "Mont Ouareau, Québec, Canada",
-	// 	title: null,
-	// 	description: null,
-	// 	links: {
-	// 		html: null,
-	// 	},
-	// 	date: new Date("2021-11-06"),
-	// 	width: 1440,
-	// 	height: 1080,
-	// 	color: "var(--dark)",
-	// 	alt: null,
-	// 	categories: [],
-	// },
-	// {
-	// 	id: 9,
-	// 	src: photo9,
-	// 	location: "Mont Ouareau, Québec, Canada",
-	// 	title: null,
-	// 	description: null,
-	// 	links: {
-	// 		html: null,
-	// 	},
-	// 	date: new Date("2021-11-06"),
-	// 	width: 1440,
-	// 	height: 1080,
-	// 	color: "var(--dark)",
-	// 	alt: null,
-	// 	categories: [],
-	// },
-	// {
-	// 	id: 10,
-	// 	src: photo10,
-	// 	location: "Saint-Hippolyte, Québec, Canada",
-	// 	title: null,
-	// 	description: null,
-	// 	links: {
-	// 		html: null,
-	// 	},
-	// 	date: new Date("2021-11-13"),
-	// 	width: 1512,
-	// 	height: 1080,
-	// 	color: "var(--dark)",
-	// 	alt: null,
-	// 	categories: [],
-	// },
-	// {
-	// 	id: 11,
-	// 	src: photo11,
-	// 	location: "Saint-Hippolyte, Québec, Canada",
-	// 	title: null,
-	// 	description: null,
-	// 	links: {
-	// 		html: null,
-	// 	},
-	// 	date: new Date("2021-11-13"),
-	// 	width: 1440,
-	// 	height: 1080,
-	// 	color: "var(--dark)",
-	// 	alt: null,
-	// 	categories: [],
-	// },
 	{
-		id: 12,
-		src: photo12,
-		location: "Saint-Hippolyte, Québec, Canada",
+		id: 7,
+		src: photo7,
+		location: "Mont Ouareau, Québec, Canada",
 		title: null,
 		description: null,
 		links: {
 			html: null,
 		},
-		date: new Date("2021-11-13"),
-		width: 1440,
+		date: new Date("2021-11-06"),
+		width: 1920,
 		height: 1080,
 		color: "var(--dark)",
 		alt: null,
@@ -320,22 +229,6 @@ const gallery = [
 		categories: [],
 	},
 	{
-		id: 15,
-		src: photo15,
-		location: "Joliette, Québec, Canada",
-		title: null,
-		description: null,
-		links: {
-			html: null,
-		},
-		date: new Date("2022-02-20"),
-		width: 864,
-		height: 1080,
-		color: "var(--dark)",
-		alt: null,
-		categories: [],
-	},
-	{
 		id: 16,
 		src: photo16,
 		location: "Joliette, Québec, Canada",
@@ -346,22 +239,6 @@ const gallery = [
 		},
 		date: new Date("2022-02-20"),
 		width: 810,
-		height: 1080,
-		color: "var(--dark)",
-		alt: null,
-		categories: [],
-	},
-	{
-		id: 17,
-		src: photo17,
-		location: "Joliette, Québec, Canada",
-		title: null,
-		description: null,
-		links: {
-			html: null,
-		},
-		date: new Date("2022-02-20"),
-		width: 1080,
 		height: 1080,
 		color: "var(--dark)",
 		alt: null,
@@ -409,22 +286,6 @@ const gallery = [
 			html: null,
 		},
 		date: new Date("2022-03-26"),
-		width: 1440,
-		height: 1080,
-		color: "var(--dark)",
-		alt: null,
-		categories: [],
-	},
-	{
-		id: 21,
-		src: photo21,
-		location: "Montréal, Québec, Canada",
-		title: null,
-		description: null,
-		links: {
-			html: null,
-		},
-		date: new Date("2022-04-10"),
 		width: 1440,
 		height: 1080,
 		color: "var(--dark)",
@@ -564,22 +425,6 @@ const gallery = [
 	{
 		id: 32,
 		src: photo32,
-		location: "Réserve faunique La Vérendrye",
-		title: null,
-		description: null,
-		links: {
-			html: null,
-		},
-		date: new Date("2022-08-26"),
-		width: 1440,
-		height: 1080,
-		color: "var(--dark)",
-		alt: null,
-		categories: [],
-	},
-	{
-		id: 33,
-		src: photo33,
 		location: "Réserve faunique La Vérendrye",
 		title: null,
 		description: null,

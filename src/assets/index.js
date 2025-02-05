@@ -2,6 +2,7 @@ import logo from "./logo.svg";
 import instagram from "./instagram.svg";
 import linkedin from "./linkedin.svg";
 import unsplash from "./unsplash.svg";
+import troisieme from "./troisieme.svg";
 import chevronLeft from "./chevron-left.svg";
 import chevronRight from "./chevron-right.svg";
 import info from "./info.svg";
@@ -29,6 +30,7 @@ export {
 	instagram,
 	linkedin,
 	unsplash,
+	troisieme,
 	chevronLeft,
 	chevronRight,
 	info,

@@ -22,14 +22,9 @@ const About = ({ active, onClosePopup }) => {
 			<div className="w-full h-full bg-black text-white relative z-[1] overflow-auto">
 				<div className="flex md:flex-nowrap flex-wrap items-center content-center h-full gap-4">
 					{/* Left */}
-					<div className="padd md:w-1/2 w-full relative z-[1]">
+					<div className="padd md:w-1/2 w-full relative z-[1] richtext">
 						<div className="wrap">
-							<h2 className="h2 mb-8">À propos</h2>
-							<p>
-								Bien que confortable sur une chaise derrière mon bureau à taper du code à longueur de journée, 
-								rien n'égale sortir dans les rues et y capturer des moments humains et impossible à reproduire. 
-								Ou goûter à la nature et découvrir/redécouvrir des paysages épatants.
-							</p>
+							<h2 className="h2 mb-8">À propos de moi</h2>
 							<p>
 								Photographe depuis 2020 je m'adonne à toutes sortes de disciplines à défaut d'être en mesure de 
 								m'arrêter sur une seule. Que ce soit de la photographie de portraits, paysages, architecture, 
@@ -37,9 +32,15 @@ const About = ({ active, onClosePopup }) => {
 								l'épicerie).
 							</p>
 							<p>
-								Sur une note plus personnelle je suis adepte d'escalade, skateboard, course, gaming, airsoft, 
+								Sur une note plus personnelle je suis adepte d'escalade, skateboard, course, gaming, 
 								backpacking ainsi que musicien de longue date.
 							</p>
+							<h3 className="h3 mb-4">Services</h3>
+							<ul>
+								<li>Portraits</li>
+								<li>Image de marque</li>
+								<li>Événements</li>
+							</ul>
 							<div className="mt-10"><Button text="Me contacter" line="right" className="button--white" href="mailto:maximedore43@gmail.com" /></div>
 						</div>
 					</div>

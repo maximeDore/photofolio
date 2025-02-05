@@ -1,0 +1,54 @@
+@layer base {
+   .richtext {
+      p, ul {
+         & + p, & + ul {
+            margin-top: 1.5rem;
+         }
+         & + h3 {
+            margin-top: 2rem;
+         }
+      }
+      ul {
+         li {
+            &::before {
+               content: "-";
+               padding: 0 0.5rem;
+            }
+         }
+      }
+   }
+
+	.h1 {
+		font-family: "Rubik", sans-serif;
+		font-size: 6.25rem;
+		line-height: 1;
+
+		@media screen and (max-width: 768px) {
+			font-size: 65px;
+		}
+	}
+	.h2 {
+		font-family: "Rubik", sans-serif;
+		font-size: 2.5rem;
+		line-height: 1.2;
+
+		@media screen and (max-width: 768px) {
+			font-size: 2rem;
+		}
+	}
+	.h3 {
+		font-family: "Rubik", sans-serif;
+		font-size: 2rem;
+		line-height: 1.2;
+
+		@media screen and (max-width: 768px) {
+			font-size: 1.5rem;
+		}
+	}
+
+	.subtitle {
+		font-family: "Rubik", sans-serif;
+		font-size: 14px;
+		font-weight: 300;
+	}
+}

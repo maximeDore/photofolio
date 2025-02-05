@@ -6,7 +6,7 @@
 	// ╚██████╔╝██║  ██║███████╗███████╗███████╗██║  ██║   ██║
 	//  ╚═════╝ ╚═╝  ╚═╝╚══════╝╚══════╝╚══════╝╚═╝  ╚═╝   ╚═╝
 	.gallery {
-		--gutter: 2rem;
+		--gutter: 2px;
 		--columns: 300px;
 
 		columns: var(--columns);
@@ -23,6 +23,10 @@
 				opacity: 0;
 				visibility: hidden;
 			}
+		}
+
+		&__button {
+			@apply flex-1 sm:flex-auto;
 		}
 
 		&__item {
@@ -142,7 +146,7 @@
 		}
 
 		@media screen and (max-width: 768px) {
-			--gutter: 1rem;
+			// --gutter: 1rem;
 			--columns: 2;
 		}
 	}
