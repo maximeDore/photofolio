@@ -34,7 +34,7 @@ const Contact = ({ active, onClosePopup }) => {
 					</div>
 					{/* Right */}
 					<div className="md:w-1/2 w-full md:mt-0 mt-10 md:text-center">
-						<Button text="Courriel" line="right" className="button--black" href="mailto:maximedore43@gmail.com" />
+						<Button text="Courriel" line="right" className="button--black" href="mailto:maximedore43@gmail.com" target="_blank" />
 					</div>
 				</div>
 			</div>

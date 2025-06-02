@@ -29,7 +29,7 @@ module.exports = {
 			xl: "1600px",
 		},
 		transitionDuration: {
-			DEFAULT: "250ms",
+			DEFAULT: "500ms",
 		},
 	},
 	plugins: [],
