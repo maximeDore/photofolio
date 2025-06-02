@@ -1,0 +1,64 @@
+@layer base {
+   .richtext {
+      p, ul {
+			font-weight: 300;
+			font-family: "Rubik", sans-serif;
+			font-size
+         & + p, & + ul {
+            margin-top: 1.5rem;
+         }
+         & + h3 {
+            margin-top: 2rem;
+         }
+      }
+      ul {
+         li {
+            &::before {
+               content: "-";
+               padding: 0 0.5rem;
+            }
+         }
+      }
+   }
+
+	.h1 {
+		font-family: "Hatton", sans-serif;
+		font-size: min(10rem, 10vw);
+		line-height: 1;
+		font-weight: 200;
+		font-style: italic;
+
+		@media screen and (max-width: 768px) {
+			font-size: 15vw;
+		}
+	}
+	.h2 {
+		font-family: "Hatton", sans-serif;
+		font-size: 4.5rem;
+		line-height: 1.2;
+		font-weight: 200;
+		font-style: italic;
+
+		@media screen and (max-width: 768px) {
+			font-size: 3rem;
+		}
+	}
+	.h3 {
+		font-family: "Hatton", sans-serif;
+		font-size: 3rem;
+		line-height: 1.2;
+		font-weight: 200;
+		font-style: italic;
+
+		@media screen and (max-width: 768px) {
+			font-size: 1.5rem;
+		}
+	}
+
+	.subtitle {
+		font-family: "Hatton", sans-serif;
+		font-size: 0.9rem;
+		font-weight: 300;
+		font-style: italic;
+	}
+}

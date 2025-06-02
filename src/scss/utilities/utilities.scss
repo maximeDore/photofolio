@@ -29,43 +29,17 @@
 		margin: 0 auto;
 	}
 
-	p {
-		& + & {
-			margin-top: 20px;
-		}
-	}
-	.h1 {
-		font-family: "Rubik", sans-serif;
-		font-size: 100px;
-		line-height: 1.2;
-
-		@media screen and (max-width: 768px) {
-			font-size: 65px;
-		}
-	}
-
-	.h2 {
-		font-family: "Rubik", sans-serif;
-		font-size: 40px;
-		line-height: 1.2;
-
-		@media screen and (max-width: 768px) {
-			font-size: 32px;
-		}
-	}
-	.subtitle {
-		font-family: "Rubik", sans-serif;
-		font-size: 14px;
-		font-weight: 300;
-	}
-
 	section {
 		position: relative;
 	}
 
 	.button {
+		font-family: "Hatton", sans-serif;
+		font-weight: 600;
+		font-style: italic;
 		transition: all 0.25s;
 		display: inline-flex;
+		justify-content: center;
 		align-items: center;
 		gap: 15px;
 		position: relative;
@@ -186,6 +160,12 @@
 
 			.light-mode & {
 				filter: invert(1);
+			}
+		}
+
+		@media screen and (max-width: 576px) {
+			&__line, img {
+				display: none;
 			}
 		}
 	}

@@ -21,20 +21,20 @@ const Contact = ({ active, onClosePopup }) => {
 			<div className="w-full h-full wrap padd bg-white relative z-[1] overflow-auto">
 				<div className="wrapper flex md:flex-nowrap flex-wrap items-center content-center h-full gap-4">
 					{/* Left */}
-					<div className="md:w-1/2 w-full">
+					<div className="md:w-1/2 w-full richtext">
 						<h2 className="h2 mb-8">Comment me contacter</h2>
 						<p>
 							Pour une estimation ou une demande d'information vous pouvez m'envoyer un message direct sur
 							Instagram ou un courriel en utilisant le bouton suivant.
 						</p>
-						<p>
+						{/* <p>
 							Merci de faire preuve d'indulgence. Être photographe n'est pas mon emploi à temps plein mais bien
 							une passion à temps partiel. Je vous répondrai dès que possible.
-						</p>
+						</p> */}
 					</div>
 					{/* Right */}
 					<div className="md:w-1/2 w-full md:mt-0 mt-10 md:text-center">
-						<Button text="Courriel" line="right" className="button--black" href="mailto:maximedore43@gmail.com" />
+						<Button text="Courriel" line="right" className="button--black" href="mailto:maximedore43@gmail.com" target="_blank" />
 					</div>
 				</div>
 			</div>

@@ -1,4 +1,4 @@
-import { instagram, linkedin, unsplash } from "../assets";
+import { instagram, linkedin, unsplash, troisieme } from "../assets";
 
 export const navLinks = [
 	// {
@@ -45,5 +45,11 @@ export const socialMedia = [
 		icon: linkedin,
 		link: "https://www.linkedin.com/in/maxime-dore/",
 		name: "Linkedin",
+	},
+	{
+		id: "social-media-4",
+		icon: troisieme,
+		link: "https://www.troisieme.ca/qui-nous-sommes",
+		name: "troisième",
 	},
 ];

@@ -25,20 +25,17 @@ const Navbar = ({ isScrolled }) => {
 
 			<Contact active={popup === "contact" ? true : false} onClosePopup={() => togglePopup()} />
 
-			<div className="wrapper w-full flex justify-between items-center" data-aos="fade-down">
-				<a href={window.location.origin} className="logo pointer-events-auto pt-2 pb-2" title="Retour en haut">
+			<div className="w-full flex justify-between items-center" data-aos="fade-down">
+				<a href={window.location.origin} className={`logo pointer-events-auto pt-2 pb-2 transition-transform ${isScrolled ? "transform-none" : "-translate-y-[120%]"}`} title="Retour en haut">
 					<Logo alt="Maxime Doré" className="xs:w-[120px] w-[60px] xs:h-[80px] h-[45px]" />
 					<img src={logo} alt="Maxime Doré" className="xs:w-[120px] w-[60px] xs:h-[80px] h-[45px] hidden" />
 				</a>
-				<ul className={`flex items-center justify-end  ${isScrolled ? "text-white" : "text-black"}`}>
+				<ul className={`flex items-center justify-end gap-2 transition-[padding]  ${isScrolled ? "text-white" : "text-black pr-16 sm:pr-sidebar"}`}>
 					{/* Nav links */}
 					{navLinks.map((link, index) => (
 						<li key={link.id}>
-							{/* TODO: Ajouter un état actif au scroll */}
 							<a
-								className={`nav__link transition-colors ${isScrolled ? " hover:text-primary" : " hover:text-white"} ${
-									index !== 0 ? "xs:ml-10 ml-6" : ""
-								} pointer-events-auto`}
+								className={`nav__link transition-colors ${isScrolled ? " hover:text-primary" : " hover:text-white"} pointer-events-auto p-4`}
 								href={`#${link.htmlID}`}
 								onClick={(e) => togglePopup(e, link.popup)}
 								data-popup={link.popup}

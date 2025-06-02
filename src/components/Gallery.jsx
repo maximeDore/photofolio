@@ -67,7 +67,7 @@ const Gallery = () => {
 		<section id="galerie" className="bg-black min-h-screen">
 			{/* Gallery nav */}
 			<div className="absolute inset-x-0 sm:right-auto top-[var(--padd)] bottom-[var(--padd)] z-[9] flex items-end sm:items-start pointer-events-none">
-				<div className="sticky bottom-0 sm:top-[100px] xs:mx-auto sm:mx-0 sm:w-0">
+				<div className="sticky bottom-0 w-full sm:top-[100px] xs:mx-auto sm:mx-0 sm:w-0">
 					<div className="gallery__tabs flex whitespace-nowrap pointer-events-auto">
 						<Button
 							className={`gallery__button button button--white button--sideways ${
@@ -107,7 +107,7 @@ const Gallery = () => {
 
 			{/* Gallery content */}
 			<div className="wrap padd overflow-hidden">
-				<div className="wrapper">
+				<div className="">
 					{/* Regular gallery */}
 					{gallery.length > 0 && (
 						<div className={`gallery__tab ${activeTab == "portfolio" ? "" : "tab--hidden"}`}>

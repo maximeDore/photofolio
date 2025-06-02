@@ -6,24 +6,14 @@ import photo3 from "./P1050348.jpg";
 import photo4 from "./P1050420.jpg";
 import photo5 from "./P1050468.jpg";
 import photo6 from "./P1050604.jpg";
-// import photo7 from "./P1083411.jpg";
-// import photo8 from "./P1083443.jpg";
-// import photo9 from "./P1083447.jpg";
-// import photo10 from "./P1083782.jpg";
-// import photo11 from "./P1083862.jpg";
-import photo12 from "./P1094314.jpg";
+import photo7 from "./P1083411.jpg";
 import photo13 from "./P1106223.jpg";
 import photo14 from "./P1106227.jpg";
-import photo15 from "./P1128772.jpg";
 import photo16 from "./P1128832.jpg";
-import photo17 from "./P1128924.jpg";
 import photo18 from "./P1139979.jpg";
 import photo19 from "./P1140028.jpg";
 import photo20 from "./P1151587.jpg";
-import photo21 from "./P1151740.jpg";
 import photo22 from "./P1175226.jpg";
-// import photo23 from "./P1208181.jpg";
-// import photo24 from "./P1208191.jpg";
 import photo25 from "./IMG_6166.jpg";
 import photo26 from "./IMG_6184.jpg";
 import photo27 from "./P1013283.jpg";
@@ -32,7 +22,6 @@ import photo29 from "./P1037770.jpg";
 import photo30 from "./P1038980.jpg";
 import photo31 from "./P1038985.jpg";
 import photo32 from "./P1308972.jpg";
-import photo33 from "./P1309014.jpg";
 import photo34 from "./ACP02559.jpg";
 import photo35 from "./ACP02869.jpg";
 import photo36 from "./ACP04100.jpg";
@@ -58,6 +47,41 @@ import photo55 from "./ACP09066.jpg";
 import photo56 from "./DJI_0110.jpg";
 import photo57 from "./DJI_0142.jpg";
 import photo58 from "./DSC05138.jpg";
+import photo59 from "./ACP00003.jpg";
+import photo60 from "./ACP00026.jpg";
+import photo61 from "./ACP00466.jpg";
+import photo62 from "./ACP00632.jpg";
+import photo63 from "./ACP01968.jpg";
+import photo64 from "./ACP02007.jpg";
+import photo65 from "./ACP03324.jpg";
+import photo66 from "./ACP03462.jpg";
+import photo67 from "./ACP03603.jpg";
+import photo68 from "./ACP03710.jpg";
+import photo69 from "./ACP04395.jpg";
+import photo70 from "./ACP04446.jpg";
+import photo71 from "./ACP04544.jpg";
+import photo72 from "./ACP04803.jpg";
+import photo73 from "./ACP04826.jpg";
+import photo74 from "./ACP05709.jpg";
+import photo75 from "./ACP06080.jpg";
+import photo76 from "./ACP06204.jpg";
+import photo77 from "./ACP06210.jpg";
+import photo78 from "./ACP08267.jpg";
+import photo79 from "./ACP09404.jpg";
+import photo80 from "./ACP09453.jpg";
+import photo81 from "./ACP09503.jpg";
+import photo82 from "./ACP09749.jpg";
+import photo83 from "./ACP09851.jpg";
+import photo84 from "./ACP09938.jpg";
+import photo85 from "./ACP09967.jpg";
+import photo86 from "./ACP09973.jpg";
+import photo87 from "./DJI_0280.jpg";
+import photo88 from "./DJI_0290.jpg";
+import photo89 from "./DSC04899.jpg";
+import photo90 from "./DSC05012.jpg";
+import photo91 from "./DSC05941.jpg";
+import photo92 from "./DSC05958.jpg";
+import photo93 from "./DSC05969.jpg";
 
 const gallery = [
 	{
@@ -156,97 +180,17 @@ const gallery = [
 		alt: null,
 		categories: [],
 	},
-	// {
-	// 	id: 7,
-	// 	src: photo7,
-	// 	location: "Mont Ouareau, Québec, Canada",
-	// 	title: null,
-	// 	description: null,
-	// 	links: {
-	// 		html: null,
-	// 	},
-	// 	date: new Date("2021-11-06"),
-	// 	width: 1920,
-	// 	height: 1080,
-	// 	color: "var(--dark)",
-	// 	alt: null,
-	// 	categories: [],
-	// },
-	// {
-	// 	id: 8,
-	// 	src: photo8,
-	// 	location: "Mont Ouareau, Québec, Canada",
-	// 	title: null,
-	// 	description: null,
-	// 	links: {
-	// 		html: null,
-	// 	},
-	// 	date: new Date("2021-11-06"),
-	// 	width: 1440,
-	// 	height: 1080,
-	// 	color: "var(--dark)",
-	// 	alt: null,
-	// 	categories: [],
-	// },
-	// {
-	// 	id: 9,
-	// 	src: photo9,
-	// 	location: "Mont Ouareau, Québec, Canada",
-	// 	title: null,
-	// 	description: null,
-	// 	links: {
-	// 		html: null,
-	// 	},
-	// 	date: new Date("2021-11-06"),
-	// 	width: 1440,
-	// 	height: 1080,
-	// 	color: "var(--dark)",
-	// 	alt: null,
-	// 	categories: [],
-	// },
-	// {
-	// 	id: 10,
-	// 	src: photo10,
-	// 	location: "Saint-Hippolyte, Québec, Canada",
-	// 	title: null,
-	// 	description: null,
-	// 	links: {
-	// 		html: null,
-	// 	},
-	// 	date: new Date("2021-11-13"),
-	// 	width: 1512,
-	// 	height: 1080,
-	// 	color: "var(--dark)",
-	// 	alt: null,
-	// 	categories: [],
-	// },
-	// {
-	// 	id: 11,
-	// 	src: photo11,
-	// 	location: "Saint-Hippolyte, Québec, Canada",
-	// 	title: null,
-	// 	description: null,
-	// 	links: {
-	// 		html: null,
-	// 	},
-	// 	date: new Date("2021-11-13"),
-	// 	width: 1440,
-	// 	height: 1080,
-	// 	color: "var(--dark)",
-	// 	alt: null,
-	// 	categories: [],
-	// },
 	{
-		id: 12,
-		src: photo12,
-		location: "Saint-Hippolyte, Québec, Canada",
+		id: 7,
+		src: photo7,
+		location: "Mont Ouareau, Québec, Canada",
 		title: null,
 		description: null,
 		links: {
 			html: null,
 		},
-		date: new Date("2021-11-13"),
-		width: 1440,
+		date: new Date("2021-11-06"),
+		width: 1920,
 		height: 1080,
 		color: "var(--dark)",
 		alt: null,
@@ -285,22 +229,6 @@ const gallery = [
 		categories: [],
 	},
 	{
-		id: 15,
-		src: photo15,
-		location: "Joliette, Québec, Canada",
-		title: null,
-		description: null,
-		links: {
-			html: null,
-		},
-		date: new Date("2022-02-20"),
-		width: 864,
-		height: 1080,
-		color: "var(--dark)",
-		alt: null,
-		categories: [],
-	},
-	{
 		id: 16,
 		src: photo16,
 		location: "Joliette, Québec, Canada",
@@ -311,22 +239,6 @@ const gallery = [
 		},
 		date: new Date("2022-02-20"),
 		width: 810,
-		height: 1080,
-		color: "var(--dark)",
-		alt: null,
-		categories: [],
-	},
-	{
-		id: 17,
-		src: photo17,
-		location: "Joliette, Québec, Canada",
-		title: null,
-		description: null,
-		links: {
-			html: null,
-		},
-		date: new Date("2022-02-20"),
-		width: 1080,
 		height: 1080,
 		color: "var(--dark)",
 		alt: null,
@@ -381,22 +293,6 @@ const gallery = [
 		categories: [],
 	},
 	{
-		id: 21,
-		src: photo21,
-		location: "Montréal, Québec, Canada",
-		title: null,
-		description: null,
-		links: {
-			html: null,
-		},
-		date: new Date("2022-04-10"),
-		width: 1440,
-		height: 1080,
-		color: "var(--dark)",
-		alt: null,
-		categories: [],
-	},
-	{
 		id: 22,
 		src: photo22,
 		location: "Saint-Lin-Laurentides, Québec, Canada",
@@ -412,38 +308,8 @@ const gallery = [
 		alt: null,
 		categories: [],
 	},
-	// {
-	// 	id: 23,
-	// 	src: photo23,
-	// 	location: "Toscane, Italie",
-	// 	title: null,
-	// 	description: null,
-	// 	links: {
-	// 		html: null,
-	// 	},
-	// 	date: new Date("2022-05-20"),
-	// 	width: 1920,
-	// 	height: 1080,
-	// 	color: "var(--dark)",
-	// 	alt: null,
-	// 	categories: [],
-	// },
-	// {
-	// 	id: 24,
-	// 	src: photo24,
-	// 	location: "San Quirico d'Orcia, Sienne, Italie",
-	// 	title: null,
-	// 	description: null,
-	// 	links: {
-	// 		html: null,
-	// 	},
-	// 	date: new Date("2022-05-20"),
-	// 	width: 1440,
-	// 	height: 1080,
-	// 	color: "var(--dark)",
-	// 	alt: null,
-	// 	categories: [],
-	// },
+	
+
 	{
 		id: 25,
 		src: photo25,
@@ -559,22 +425,6 @@ const gallery = [
 	{
 		id: 32,
 		src: photo32,
-		location: "Réserve faunique La Vérendrye",
-		title: null,
-		description: null,
-		links: {
-			html: null,
-		},
-		date: new Date("2022-08-26"),
-		width: 1440,
-		height: 1080,
-		color: "var(--dark)",
-		alt: null,
-		categories: [],
-	},
-	{
-		id: 33,
-		src: photo33,
 		location: "Réserve faunique La Vérendrye",
 		title: null,
 		description: null,
@@ -987,6 +837,566 @@ const gallery = [
 		color: "var(--dark)",
 		alt: null,
 		categories: ["evenement", "animal", "portrait"],
+	},
+	{
+		id: 59,
+		src: photo59,
+		location: "Longueuil, Québec, Canada",
+		title: "",
+		description: null,
+		links: {
+			html: null,
+		},
+		date: new Date("2024-07-07"),
+		width: 1620,
+		height: 1080,
+		color: "var(--dark)",
+		alt: null,
+		categories: ["skateboard", "sport"],
+	},
+	{
+		id: 60,
+		src: photo60,
+		location: "Montréal, Québec, Canada",
+		title: "Troisième",
+		description: null,
+		links: {
+			html: null,
+		},
+		date: new Date("2023-05-18"),
+		width: 1620,
+		height: 1080,
+		color: "var(--dark)",
+		alt: null,
+		categories: ["skateboard", "sport"],
+	},
+	{
+		id: 61,
+		src: photo61,
+		location: "Montréal, Québec, Canada",
+		title: "Montreal Skates",
+		description: null,
+		links: {
+			html: null,
+		},
+		date: new Date("2024-07-20"),
+		width: 720,
+		height: 1080,
+		color: "var(--dark)",
+		alt: null,
+		categories: ["skateboard", "sport"],
+	},
+	{
+		id: 62,
+		src: photo62,
+		location: "Drummondville, Québec, Canada",
+		title: "",
+		description: null,
+		links: {
+			html: null,
+		},
+		date: new Date("2024-08-11"),
+		width: 720,
+		height: 1080,
+		color: "var(--dark)",
+		alt: null,
+		categories: ["portrait", "animal"],
+	},
+	{
+		id: 63,
+		src: photo63,
+		location: "Montréal, Québec, Canada",
+		title: "",
+		description: null,
+		links: {
+			html: null,
+		},
+		date: new Date("2024-09-22"),
+		width: 720,
+		height: 1080,
+		color: "var(--dark)",
+		alt: null,
+		categories: ["skateboard", "sport"],
+	},
+	{
+		id: 64,
+		src: photo64,
+		location: "Montréal, Québec, Canada",
+		title: "",
+		description: null,
+		links: {
+			html: null,
+		},
+		date: new Date("2024-09-22"),
+		width: 1620,
+		height: 1080,
+		color: "var(--dark)",
+		alt: null,
+		categories: ["skateboard", "sport"],
+	},
+	{
+		id: 65,
+		src: photo65,
+		location: "Montréal, Québec, Canada",
+		title: "",
+		description: null,
+		links: {
+			html: null,
+		},
+		date: new Date("2023-07-16"),
+		width: 1620,
+		height: 1080,
+		color: "var(--dark)",
+		alt: null,
+		categories: ["architecture"],
+	},
+	{
+		id: 66,
+		src: photo66,
+		location: "Montréal, Québec, Canada",
+		title: "",
+		description: null,
+		links: {
+			html: null,
+		},
+		date: new Date("2024-10-26"),
+		width: 720,
+		height: 1080,
+		color: "var(--dark)",
+		alt: null,
+		categories: ["portrait", "film", "bnw"],
+	},
+	{
+		id: 67,
+		src: photo67,
+		location: "Montréal, Québec, Canada",
+		title: "",
+		description: null,
+		links: {
+			html: null,
+		},
+		date: new Date("2024-10-30"),
+		width: 936,
+		height: 1080,
+		color: "var(--dark)",
+		alt: null,
+		categories: ["architecture", "film", "bnw"],
+	},
+	{
+		id: 68,
+		src: photo68,
+		location: "Sherbrooke, Québec, Canada",
+		title: "Troisième x Bravad",
+		description: null,
+		links: {
+			html: null,
+		},
+		date: new Date("2024-11-01"),
+		width: 720,
+		height: 1080,
+		color: "var(--dark)",
+		alt: null,
+		categories: ["portrait"],
+	},
+	{
+		id: 69,
+		src: photo69,
+		location: "Montréal, Québec, Canada",
+		title: "",
+		description: null,
+		links: {
+			html: null,
+		},
+		date: new Date("2023-08-13"),
+		width: 1620,
+		height: 1080,
+		color: "var(--dark)",
+		alt: null,
+		categories: ["concert"],
+	},
+	{
+		id: 70,
+		src: photo70,
+		location: "Montréal, Québec, Canada",
+		title: "",
+		description: null,
+		links: {
+			html: null,
+		},
+		date: new Date("2023-08-13"),
+		width: 720,
+		height: 1080,
+		color: "var(--dark)",
+		alt: null,
+		categories: ["architecture"],
+	},
+	{
+		id: 71,
+		src: photo71,
+		location: "Réserve faunique La Vérendrye",
+		title: "Canot-camping",
+		description: null,
+		links: {
+			html: null,
+		},
+		date: new Date("2023-08-18"),
+		width: 1620,
+		height: 1080,
+		color: "var(--dark)",
+		alt: null,
+		categories: ["outdoors"],
+	},
+	{
+		id: 72,
+		src: photo72,
+		location: "Réserve faunique La Vérendrye",
+		title: "Canot-camping",
+		description: null,
+		links: {
+			html: null,
+		},
+		date: new Date("2023-08-19"),
+		width: 1620,
+		height: 1080,
+		color: "var(--dark)",
+		alt: null,
+		categories: ["outdoors"],
+	},
+	{
+		id: 73,
+		src: photo73,
+		location: "Réserve faunique La Vérendrye",
+		title: "Canot-camping",
+		description: null,
+		links: {
+			html: null,
+		},
+		date: new Date("2023-08-19"),
+		width: 720,
+		height: 1080,
+		color: "var(--dark)",
+		alt: null,
+		categories: ["outdoors"],
+	},
+	{
+		id: 74,
+		src: photo74,
+		location: "Rawdon, Québec, Canada",
+		title: "",
+		description: null,
+		links: {
+			html: null,
+		},
+		date: new Date("2023-08-27"),
+		width: 720,
+		height: 1080,
+		color: "var(--dark)",
+		alt: null,
+		categories: ["macro"],
+	},
+	{
+		id: 75,
+		src: photo75,
+		location: "Rawdon, Québec, Canada",
+		title: "",
+		description: null,
+		links: {
+			html: null,
+		},
+		date: new Date("2023-08-27"),
+		width: 720,
+		height: 1080,
+		color: "var(--dark)",
+		alt: null,
+		categories: [],
+	},
+	{
+		id: 76,
+		src: photo76,
+		location: "Rawdon, Québec, Canada",
+		title: "",
+		description: null,
+		links: {
+			html: null,
+		},
+		date: new Date("2023-08-27"),
+		width: 720,
+		height: 1080,
+		color: "var(--dark)",
+		alt: null,
+		categories: [],
+	},
+	{
+		id: 77,
+		src: photo77,
+		location: "Rawdon, Québec, Canada",
+		title: "",
+		description: null,
+		links: {
+			html: null,
+		},
+		date: new Date("2023-08-27"),
+		width: 1620,
+		height: 1080,
+		color: "var(--dark)",
+		alt: null,
+		categories: [],
+	},
+	{
+		id: 78,
+		src: photo78,
+		location: "",
+		title: "Éclipse solaire totale 2024",
+		description: null,
+		links: {
+			html: null,
+		},
+		date: new Date("2024-04-08"),
+		width: 1080,
+		height: 1080,
+		color: "var(--dark)",
+		alt: null,
+		categories: ["astro"],
+	},
+	{
+		id: 79,
+		src: photo79,
+		location: "Montréal, Québec, Canada",
+		title: "Okoso bags",
+		description: null,
+		links: {
+			html: null,
+		},
+		date: new Date("2024-06-12"),
+		width: 720,
+		height: 1080,
+		color: "var(--dark)",
+		alt: null,
+		categories: ["produit", "skateboard"],
+	},
+	{
+		id: 80,
+		src: photo80,
+		location: "Montréal, Québec, Canada",
+		title: "Okoso bags",
+		description: null,
+		links: {
+			html: null,
+		},
+		date: new Date("2024-06-12"),
+		width: 608,
+		height: 1080,
+		color: "var(--dark)",
+		alt: null,
+		categories: ["produit", "skateboard"],
+	},
+	{
+		id: 81,
+		src: photo81,
+		location: "Montréal, Québec, Canada",
+		title: "Okoso bags",
+		description: null,
+		links: {
+			html: null,
+		},
+		date: new Date("2024-06-12"),
+		width: 720,
+		height: 1080,
+		color: "var(--dark)",
+		alt: null,
+		categories: ["produit", "skateboard"],
+	},
+	{
+		id: 82,
+		src: photo82,
+		location: "Montréal, Québec, Canada",
+		title: "Montreal Skates",
+		description: null,
+		links: {
+			html: null,
+		},
+		date: new Date("2024-06-12"),
+		width: 1080,
+		height: 1080,
+		color: "var(--dark)",
+		alt: null,
+		categories: ["produit", "skateboard"],
+	},
+	{
+		id: 83,
+		src: photo83,
+		location: "Montréal, Québec, Canada",
+		title: "Troisième",
+		description: null,
+		links: {
+			html: null,
+		},
+		date: new Date("2023-05-18"),
+		width: 720,
+		height: 1080,
+		color: "var(--dark)",
+		alt: null,
+		categories: ["portrait"],
+	},
+	{
+		id: 84,
+		src: photo84,
+		location: "Montréal, Québec, Canada",
+		title: "Troisième",
+		description: null,
+		links: {
+			html: null,
+		},
+		date: new Date("2023-05-18"),
+		width: 1512,
+		height: 1080,
+		color: "var(--dark)",
+		alt: null,
+		categories: ["portrait"],
+	},
+	{
+		id: 85,
+		src: photo85,
+		location: "Montréal, Québec, Canada",
+		title: "Troisième",
+		description: null,
+		links: {
+			html: null,
+		},
+		date: new Date("2023-05-18"),
+		width: 1620,
+		height: 1080,
+		color: "var(--dark)",
+		alt: null,
+		categories: ["portrait"],
+	},
+	{
+		id: 86,
+		src: photo86,
+		location: "Montréal, Québec, Canada",
+		title: "Troisième",
+		description: null,
+		links: {
+			html: null,
+		},
+		date: new Date("2023-05-18"),
+		width: 1620,
+		height: 1080,
+		color: "var(--dark)",
+		alt: null,
+		categories: ["portrait"],
+	},
+	{
+		id: 87,
+		src: photo87,
+		location: "",
+		title: "",
+		description: null,
+		links: {
+			html: null,
+		},
+		date: new Date("2023-08-19"),
+		width: 1350,
+		height: 1080,
+		color: "var(--dark)",
+		alt: null,
+		categories: ["drone", "camping"],
+	},
+	{
+		id: 88,
+		src: photo88,
+		location: "",
+		title: "",
+		description: null,
+		links: {
+			html: null,
+		},
+		date: new Date("2023-08-19"),
+		width: 1440,
+		height: 1080,
+		color: "var(--dark)",
+		alt: null,
+		categories: ["drone", "camping"],
+	},
+	{
+		id: 89,
+		src: photo89,
+		location: "Montréal, Québec, Canada",
+		title: "Troisième",
+		description: null,
+		links: {
+			html: null,
+		},
+		date: new Date("2023-05-18"),
+		width: 720,
+		height: 1080,
+		color: "var(--dark)",
+		alt: null,
+		categories: ["portrait"],
+	},
+	{
+		id: 90,
+		src: photo90,
+		location: "Montréal, Québec, Canada",
+		title: "Troisième",
+		description: null,
+		links: {
+			html: null,
+		},
+		date: new Date("2023-05-18"),
+		width: 1620,
+		height: 1080,
+		color: "var(--dark)",
+		alt: null,
+		categories: ["portrait"],
+	},
+	{
+		id: 91,
+		src: photo91,
+		location: "Saint-Lazare, Québec, Canada",
+		title: "",
+		description: null,
+		links: {
+			html: null,
+		},
+		date: new Date("2024-06-11"),
+		width: 720,
+		height: 1080,
+		color: "var(--dark)",
+		alt: null,
+		categories: ["portrait", "animal"],
+	},
+	{
+		id: 92,
+		src: photo92,
+		location: "Saint-Lazare, Québec, Canada",
+		title: "",
+		description: null,
+		links: {
+			html: null,
+		},
+		date: new Date("2024-06-11"),
+		width: 720,
+		height: 1080,
+		color: "var(--dark)",
+		alt: null,
+		categories: ["portrait", "animal"],
+	},
+	{
+		id: 93,
+		src: photo93,
+		location: "Saint-Lazare, Québec, Canada",
+		title: "",
+		description: null,
+		links: {
+			html: null,
+		},
+		date: new Date("2024-06-11"),
+		width: 1620,
+		height: 1080,
+		color: "var(--dark)",
+		alt: null,
+		categories: ["portrait", "animal"],
 	},
 ];
 
