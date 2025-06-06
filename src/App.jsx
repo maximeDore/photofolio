@@ -5,8 +5,6 @@ import { Navbar, Hero, Gallery, Footer, Spinner, BackToTop, Konami } from "./com
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-// TODO: Version bilingue?
-
 const App = () => {
 	const [isScrolled, setIsScrolled] = useState(false);
 	const [isLoaded, setIsLoaded] = useState(false);

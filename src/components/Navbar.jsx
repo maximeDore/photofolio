@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import { logo } from "../assets";
-import { navLinks, socialMedia } from "../constants";
+import { navLinks } from "../constants";
 import About from "./About";
 import Contact from "./Contact";
 

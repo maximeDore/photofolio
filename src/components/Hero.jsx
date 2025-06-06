@@ -74,29 +74,32 @@ const Hero = () => {
 				{/* Title */}
 				<div className="wrap padd absolute bottom-0 left-0 right-0 lg:-right-sidebar z-[2] pointer-events-none">
 					<div className="wrapper">
-						<h1 className="h1 inline-block pointer-events-auto drop-shadow-md shadow-black mr-10">
+						<h1 className="sr-only">Maxime Doré | Développeur Web - Photographe</h1>
+						<div className="h1 block pointer-events-auto drop-shadow-md shadow-black mr-10">
 							<span
-								className="inline-block"
-								data-aos="fade-left"
-								data-aos-duration="750"
-								data-aos-delay="1000"
-								data-aos-easing="ease"
+								className="inline-block -mx-1 px-1 overflow-hidden"
+								data-aos
 							>
-								Maxime
+								<span className="inline-block transition-[transform,opacity] opacity-0 translate-y-full -translate-x-2 rotate-45 scale-50 origin-top-left parent-aos:opacity-100 parent-aos:transform-none duration-[800ms] delay-1000">M</span>
+								<span className="inline-block transition-[transform,opacity] opacity-0 translate-y-full -translate-x-2 rotate-45 scale-50 origin-top-left parent-aos:opacity-100 parent-aos:transform-none duration-[800ms] delay-[1020ms]">a</span>
+								<span className="inline-block transition-[transform,opacity] opacity-0 translate-y-full -translate-x-2 rotate-45 scale-50 origin-top-left parent-aos:opacity-100 parent-aos:transform-none duration-[800ms] delay-[1040ms]">x</span>
+								<span className="inline-block transition-[transform,opacity] opacity-0 translate-y-full -translate-x-2 rotate-45 scale-50 origin-top-left parent-aos:opacity-100 parent-aos:transform-none duration-[800ms] delay-[1060ms]">i</span>
+								<span className="inline-block transition-[transform,opacity] opacity-0 translate-y-full -translate-x-2 rotate-45 scale-50 origin-top-left parent-aos:opacity-100 parent-aos:transform-none duration-[800ms] delay-[1080ms]">m</span>
+								<span className="inline-block transition-[transform,opacity] opacity-0 translate-y-full -translate-x-2 rotate-45 scale-50 origin-top-left parent-aos:opacity-100 parent-aos:transform-none duration-[800ms] delay-[1100ms]">e</span>
 							</span>{" "}
 							<span
-								className="text-primary inline-block"
-								data-aos="fade-right"
-								data-aos-duration="750"
-								data-aos-delay="1250"
-								data-aos-easing="ease"
+								className="text-primary inline-block -mx-1 px-1 overflow-hidden"
+								data-aos
 							>
-								Doré
+								<span className="inline-block transition-[transform,opacity] opacity-0 translate-y-full -translate-x-2 rotate-45 scale-50 origin-top-left parent-aos:opacity-100 parent-aos:transform-none duration-[800ms] delay-[1120ms]">D</span>
+								<span className="inline-block transition-[transform,opacity] opacity-0 translate-y-full -translate-x-2 rotate-45 scale-50 origin-top-left parent-aos:opacity-100 parent-aos:transform-none duration-[800ms] delay-[1140ms]">o</span>
+								<span className="inline-block transition-[transform,opacity] opacity-0 translate-y-full -translate-x-2 rotate-45 scale-50 origin-top-left parent-aos:opacity-100 parent-aos:transform-none duration-[800ms] delay-[1160ms]">r</span>
+								<span className="inline-block transition-[transform,opacity] opacity-0 translate-y-full -translate-x-2 rotate-45 scale-50 origin-top-left parent-aos:opacity-100 parent-aos:transform-none duration-[800ms] delay-[1180ms]">é</span>
 							</span>
-						</h1>
-						<p className="subtitle pt-3 pl-1" data-aos="fade" data-aos-delay="2000" data-aos-easing="ease">
+						</div>
+						<div className="inline-block subtitle pt-3 pl-1" data-aos="fade" data-aos-delay="1500" data-aos-easing="ease">
 							Développeur Web - <span className="text-primary">Photographe</span>
-						</p>
+						</div>
 					</div>
 				</div>
 				{/* Slider */}

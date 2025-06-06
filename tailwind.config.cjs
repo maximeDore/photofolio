@@ -1,8 +1,23 @@
 /** @type {import('tailwindcss').Config} */
+/* eslint-disable comma-dangle */
+const plugin = require("tailwindcss/plugin")
+
 module.exports = {
 	content: ["./index.html", "./src/**/*.{js,jsx}"],
 	mode: "jit",
 	theme: {
+      /*
+      -------------------------------------
+      TRANSITIONS
+      -------------------------------------
+      */
+      transitionDuration: {
+         DEFAULT: "600ms"
+      },
+      transitionTimingFunction: {
+         DEFAULT: "cubic-bezier(.62,.05,.29,1)",
+         bounce: "cubic-bezier(.79,2.25,.65,.5)"
+      },
 		extend: {
 			colors: {
 				pitchBlack: "var(--pitchBlack)",
@@ -28,9 +43,11 @@ module.exports = {
 			lg: "1200px",
 			xl: "1600px",
 		},
-		transitionDuration: {
-			DEFAULT: "500ms",
-		},
 	},
-	plugins: [],
+	plugins: [
+      plugin(function ({ addVariant }) {
+         // Document
+         addVariant("parent-aos", ".aos-init.aos-animate &")
+		})
+	],
 };
