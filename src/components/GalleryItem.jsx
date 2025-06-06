@@ -30,8 +30,6 @@ const GalleryItem = ({ photo, type, onActivate, onDeactivate, isActive, galleryL
 			className={`group gallery__item ${isActive ? "is-active" : ""}`}
 			style={{ backgroundColor: color ?? "var(--dark)" }}
 			data-index={index}
-			data-aos="fade"
-			data-aos-duration="500"
 		>
 			{/* Image number */}
 			{/* {isDump > 0 && (
