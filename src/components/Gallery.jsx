@@ -1,5 +1,6 @@
 // Hooks
 import { useState, useEffect } from "react";
+
 // Components
 import Spinner from "./Spinner";
 import GalleryTab from "./GalleryTab";
@@ -36,14 +37,18 @@ const api = createApi({
 
 // TODO: Ajouter un hash à l'URL et ouvrir l'image concernée au load
 
-const Gallery = () => {
+const Gallery = ({ lenisInstance }) => {
 	const [activeTab, setActiveTab] = useState("portfolio");
 	// Unsplash API data state
 	const [data, setPhotosResponse] = useState(null);
+	
+	const scrollToSection = () => {
+		if (lenisInstance) lenisInstance.scrollTo("#galerie");
+	};
 
 	const changeTab = (slug) => {
 		setActiveTab(slug);
-		window.scrollTo({ top: window.innerHeight, behavior: "smooth" });
+		scrollToSection(slug)
 	};
 
 	useEffect(() => {
@@ -66,7 +71,7 @@ const Gallery = () => {
 	return (
 		<section id="galerie" className="bg-black min-h-screen">
 			{/* Gallery nav */}
-			<div className="absolute inset-x-0 sm:right-auto top-[var(--padd)] bottom-[var(--padd)] z-[9] flex items-end sm:items-start pointer-events-none">
+			<div className="fixed sm:absolute inset-x-0 sm:right-auto top-[var(--padd)] bottom-0 sm:bottom-[var(--padd)] z-[9] flex items-end sm:items-start pointer-events-none">
 				<div className="sticky bottom-0 w-full sm:top-[100px] xs:mx-auto sm:mx-0 sm:w-0">
 					<div className="gallery__tabs flex whitespace-nowrap pointer-events-auto">
 						<Button
@@ -106,7 +111,7 @@ const Gallery = () => {
 			</div>
 
 			{/* Gallery content */}
-			<div className="wrap padd overflow-hidden">
+			<div className="padd overflow-hidden">
 				<div className="">
 					{/* Regular gallery */}
 					{gallery.length > 0 && (

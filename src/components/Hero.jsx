@@ -68,16 +68,16 @@ const Hero = () => {
 	}, [lightMode]);
 
 	return (
-		<header id="accueil" className="hero flex overflow-hidden" data-aos="fade" data-aos-delay="750">
+		<header id="accueil" className="hero flex overflow-hidden">
 			{/* Left content */}
-			<div className="hero__content bg-black w-full relative overflow-hidden">
+			<div className="hero__content bg-black w-full">
 				{/* Title */}
-				<div className="wrap padd absolute bottom-0 left-0 right-0 lg:-right-sidebar z-[2] pointer-events-none">
+				<div className="wrap padd absolute bottom-0 left-0 right-mobile-sidebar sm:right-sidebar z-[2] pointer-events-none">
 					<div className="wrapper">
 						<h1 className="sr-only">Maxime Doré | Développeur Web - Photographe</h1>
 						<div className="h1 block pointer-events-auto drop-shadow-md shadow-black mr-10">
 							<span
-								className="inline-block -mx-1 px-1 overflow-hidden"
+								className="inline-block -mx-1 px-1 pt-[0.1em] overflow-hidden"
 								data-aos
 							>
 								<span className="inline-block transition-[transform,opacity] opacity-0 translate-y-full -translate-x-2 rotate-45 scale-50 origin-top-left parent-aos:opacity-100 parent-aos:transform-none duration-[800ms] delay-1000">M</span>
@@ -88,7 +88,7 @@ const Hero = () => {
 								<span className="inline-block transition-[transform,opacity] opacity-0 translate-y-full -translate-x-2 rotate-45 scale-50 origin-top-left parent-aos:opacity-100 parent-aos:transform-none duration-[800ms] delay-[1100ms]">e</span>
 							</span>{" "}
 							<span
-								className="text-primary inline-block -mx-1 px-1 overflow-hidden"
+								className="text-primary inline-block -mx-1 px-1 pt-[0.1em] overflow-hidden"
 								data-aos
 							>
 								<span className="inline-block transition-[transform,opacity] opacity-0 translate-y-full -translate-x-2 rotate-45 scale-50 origin-top-left parent-aos:opacity-100 parent-aos:transform-none duration-[800ms] delay-[1120ms]">D</span>
@@ -103,7 +103,7 @@ const Hero = () => {
 					</div>
 				</div>
 				{/* Slider */}
-				<div className="slider slider--home absolute left-0 top-0 bottom-0 w-full">
+				<div className="slider slider--home fixed inset-0 right-mobile-sidebar md:right-sidebar">
 					<Swiper
 						{...swiperParams}
 						onSwiper={(swiper) => {
@@ -120,9 +120,8 @@ const Hero = () => {
 					</Swiper>
 				</div>
 			</div>
-
 			{/* Right sidebar */}
-			<div className="hero__sidebar bg-white sm:w-sidebar w-mobile-sidebar text-black shrink-0 relative">
+			<div className="hero__sidebar bg-white sm:w-sidebar w-mobile-sidebar text-black shrink-0 relative z-10">
 				{/* Lightmode button */}
 				{/* <button
 					className="absolute bottom-[30px] xl:bottom-0 xl:top-[20px] right-[50%] translate-x-[50%] w-[40px] h-[40px] shadow-md transition-all hover:shadow-lg hover:scale-125 rounded-full"
@@ -143,7 +142,6 @@ const Hero = () => {
 						alt="toggle-dark-mode"
 					/>
 				</button> */}
-
 				{/* Thumbnail navigation */}
 				<div
 					className="slider__nav z-[1] cursor-pointer"
@@ -153,7 +151,6 @@ const Hero = () => {
 					onClick={nextSlide}
 					title="Image suivante"
 				>
-					{/* TODO: Ajouter un progress avant la prochaine slide. Idée : transitionner le grayscale */}
 					<Swiper
 						{...swiperParams}
 						onSwiper={(swiper) => {

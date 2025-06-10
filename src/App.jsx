@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { ReactLenis, useLenis } from 'lenis/react'
 
 import { Navbar, Hero, Gallery, Footer, Spinner, BackToTop, Konami } from "./components";
 
@@ -9,16 +10,15 @@ const App = () => {
 	const [isScrolled, setIsScrolled] = useState(false);
 	const [isLoaded, setIsLoaded] = useState(false);
 	const [isKonami, setIsKonami] = useState(false);
-	const [y, setY] = useState(window.scrollY);
+	
+	// Lenis scroll
+	const lenis = useLenis((lenis) => {
+		// called every scroll
+		handleScroll(lenis.targetScroll);
+	})
 
-	const handleScroll = (e) => {
-		const window = e.currentTarget;
-		if (y > window.innerHeight * 0.9) {
-			setIsScrolled(true);
-		} else {
-			setIsScrolled(false);
-		}
-		setY(window.scrollY);
+	const handleScroll = (y) => {
+		setIsScrolled(y > window.innerHeight * 0.9);
 	};
 
 	// KONAMI CODE
@@ -64,16 +64,6 @@ const App = () => {
 		setIsLoaded(true);
 	}, []);
 
-	// Scroll state
-	useEffect(() => {
-		window.addEventListener("scroll", (e) => handleScroll(e));
-
-		return () => {
-			// return a cleanup function to unregister our function since its gonna run multiple times
-			window.removeEventListener("scroll", (e) => handleScroll(e));
-		};
-	}, [y]);
-
 	if (isKonami) {
 		return <Konami />
 	}
@@ -81,6 +71,7 @@ const App = () => {
 	return (
 		<>
 			<Spinner className={`${isScrolled ? "is-scrolled" : ""}  ${isLoaded ? "is-loaded" : ""}`} />
+			<ReactLenis root />
 			<div className={`bg-black w-full ${isScrolled ? "is-scrolled" : ""}  ${isLoaded ? "is-loaded" : ""}`}>
 				{/* Nav */}
 				<Navbar isScrolled={isScrolled} />
@@ -90,7 +81,7 @@ const App = () => {
 
 				{/* Content */}
 				<main>
-					<Gallery />
+					<Gallery lenisInstance={lenis} />
 					<BackToTop isScrolled={isScrolled} />
 					<Footer />
 				</main>

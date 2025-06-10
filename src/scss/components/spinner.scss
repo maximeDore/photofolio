@@ -6,15 +6,15 @@
 	// ███████║██║     ██║██║ ╚████║██║ ╚████║███████╗██║  ██║
 	// ╚══════╝╚═╝     ╚═╝╚═╝  ╚═══╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝
 	.spinner {
+
 		#root > &-container {
-			transition: opacity 0.5s 0.5s;
-			position: fixed;
-			bottom: 50%;
-			right: 50%;
-			transform: translate(50%, 50%);
+			@apply fixed inset-0 bg-black;
+			transition: clip-path 0.75s 0.75s;
+			clip-path: polygon(-10% 0, 110% 0, 100% 100%, -100% 100%);
+			z-index: 1000;
 
 			&.is-loaded {
-				opacity: 0;
+				clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
 			}
 		}
 		&__inner {
@@ -28,6 +28,24 @@
 				background: var(--primary);
 				animation: loader 1s infinite forwards;
 			}
+		}
+	}
+
+	@keyframes loader {
+		0% {
+			transform: scaleX(0);
+			transform-origin: left;
+		}
+		49% {
+			transform-origin: left;
+		}
+		50% {
+			transform: scaleX(100%);
+			transform-origin: right;
+		}
+		100% {
+			transform-origin: right;
+			transform: scaleX(0);
 		}
 	}
 }

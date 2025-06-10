@@ -35,7 +35,7 @@ const Navbar = ({ isScrolled }) => {
 					{navLinks.map((link, index) => (
 						<li key={link.id}>
 							<a
-								className={`nav__link transition-colors ${isScrolled ? " hover:text-primary" : " hover:text-white"} pointer-events-auto p-4`}
+								className={`nav__link transition-colors hover:text-primary pointer-events-auto p-4`}
 								href={`#${link.htmlID}`}
 								onClick={(e) => togglePopup(e, link.popup)}
 								data-popup={link.popup}

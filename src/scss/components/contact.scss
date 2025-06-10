@@ -31,22 +31,4 @@
 			transform: translateX(-15%);
 		}
 	}
-
-	@keyframes loader {
-		0% {
-			transform: scaleX(0);
-			transform-origin: left;
-		}
-		49% {
-			transform-origin: left;
-		}
-		50% {
-			transform: scaleX(100%);
-			transform-origin: right;
-		}
-		100% {
-			transform-origin: right;
-			transform: scaleX(0);
-		}
-	}
 }

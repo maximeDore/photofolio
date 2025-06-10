@@ -1,19 +1,19 @@
 /* base layer */
-@import "./base/root.scss";
-@import "./base/richtext.scss";
-@import "./base/fonts.scss";
+@use "./base/root.scss";
+@use "./base/richtext.scss";
+@use "./base/fonts.scss";
 
 /* utilities layer */
-@import "./utilities/utilities.scss";
+@use "./utilities/utilities.scss";
 
 /* components layer */
-@import "./components/popup.scss";
-@import "./components/contact.scss";
-@import "./components/about.scss";
-@import "./components/hero.scss";
-@import "./components/gallery.scss";
-@import "./components/spinner.scss";
-@import "./components/footer.scss";
+@use "./components/popup.scss";
+@use "./components/contact.scss";
+@use "./components/about.scss";
+@use "./components/hero.scss";
+@use "./components/gallery.scss";
+@use "./components/spinner.scss";
+@use "./components/footer.scss";
 
 @tailwind base;
 @tailwind utilities;
