@@ -3,9 +3,6 @@ import { ReactLenis, useLenis } from 'lenis/react'
 
 import { Navbar, Hero, Gallery, Footer, Spinner, BackToTop, Konami } from "./components";
 
-import AOS from "aos";
-import "aos/dist/aos.css";
-
 const App = () => {
 	const [isScrolled, setIsScrolled] = useState(false);
 	const [isLoaded, setIsLoaded] = useState(false);
@@ -56,12 +53,9 @@ const App = () => {
 
 	// On load
 	useEffect(() => {
-		AOS.init({ duration: 1000 });
-		AOS.refresh();
-
 		document.onkeyup = keyUp;
 
-		setIsLoaded(true);
+		setTimeout(() => { setIsLoaded(true) }, 500);
 	}, []);
 
 	if (isKonami) {

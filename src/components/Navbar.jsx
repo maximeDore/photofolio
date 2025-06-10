@@ -21,21 +21,22 @@ const Navbar = ({ isScrolled }) => {
 
 	return (
 		<nav id="nav" className="w-full fixed top-0 left-0 wrap z-40 pointer-events-none">
+			{/* Popups */}
 			<About active={popup === "about" ? true : false} onClosePopup={() => togglePopup()} />
-
 			<Contact active={popup === "contact" ? true : false} onClosePopup={() => togglePopup()} />
 
-			<div className="w-full flex justify-between items-center" data-aos="fade-down">
-				<a href={window.location.origin} className={`logo pointer-events-auto pt-2 pb-2 transition-transform ${isScrolled ? "transform-none" : "-translate-y-[120%]"}`} title="Retour en haut">
+			{/* Navbar */}
+			<div className="w-full flex justify-end sm:justify-between items-center" data-aos="fade-down">
+				<a href={window.location.origin} className={`hidden sm:block pointer-events-auto pt-2 pb-2 transition-transform ${isScrolled ? "transform-none" : "-translate-y-[120%]"}`} title="Retour en haut">
 					<Logo alt="Maxime Doré" className="xs:w-[120px] w-[60px] xs:h-[80px] h-[45px]" />
 					<img src={logo} alt="Maxime Doré" className="xs:w-[120px] w-[60px] xs:h-[80px] h-[45px] hidden" />
 				</a>
-				<ul className={`flex items-center justify-end gap-2 transition-[padding]  ${isScrolled ? "text-white" : "text-black pr-16 sm:pr-sidebar"}`}>
+				<ul className={`flex items-center justify-end gap-2 px-2 transition-[margin] pointer-events-auto bg-white/20 backdrop-blur-sm ${isScrolled ? "text-white" : "text-black mr-16 sm:mr-sidebar"}`}>
 					{/* Nav links */}
 					{navLinks.map((link, index) => (
 						<li key={link.id}>
 							<a
-								className={`nav__link transition-colors hover:text-primary pointer-events-auto p-4`}
+								className={`nav__link font-title block transition-colors hover:text-primary p-4`}
 								href={`#${link.htmlID}`}
 								onClick={(e) => togglePopup(e, link.popup)}
 								data-popup={link.popup}

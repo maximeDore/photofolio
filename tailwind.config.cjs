@@ -18,6 +18,15 @@ module.exports = {
          DEFAULT: "cubic-bezier(.62,.05,.29,1)",
          bounce: "cubic-bezier(.79,2.25,.65,.5)"
       },
+      /*
+      -------------------------------------
+      FONTS FAMILY
+      -------------------------------------
+      */
+      fontFamily: {
+         title: ["Hatton", "sans-serif"],
+         body: ["Rubik", "sans-serif"]
+      },
 		extend: {
 			colors: {
 				pitchBlack: "var(--pitchBlack)",
@@ -47,6 +56,7 @@ module.exports = {
 	plugins: [
       plugin(function ({ addVariant }) {
          // Document
+         addVariant("is-loaded", ".is-loaded &")
          addVariant("parent-aos", ".aos-init.aos-animate &")
 		})
 	],

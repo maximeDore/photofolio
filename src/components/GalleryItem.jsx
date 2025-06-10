@@ -18,6 +18,16 @@ const GalleryItem = ({ photo, type, onActivate, onDeactivate, isActive, galleryL
 	const likes = isUnsplash ? photo.likes : 0;
 	const location = isUnsplash || isDump ? "" : photo.location;
 	const date = photo.created_at ? new Date(photo.created_at) : photo.date;
+	
+	const generateUnsplashSrcSet = () => {
+		if (!isUnsplash || !photo.urls) return null
+		return `${photo.urls.thumb} 200w,
+			${photo.urls.small} 400w,
+			${photo.urls.regular} 1080w,
+			${photo.urls.full} 2000w`
+	}
+
+	const srcset = generateUnsplashSrcSet()
 
 	const [isLoaded, setIsLoaded] = useState(false);
 
@@ -75,9 +85,10 @@ const GalleryItem = ({ photo, type, onActivate, onDeactivate, isActive, galleryL
 						<img src={chevronLeft} width="16" height="27" alt="précédent" />
 					</button>
 				)}
-				<div className="relative flex justify-center">
+				<div className="item__popup-inner relative flex justify-center">
 					<Img
 						src={src}
+						srcSet={srcset}
 						width={width && width > 0 && width}
 						height={height && height > 0 && height}
 						loading="lazy"
@@ -96,7 +107,7 @@ const GalleryItem = ({ photo, type, onActivate, onDeactivate, isActive, galleryL
 									title="Visionner sur Unsplash"
 									target="_blank"
 								>
-									<img src={unsplash} className=" w-[28px] h-[28px]" alt="unsplash" />
+									<img src={unsplash} className="w-[28px] h-[28px]" alt="unsplash" />
 								</a>
 								{likes > 0 && (
 									<div

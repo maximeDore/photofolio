@@ -10,8 +10,6 @@ import heart from "./heart.svg";
 import times from "./times.svg";
 import calendar from "./calendar.svg";
 import download from "./download.svg";
-import lightmode from "./lightmode.png";
-import darkmode from "./darkmode.png";
 
 import about from "./about-max.jpg";
 
@@ -38,8 +36,6 @@ export {
 	times,
 	calendar,
 	download,
-	lightmode,
-	darkmode,
 	about,
 	heroList,
 	footerSeparator,
