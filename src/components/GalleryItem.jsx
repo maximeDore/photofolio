@@ -42,13 +42,13 @@ const GalleryItem = ({ photo, type, onActivate, onDeactivate, isActive, galleryL
 			data-index={index}
 		>
 			{/* Image number */}
-			{/* {isDump > 0 && (
+			{isDump > 0 && (
 				<div 
 					className="relative h-0 w-full pr-4 text-white drop-shadow-lg opacity-50 text-[30px] font-bold text-right 
 						group-hover:opacity-0 transition-opacity z-[2]"
 					aria-hidden="true"
 				>{ (index + 1) }</div>
-			)} */}
+			)}
 			{/* Image */}
 			<Img
 				src={thumbSrc ?? src}

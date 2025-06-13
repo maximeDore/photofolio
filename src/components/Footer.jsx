@@ -1,6 +1,9 @@
 import { footerSeparator } from "../assets";
 import { socialMedia } from "../constants";
 
+// Components
+import Social from "./Social";
+
 const Footer = () => (
 	<footer className="bg-white text-black relative">
 		<img src={footerSeparator} width="1920" height="433" className="w-full" alt="" />
@@ -8,19 +11,14 @@ const Footer = () => (
 			<div className="w-full wrapper flex justify-between items-center md:flex-row md:text-left text-center flex-col pb-6">
 				<p>© Maxime Doré, Tous droits réservés {new Date().getFullYear()} </p>
 				{/* TODO: Ajouter un disclaimer */}
-				<div className="flex flex-row md:mt-0 mt-6">
+				<div className="flex flex-row  md:mt-0 mt-6">
 					{socialMedia.map((social, index) => (
-						<a className="p-3" key={social.id} href={social.link} title={social.name} target="_blank">
-							<img
-								src={social.icon}
-								alt={social.id}
-								width={21}
-								height={21}
-								className={`social w-6 h-6 object-contain cursor-pointer ${
-									index !== socialMedia.length - 1 ? "mr-0" : "mr-0"
-								}`}
-							/>
-						</a>
+						<Social
+							name={social.name}
+							id={social.id}
+							icon={social.icon}
+							link={social.link}
+						/>
 					))}
 				</div>
 			</div>

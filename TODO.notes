@@ -1,7 +1,7 @@
 Important:
 [ ] Lien vers instagram dans la nav
+[ ] Ajouter un hash dans l'url pour chaque image et l'ouvrir dans le lightbox on load
 [√] Changer le layout des onglets en responsive mobile pour cacher un minimum de contenu
-
 
 * Pertinent: *
 [ ] Groupes d'images (une image dans la mosaique ouvrant une galerie de plusieurs images dans le lightbox)

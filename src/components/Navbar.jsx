@@ -1,11 +1,17 @@
 import { useState } from "react";
 
+// Assets
 import { logo } from "../assets";
-import { navLinks } from "../constants";
+// Data
+import { navLinks, socialMedia } from "../constants";
+// Components
 import About from "./About";
 import Contact from "./Contact";
+import Social from "./Social";
 
 import { ReactComponent as Logo } from "../assets/logo.svg";
+
+const ig = socialMedia.find((s) => s.name === "Instagram");
 
 const Navbar = ({ isScrolled }) => {
 	const [popup, setPopup] = useState("");
@@ -46,6 +52,16 @@ const Navbar = ({ isScrolled }) => {
 							</a>
 						</li>
 					))}
+					{ig &&
+						<li>
+							<Social 
+								name={ig.name} 
+								id={ig.id} 
+								icon={ig.icon} 
+								link={ig.link} 
+							/>
+						</li>
+					}
 				</ul>
 			</div>
 		</nav>
