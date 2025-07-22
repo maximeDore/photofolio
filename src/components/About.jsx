@@ -2,6 +2,7 @@ import React from "react";
 
 import { times } from "../assets";
 import { about } from "../assets";
+import { cv } from "../assets";
 import Button from "./Button";
 
 const About = ({ active, onClosePopup }) => {
@@ -20,9 +21,9 @@ const About = ({ active, onClosePopup }) => {
 				<img src={times} width="24" height="24" alt="fermer" />
 			</button>
 			<div className="w-full h-full bg-black text-white relative z-[1] overflow-auto">
-				<div className="flex md:flex-nowrap flex-wrap items-center content-center h-full gap-4">
+				<div className="flex lg:flex-nowrap flex-wrap items-center content-center h-full gap-4">
 					{/* Left */}
-					<div className="padd md:w-1/2 w-full relative z-[1] richtext">
+					<div className="padd lg:w-1/2 w-full relative z-[1] richtext">
 						<div className="wrap">
 							<h2 className="h2 mb-8">À propos de moi</h2>
 							<p>
@@ -41,11 +42,14 @@ const About = ({ active, onClosePopup }) => {
 								<li>Image de marque</li>
 								<li>Événements</li>
 							</ul>
-							<div className="mt-10"><Button text="Me contacter" line="right" className="button--white" href="mailto:maximedore43@gmail.com" /></div>
+							<div className="mt-10 flex flex-wrap gap-4">
+								<Button text="Me contacter" line="right" className="button--white" href="mailto:maximedore43@gmail.com" />
+								<Button text="C.V." line="right" className="button--black" href={cv} target="_blank" />
+							</div>
 						</div>
 					</div>
 					{/* Right */}
-					<div className="md:w-1/2 w-full h-full md:static absolute top-0 left-0 md:opacity-100 opacity-25">
+					<div className="lg:w-1/2 w-full h-full lg:static absolute top-0 left-0 lg:opacity-100 opacity-25">
 						<img src={about} className="h-full w-full object-cover" alt="" />
 					</div>
 				</div>
