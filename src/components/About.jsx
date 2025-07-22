@@ -2,7 +2,6 @@ import React from "react";
 
 import { times } from "../assets";
 import { about } from "../assets";
-import { cv } from "../assets";
 import Button from "./Button";
 
 const About = ({ active, onClosePopup }) => {
@@ -44,7 +43,7 @@ const About = ({ active, onClosePopup }) => {
 							</ul>
 							<div className="mt-10 flex flex-wrap gap-4">
 								<Button text="Me contacter" line="right" className="button--white" href="mailto:maximedore43@gmail.com" />
-								<Button text="C.V." line="right" className="button--black" href={cv} target="_blank" />
+								<Button text="C.V." line="right" className="button--black" href="/assets/CV_MAXIME_DORE_2025.pdf" target="_blank" />
 							</div>
 						</div>
 					</div>

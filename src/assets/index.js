@@ -19,8 +19,6 @@ import hero3 from "./ACP06976.jpg";
 import hero4 from "./P1083782.jpg";
 import hero5 from "./ACP04227.jpg";
 
-import cv from "./CV_MAXIME_DORE_2025.pdf";
-
 import footerSeparator from "./footer.jpg";
 
 const heroList = [hero5, hero1, hero2, hero3, hero4];
@@ -41,5 +39,4 @@ export {
 	about,
 	heroList,
 	footerSeparator,
-	cv,
 };
