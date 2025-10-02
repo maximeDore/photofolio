@@ -13,11 +13,11 @@
 		column-gap: var(--gutter);
 
 		&__tab {
-			transition: visibility 0s 0.25s, max-height 0s 0.25s, padding 0s 0.25s, opacity 0.25s 0.25s;
+			transition: visibility 0s .5s, max-height 0s .5s, padding 0s .5s, opacity .5s .5s;
 			max-height: 99999px;
 
 			&.tab--hidden {
-				transition: visibility 0s 0.25s, max-height 0s 0.255s, padding 0s 0.25s, opacity 0.25s;
+				transition: visibility 0s .5s, max-height 0s 0.255s, padding 0s .5s, opacity .5s;
 				padding: 0;
 				max-height: 0;
 				opacity: 0;
@@ -38,8 +38,8 @@
 			margin: 0 0 var(--gutter);
 
 			@media screen and (min-width: 769px) and (hover: hover) {
-				& > img {
-					transition: transform 0.25s var(--bezier), box-shadow 0.25s var(--bezier), opacity 1s 0.25s;
+				& > .image-container img {
+					transition: transform .5s var(--bezier), box-shadow .5s var(--bezier), opacity 1s .5s;
 
 					&:hover {
 						transform: scale(1.125);
@@ -50,12 +50,12 @@
 		}
 		.item {
 			&__popup {
-				transition: visibility 0s 0.35s, opacity 0.25s;
+				transition: visibility 0s 0.35s, opacity .5s;
 				opacity: 0;
 				visibility: hidden;
 
 				&.is-active {
-					transition: visibility 0s, opacity 0.25s;
+					transition: visibility 0s, opacity .5s;
 					opacity: 1;
 					visibility: visible;
 
@@ -75,7 +75,7 @@
 				}
 			}
 			&__nav {
-				transition: box-shadow 0.25s;
+				transition: box-shadow .5s;
 
 				&.nav--prev {
 					box-shadow: inset 30px 0 20px -20px var(--black);
@@ -106,7 +106,7 @@
 			&__info {
 				&:hover {
 					.item__description {
-						transition: visibility 0s, opacity 0.25s;
+						transition: visibility 0s, opacity .25s;
 						opacity: 1;
 						visibility: visible;
 					}
@@ -122,7 +122,7 @@
 			}
 			&__description {
 				opacity: 0;
-				transition: visibility 0s 0.25s, opacity 0.25s;
+				transition: visibility 0s .5s, opacity .5s;
 				visibility: hidden;
 
 				&::before {

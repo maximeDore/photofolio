@@ -14,7 +14,7 @@ const Button = ({ name, id, icon, link }) => {
    return (
       <a className="inline-block p-3" key={id} href={link} title={name} target="_blank">
          <IconComponent 
-            className="w-6 h-6 transition-colors hover:text-primary"
+            className="w-6 h-6 transition-colors duration-[300ms] hover:text-primary"
          />
       </a>
    )

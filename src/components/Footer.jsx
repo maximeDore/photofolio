@@ -5,7 +5,7 @@ import { socialMedia } from "../constants";
 import Social from "./Social";
 
 const Footer = () => (
-	<footer className="bg-white text-black relative">
+	<footer className="sticky bottom-0 bg-white text-black">
 		<img src={footerSeparator} width="1920" height="433" className="w-full" alt="" />
 		<div className="wrap pb-16">
 			<div className="w-full wrapper flex justify-between items-center md:flex-row md:text-left text-center flex-col pb-6">

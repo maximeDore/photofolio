@@ -50,20 +50,22 @@ const GalleryItem = ({ photo, type, onActivate, onDeactivate, isActive, galleryL
 				>{ (index + 1) }</div>
 			)}
 			{/* Image */}
-			<Img
-				src={thumbSrc ?? src}
-				width={width && width > 0 && width}
-				height={height && height > 0 && height}
-				alt={alt}
-				className={`max-h-full min-h-[100px] w-full object-cover cursor-zoom-in ${
-					isLoaded ? "opacity-100" : "opacity-0"
-				}`}
-				onLoad={toggleIsLoaded}
-				onClick={() => onActivate(index)}
-				onContextMenu={(e) => {
-					e.preventDefault();
-				}}
-			/>
+			<div className="image-container overflow-hidden">
+				<Img
+					src={thumbSrc ?? src}
+					width={width && width > 0 && width}
+					height={height && height > 0 && height}
+					alt={alt}
+					className={`max-h-full min-h-[100px] w-full object-cover cursor-zoom-in ${
+						isLoaded ? "opacity-100" : "opacity-0"
+					}`}
+					onLoad={toggleIsLoaded}
+					onClick={() => onActivate(index)}
+					onContextMenu={(e) => {
+						e.preventDefault();
+					}}
+				/>
+			</div>
 
 			{/* Popup */}
 			<div
@@ -103,7 +105,7 @@ const GalleryItem = ({ photo, type, onActivate, onDeactivate, isActive, galleryL
 							<div className="flex items-end">
 								<a
 									href={photo.links.html}
-									className="transition-all shadow-md w-[40px] h-[40px] hover:shadow-lg hover:scale-125 rounded-tr-[30px] pt-1 pr-1 bg-white flex justify-center items-center"
+									className="transition-all duration-[500ms] shadow-md w-[40px] h-[40px] hover:shadow-lg hover:scale-125 rounded-tr-[30px] pt-1 pr-1 bg-white flex justify-center items-center"
 									title="Visionner sur Unsplash"
 									target="_blank"
 								>
@@ -134,7 +136,7 @@ const GalleryItem = ({ photo, type, onActivate, onDeactivate, isActive, galleryL
 											width="16"
 											height="16"
 											alt="info"
-											className="opacity-75 transition-opacity hover:opacity-100"
+											className="opacity-75 transition-opacity duration-[500ms] hover:opacity-100"
 										/>
 										<div className="item__description p-4 absolute bottom-[125%] -right-[20px] ss:w-[400px] w-[80vw] max-w-[200px] shadow-md bg-white text-black text-center capitalize">
 											{date && <p>{date.toLocaleDateString("fr-CA", { year: "numeric", month: "long" })}</p>}
@@ -153,7 +155,7 @@ const GalleryItem = ({ photo, type, onActivate, onDeactivate, isActive, galleryL
 											width="16"
 											height="16"
 											alt="info"
-											className="opacity-75 transition-opacity hover:opacity-100"
+											className="opacity-75 transition-opacity duration-[500ms] hover:opacity-100"
 										/>
 										<p className="item__description p-4 absolute bottom-[125%] -right-[20px] ss:w-[400px] w-[80vw] bg-white text-black text-center">
 											{description}
@@ -162,7 +164,7 @@ const GalleryItem = ({ photo, type, onActivate, onDeactivate, isActive, galleryL
 								)}
 								<a
 									href={photo.user.links.html}
-									className="transition-all shadow-md w-[40px] h-[40px] ml-2 hover:shadow-lg hover:scale-125 rounded-tl-[30px] block"
+									className="transition-all duration-[500ms] shadow-md w-[40px] h-[40px] ml-2 hover:shadow-lg hover:scale-125 rounded-tl-[30px] block"
 									title="Consulter mon profil Unsplash"
 									target="_blank"
 								>
@@ -192,7 +194,7 @@ const GalleryItem = ({ photo, type, onActivate, onDeactivate, isActive, galleryL
 											width="16"
 											height="16"
 											alt="info"
-											className="opacity-75 transition-opacity hover:opacity-100"
+											className="opacity-75 transition-opacity duration-[500ms] hover:opacity-100"
 										/>
 										<div className="item__description p-4 absolute bottom-[125%] -right-[20px] ss:w-[400px] w-[80vw] max-w-[200px] shadow-md bg-white text-black text-center capitalize">
 											{date && <p>{date.toLocaleDateString("fr-CA", { year: "numeric", month: "long" })}</p>}
@@ -211,7 +213,7 @@ const GalleryItem = ({ photo, type, onActivate, onDeactivate, isActive, galleryL
 											width="16"
 											height="16"
 											alt="info"
-											className="opacity-75 transition-opacity hover:opacity-100"
+											className="opacity-75 transition-opacity duration-[500ms] hover:opacity-100"
 										/>
 										<p className="item__description p-4 absolute bottom-[125%] -right-[20px] ss:w-[400px] w-[80vw] bg-white text-black text-center">
 											{description}
@@ -232,7 +234,7 @@ const GalleryItem = ({ photo, type, onActivate, onDeactivate, isActive, galleryL
 											width="16"
 											height="16"
 											alt="info"
-											className="opacity-75 transition-opacity hover:opacity-100"
+											className="opacity-75 transition-opacity duration-[500ms] hover:opacity-100"
 										/>
 										<p className="item__description p-4 absolute bottom-[125%] -right-[20px] ss:w-[150px] w-[80vw] bg-white text-black text-center">
 											Télécharger

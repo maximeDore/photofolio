@@ -65,26 +65,26 @@ const Hero = () => {
 							<span
 								className="inline-block -mx-1 px-1 pt-[0.1em] overflow-hidden"
 							>
-								<span className="inline-block transition-[transform,opacity] opacity-0 translate-y-full -translate-x-[0.5em] rotate-45 scale-50 origin-top-left is-loaded:opacity-100 is-loaded:transform-none duration-[800ms] delay-1000">M</span>
-								<span className="inline-block transition-[transform,opacity] opacity-0 translate-y-full -translate-x-[0.5em] rotate-45 scale-50 origin-top-left is-loaded:opacity-100 is-loaded:transform-none duration-[800ms] delay-[1020ms]">a</span>
-								<span className="inline-block transition-[transform,opacity] opacity-0 translate-y-full -translate-x-[0.5em] rotate-45 scale-50 origin-top-left is-loaded:opacity-100 is-loaded:transform-none duration-[800ms] delay-[1040ms]">x</span>
-								<span className="inline-block transition-[transform,opacity] opacity-0 translate-y-full -translate-x-[0.5em] rotate-45 scale-50 origin-top-left is-loaded:opacity-100 is-loaded:transform-none duration-[800ms] delay-[1060ms]">i</span>
-								<span className="inline-block transition-[transform,opacity] opacity-0 translate-y-full -translate-x-[0.5em] rotate-45 scale-50 origin-top-left is-loaded:opacity-100 is-loaded:transform-none duration-[800ms] delay-[1080ms]">m</span>
-								<span className="inline-block transition-[transform,opacity] opacity-0 translate-y-full -translate-x-[0.5em] rotate-45 scale-50 origin-top-left is-loaded:opacity-100 is-loaded:transform-none duration-[800ms] delay-[1100ms]">e</span>
+								<span className="inline-block transition-[transform,opacity] opacity-0 translate-y-[125%] -translate-x-[0.5em] origin-top-left rotate-[10deg] is-loaded:opacity-100 is-loaded:transform-none delay-1000">M</span>
+								<span className="inline-block transition-[transform,opacity] opacity-0 translate-y-[125%] -translate-x-[0.5em] origin-top-left rotate-[10deg] is-loaded:opacity-100 is-loaded:transform-none delay-[1020ms]">a</span>
+								<span className="inline-block transition-[transform,opacity] opacity-0 translate-y-[125%] -translate-x-[0.5em] origin-top-left rotate-[10deg] is-loaded:opacity-100 is-loaded:transform-none delay-[1040ms]">x</span>
+								<span className="inline-block transition-[transform,opacity] opacity-0 translate-y-[125%] -translate-x-[0.5em] origin-top-left rotate-[10deg] is-loaded:opacity-100 is-loaded:transform-none delay-[1060ms]">i</span>
+								<span className="inline-block transition-[transform,opacity] opacity-0 translate-y-[125%] -translate-x-[0.5em] origin-top-left rotate-[10deg] is-loaded:opacity-100 is-loaded:transform-none delay-[1080ms]">m</span>
+								<span className="inline-block transition-[transform,opacity] opacity-0 translate-y-[125%] -translate-x-[0.5em] origin-top-left rotate-[10deg] is-loaded:opacity-100 is-loaded:transform-none delay-[1100ms]">e</span>
 							</span>{" "}
 							<span
 								className="text-primary inline-block -mx-1 px-1 pt-[0.1em] overflow-hidden"
 							>
-								<span className="inline-block transition-[transform,opacity] opacity-0 translate-y-full -translate-x-[0.5em] rotate-45 scale-50 origin-top-left is-loaded:opacity-100 is-loaded:transform-none duration-[800ms] delay-[1120ms]">D</span>
-								<span className="inline-block transition-[transform,opacity] opacity-0 translate-y-full -translate-x-[0.5em] rotate-45 scale-50 origin-top-left is-loaded:opacity-100 is-loaded:transform-none duration-[800ms] delay-[1140ms]">o</span>
-								<span className="inline-block transition-[transform,opacity] opacity-0 translate-y-full -translate-x-[0.5em] rotate-45 scale-50 origin-top-left is-loaded:opacity-100 is-loaded:transform-none duration-[800ms] delay-[1160ms]">r</span>
-								<span className="inline-block transition-[transform,opacity] opacity-0 translate-y-full -translate-x-[0.5em] rotate-45 scale-50 origin-top-left is-loaded:opacity-100 is-loaded:transform-none duration-[800ms] delay-[1180ms]">é</span>
+								<span className="inline-block transition-[transform,opacity] opacity-0 translate-y-[125%] -translate-x-[0.5em] origin-top-left rotate-[10deg] is-loaded:opacity-100 is-loaded:transform-none delay-[1120ms]">D</span>
+								<span className="inline-block transition-[transform,opacity] opacity-0 translate-y-[125%] -translate-x-[0.5em] origin-top-left rotate-[10deg] is-loaded:opacity-100 is-loaded:transform-none delay-[1140ms]">o</span>
+								<span className="inline-block transition-[transform,opacity] opacity-0 translate-y-[125%] -translate-x-[0.5em] origin-top-left rotate-[10deg] is-loaded:opacity-100 is-loaded:transform-none delay-[1160ms]">r</span>
+								<span className="inline-block transition-[transform,opacity] opacity-0 translate-y-[125%] -translate-x-[0.5em] origin-top-left rotate-[10deg] is-loaded:opacity-100 is-loaded:transform-none delay-[1180ms]">é</span>
 							</span>
 						</div>
 						<div className="inline-block subtitle pt-3 pl-1 overflow-hidden">
-							<span className="inline-block transition-[transform,opacity] opacity-0 translate-y-full -translate-x-[0.5em] rotate-45 scale-50 origin-top-left is-loaded:opacity-100 is-loaded:transform-none duration-[800ms] delay-[1200ms]">Développeur Web</span>{" "}
-							<span className="inline-block transition-[transform,opacity] opacity-0 translate-y-full -translate-x-[0.5em] rotate-45 scale-50 origin-top-left is-loaded:opacity-100 is-loaded:transform-none duration-[800ms] delay-[1220ms]"> - </span>{" "}
-							<span className="inline-block text-primary transition-[transform,opacity] opacity-0 translate-y-full -translate-x-[0.5em] rotate-45 scale-50 origin-top-left is-loaded:opacity-100 is-loaded:transform-none duration-[800ms] delay-[1240ms]">Photographe</span>
+							<span className="inline-block transition-[transform,opacity] opacity-0 translate-y-[125%] -translate-x-[0.5em] origin-top-left rotate-[10deg] is-loaded:opacity-100 is-loaded:transform-none delay-[1200ms]">Développeur Web</span>{" "}
+							<span className="inline-block transition-[transform,opacity] opacity-0 translate-y-[125%] -translate-x-[0.5em] origin-top-left rotate-[10deg] is-loaded:opacity-100 is-loaded:transform-none delay-[1220ms]"> - </span>{" "}
+							<span className="inline-block text-primary transition-[transform,opacity] opacity-0 translate-y-[125%] -translate-x-[0.5em] origin-top-left rotate-[10deg] is-loaded:opacity-100 is-loaded:transform-none delay-[1240ms]">Photographe</span>
 						</div>
 					</div>
 				</div>

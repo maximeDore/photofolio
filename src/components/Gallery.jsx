@@ -69,7 +69,7 @@ const Gallery = ({ lenisInstance }) => {
 	}, []);
 
 	return (
-		<section id="galerie" className="bg-black min-h-screen">
+		<section id="galerie" className="bg-black min-h-screen z-[1] relative">
 			{/* Gallery nav */}
 			<div className="fixed sm:absolute inset-x-0 sm:right-auto top-[var(--padd)] bottom-0 sm:bottom-[var(--padd)] z-[9] flex items-end sm:items-start pointer-events-none">
 				<div className="sticky bottom-0 w-full sm:top-[100px] xs:mx-auto sm:mx-0 sm:w-0">
@@ -111,7 +111,7 @@ const Gallery = ({ lenisInstance }) => {
 			</div>
 
 			{/* Gallery content */}
-			<div className="padd overflow-hidden">
+			<div className="overflow-hidden">
 				<div className="">
 					{/* Regular gallery */}
 					{gallery.length > 0 && (
@@ -136,6 +136,8 @@ const Gallery = ({ lenisInstance }) => {
 					{/* TODO: Intégrer l'API Instagram pour un tab de feed custom */}
 				</div>
 			</div>
+			{/* Gradient */}
+			<div className="absolute top-full inset-x-0 padd from-black to-transparent bg-gradient-to-b -mb-1 z-[1]"></div>
 		</section>
 	);
 };

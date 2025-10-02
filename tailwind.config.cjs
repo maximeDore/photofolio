@@ -12,7 +12,7 @@ module.exports = {
       -------------------------------------
       */
       transitionDuration: {
-         DEFAULT: "600ms"
+         DEFAULT: "1000ms"
       },
       transitionTimingFunction: {
          DEFAULT: "cubic-bezier(.62,.05,.29,1)",
